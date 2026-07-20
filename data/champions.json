@@ -76,7 +76,7 @@
       "title": "La Rata Bibliotecaria",
       "icon": "img/icons/iconSplinter.png",
       "image": "img/champions/perfilSplinter.png",
-      "background": "img/backgrounds/SplinterBG.png",
+      "background": "img/backgrounds/splinterBG.png",
       "lore": "Splinter era un mink esclavo de una tripulación pirata cuando era un niño muy pequeño. Fue abandonado en una isla del East Blue, donde conoció a un científico y arqueólogo llamado Martin P. Disalvo, quien lo crió durante años como si fuese su hijo y le transmitió sus conocimientos al pequeño roedor.\n\nUna noche de luna llena, Splinter se sentía mal. Salió de su casa y se perdió en el bosque. Esa misma noche, la Marina planeó un ataque contra el científico Disalvo, ya que habían recibido información de que estaba investigando los secretos de un misterioso Poneglyph. Mientras esto sucedía, Splinter, perdido en el bosque, perdió el conocimiento.\n\nCuando despertó, ya era de día. Notó que a su alrededor había árboles rotos y marcas de garras. Al regresar al pueblo, lo encontró completamente destruido: las casas estaban quemadas y todos sus habitantes, muertos.\n\nCuando fue a su casa, encontró el cuerpo asesinado de su padre adoptivo y el lugar hecho escombros. Lleno de tristeza, abrazó el cadáver de Disalvo y notó que este tenía una llave en la mano. El científico solía encerrarse por horas en su sótano, pero jamás le había permitido al ratón entrar allí.\n\nSplinter usó la llave y entró al sótano de su maestro. Allí encontró los textos de Disalvo que hablaban de un posible Poneglyph perdido, junto con un mapa encriptado en un lenguaje indescriptible para cualquier persona. La única persona que Splinter conocía capaz de leer ese mapa era el mejor amigo de Disalvo: su tío, el Dr. Vegapunk.\n\nAhora, Splinter se embarca en un viaje a Egghead en busca de su tío, con la esperanza de cumplir el sueño de su maestro.",
       "region": "filo-maldito",
       "race": "Mink",
@@ -105,7 +105,7 @@
       "title": "El Último Serafín",
       "icon": "img/icons/iconCaelis.png",
       "image": "img/champions/perfilCaelis.png",
-      "background": "img/backgrounds/CaelisBG.png",
+      "background": "img/backgrounds/caelisBG.png",
       "lore": "Caelis nació más allá de las nubes, en Birka, la isla celestial donde el autoproclamado dios Enel prohibía todo contacto con la Tierra. Hijo de Alya, una skypieana, y Zephyr, un marine terrícola, su llegada fue un acto de amor clandestino… y de traición. Cuando Enel descubrió su existencia, ordenó matar a Alya; Zephyr logró huir con Caelis, pero su madre cayó bajo el relámpago divino.\n\nCreció como soldado errante junto a su padre, entrenándose en artes marciales y supervivencia; cada derrota templaba su cuerpo y su espíritu.\n\nA los doce años dominaba el combate cuerpo a cuerpo, pero en la ceremonia de ascenso de Zephyr, el almirante Akainu lo delató como hijo de una «rebelde» de Birka. Zephyr fue arrestado y encarcelado en Impel Down, y Caelis escapó, huérfano y sediento de justicia.\n\nDurante siete años peleó en arenas clandestinas, forjando su fuerza en sangre y soledad, ocultando su origen celeste.\n\nAhora, con diecinueve años y el corazón endurecido, su destino está claro: vengar a su madre, derrocar al traidor Akainu y liberar a su padre de la prisión más temida del mundo...\n\n¡Impel Down!",
       "region": "filo-maldito",
       "race": "Skypieano",
@@ -134,7 +134,7 @@
       "title": "El Justiciero de Acero",
       "icon": "img/icons/iconArthur.png",
       "image": "img/champions/perfilArthur.png",
-      "background": "img/backgrounds/ArthurBG.png",
+      "background": "img/backgrounds/arthurBG.png",
       "lore": "Mucho antes de que el Rey de los Piratas fuera ejecutado, el Gobierno Mundial temía lo que su legado pudiera provocar. Así nació el Proyecto Génos, una operación secreta para crear niños modificados, despojados de emociones y convertidos en armas humanas.\n\nArthur y su hermano mayor Joan fueron secuestrados del Reino Germa siendo bebés, hijos de esclavos forzados a entregar a sus hijos. Para Arthur, Joan era todo: su única familia, su guía y protector dentro de un infierno disfrazado de entrenamiento.\n\nTras la muerte prematura de Roger, el objetivo del proyecto cambió: eliminar todo rastro de su influencia. A los 14 años, Arthur y Joan recibieron una misión: asesinar a Scopper Gaban. Pero al llegar al lugar, fueron emboscados por los Piratas Donquixote. Arthur fue herido gravemente y abandonado; Joan, capturado por Doflamingo.\n\nArthur fue rescatado por Gaban y el doctor Crocus, quienes le revelaron la verdad: el Proyecto Génos había sido cancelado y sus participantes enviados a morir. Traicionados por quienes los crearon, Arthur quedó sin rumbo. Pero Gaban lo desafió a seguir viviendo, no por venganza, sino por Joan.\n\nDurante dos años, Arthur entrenó con Gaban en el uso del hacha y con Crocus en medicina. Gracias a sus modificaciones cibernéticas —resistencia aumentada, agilidad sobrehumana y visión táctica artificial—, su cuerpo se convirtió en un arma perfeccionada al servicio de una causa justa.\n\nAhora, con 18 años, Arthur navega por el East Blue en busca de aliados reales, con un solo propósito: liberar a Joan de las manos de Doflamingo y acabar con la tiranía de Judge Vinsmoke en su tierra natal.",
       "region": "filo-maldito",
       "race": "Humano modificado",
@@ -154,7 +154,7 @@
       "title": "El Corazón de la Tripulación",
       "icon": "img/icons/iconPipi.png",
       "image": "img/champions/perfilPipi.png",
-      "background": "img/backgrounds/PipiBG.png",
+      "background": "img/backgrounds/pipiBG.png",
       "lore": "Origen desconocido. Solo se sabe que Pipi es un tirador no letal.\n\nSu historia es un misterio, pero es conocido por su extraordinaria habilidad para reparar barcos.\n\nNo le gusta pelear.",
       "region": "filo-maldito",
       "race": "Humano",
@@ -216,7 +216,7 @@
       "wanted": null,
       "gallery": [
         {
-          "src": "img/gallery/gallerysinNombreSapo.png",
+          "src": "img/gallery/gallerySinNombreSapo.png",
           "caption": "Sin Nombre en su forma sapo."
         }
       ]

@@ -88,7 +88,7 @@ export class RegionPanel {
       championsContainer.innerHTML = champions.map(champ => `
         <a href="champion.html?id=${champ.id}" class="region-champion">
           <img src="${champ.icon}" alt="${champ.name}" class="region-champion__icon" 
-               onerror="this.src='img/champions/perfilMaximo.jpeg'">
+               onerror="this.src='img/champions/perfilMaximo.png'">
           <span class="region-champion__name">${champ.name}</span>
         </a>
       `).join('');

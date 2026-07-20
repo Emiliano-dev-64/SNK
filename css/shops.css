@@ -26,11 +26,20 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: var(--space-sm);
+  text-shadow: 0 2px 20px rgba(200, 155, 60, 0.4);
 }
 
 .shops-header__subtitle {
   color: var(--color-text-secondary);
   font-style: italic;
+  margin-bottom: var(--space-md);
+}
+
+.shops-header__divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 0 auto;
 }
 
 /* ---- Shops Grid ---- */

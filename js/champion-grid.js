@@ -89,7 +89,7 @@ export class ChampionGrid {
           alt="${champion.name}" 
           class="champion-card__image"
           loading="lazy"
-          onerror="this.src='img/champions/perfilMaximo.jpeg'"
+          onerror="this.src='img/champions/perfilMaximo.png'"
         >
         <div class="champion-card__overlay">
           <div class="champion-card__name">${champion.name}</div>
