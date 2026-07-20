@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Pipis - Plataforma DnD</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/logo OP dnd.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../img/logo OP dnd.png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="home">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <img src="../img/logo OP dnd.png" alt="One Pipis Logo">
+      <span class="navbar__logo-text">Shuen No Kokai</span>
+    </a>
+
+    <div class="navbar__menu">
+      <a href="index.html" class="navbar__link active">Inicio</a>
+      
+      <a href="champions.html" class="navbar__link">Personajes</a>
+
+      <a href="world-map.html" class="navbar__link">Mapa</a>
+
+      <a href="wanted.html" class="navbar__link">Wanted</a>
+
+      <div class="navbar__dropdown">
+        <a href="tiendas.html" class="navbar__link">Tienda</a>
+        <div class="navbar__dropdown-menu">
+          <a href="tiendas.html" class="navbar__dropdown-item">
+            <span>Bazar</span>
+          </a>
+          <a href="tiendas.html" class="navbar__dropdown-item">
+            <span>Mercado Negro</span>
+          </a>
+          <a href="tiendas.html" class="navbar__dropdown-item">
+            <span>Bar</span>
+          </a>
+          <a href="tiendas.html" class="navbar__dropdown-item">
+            <span>Astillero</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="navbar__hamburger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="navbar__mobile-menu">
+    <a href="index.html" class="navbar__mobile-link">Inicio</a>
+    <a href="champions.html" class="navbar__mobile-link">Personajes</a>
+    <div class="navbar__mobile-submenu">
+      <button class="navbar__mobile-link navbar__mobile-submenu-toggle">Mapa ▾</button>
+      <div class="navbar__mobile-submenu-items">
+        <a href="world-map.html" class="navbar__mobile-submenu-link">Mapa General</a>
+        <a href="region.html?id=cozia" class="navbar__mobile-submenu-link">Cozia</a>
+        <a href="region.html?id=archipielago-cozia" class="navbar__mobile-submenu-link">Archipiélago Cozia</a>
+        <a href="region.html?id=filo-maldito" class="navbar__mobile-submenu-link">Filo Maldito</a>
+      </div>
+    </div>
+    <a href="wanted.html" class="navbar__mobile-link">Wanted</a>
+    <a href="tiendas.html" class="navbar__mobile-link">Tiendas</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="../img/inicioBG.png" alt="Fondo" class="hero__bg">
+    <div class="hero__overlay"></div>
+    <div class="hero__particles"></div>
+
+    <div class="hero__content">
+      <img src="../img/Logo definitivo.png" alt="One Pipis Logo" class="hero__logo">
+      <h1 class="hero__title">Shuen No Kokai</h1>
+      <p class="hero__subtitle">Bienvenidos una vez más a esta épica aventura</p>
+      
+      <div class="hero__cta">
+        <a href="champions.html" class="btn btn-primary btn-lg">Explorar Personajes</a>
+        <a href="world-map.html" class="btn btn-secondary btn-lg">Ver el Mapa</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-header__title">La Historia</h2>
+        <div class="section-header__divider"></div>
+        <p class="section-header__subtitle">Descubre el comienzo de esta épica aventura</p>
+      </div>
+      
+        <div class="video-section__container">
+          <iframe 
+            class="video-section__iframe" 
+            src="https://www.youtube.com/embed/Lwvm5iWyhCM?si=olv-3TEjcqGebS-9" 
+            title="La Historia"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Champions Preview -->
+  <section class="champions-preview" style="padding: 96px 0;">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-header__title">Los Personajes</h2>
+        <div class="section-header__divider"></div>
+        <p class="section-header__subtitle">Conoce a los héroes de nuestra campaña</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto;">
+        <a href="champion.html?id=maximo-duque" class="champion-card fade-in-up">
+          <img src="../img/champions/perfilMaximo.png" alt="Máximo Duque" class="champion-card__image" loading="lazy">
+          <div class="champion-card__overlay">
+            <div class="champion-card__name">Máximo Duque</div>
+            <div class="champion-card__title">El Tiburón de Dressrosa</div>
+          </div>
+          <div class="champion-card__border"></div>
+        </a>
+        <a href="champion.html?id=nacho-d-castro" class="champion-card fade-in-up stagger-1">
+          <img src="../img/champions/perfilNacho.png" alt="Nacho D. Castro" class="champion-card__image" loading="lazy">
+          <div class="champion-card__overlay">
+            <div class="champion-card__name">Nacho D. Castro</div>
+            <div class="champion-card__title">El Espadachín de Tres Hojas</div>
+          </div>
+          <div class="champion-card__border"></div>
+        </a>
+        <a href="champion.html?id=geronimo-splinter" class="champion-card fade-in-up stagger-2">
+          <img src="../img/champions/perfilSplinter.png" alt="Gerónimo Splinter" class="champion-card__image" loading="lazy">
+          <div class="champion-card__overlay">
+            <div class="champion-card__name">Gerónimo Splinter</div>
+            <div class="champion-card__title">El Mentor Sombrío</div>
+          </div>
+          <div class="champion-card__border"></div>
+        </a>
+        <a href="champion.html?id=caelis-skybrand" class="champion-card fade-in-up stagger-3">
+          <img src="../img/champions/perfilCaelis.png" alt="Caelis Skybrand" class="champion-card__image" loading="lazy">
+          <div class="champion-card__overlay">
+            <div class="champion-card__name">Caelis Skybrand</div>
+            <div class="champion-card__title">El Nómada Celestial</div>
+          </div>
+          <div class="champion-card__border"></div>
+        </a>
+        <a href="champion.html?id=arthur-kane" class="champion-card fade-in-up stagger-4">
+          <img src="../img/champions/perfilArthur.png" alt="Arthur Kane" class="champion-card__image" loading="lazy">
+          <div class="champion-card__overlay">
+            <div class="champion-card__name">Arthur Kane</div>
+            <div class="champion-card__title">El Corsario de Hierro</div>
+          </div>
+          <div class="champion-card__border"></div>
+        </a>
+        <a href="champion.html?id=pipi" class="champion-card fade-in-up stagger-5">
+          <img src="../img/champions/perfilPipi.png" alt="Pipi" class="champion-card__image" loading="lazy">
+          <div class="champion-card__overlay">
+            <div class="champion-card__name">Pipi</div>
+            <div class="champion-card__title">El Corazón de la Tripulación</div>
+          </div>
+          <div class="champion-card__border"></div>
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;" class="fade-in-up">
+        <a href="champions.html" class="btn btn-secondary">Ver Todos los Personajes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- World Map Preview -->
+  <section class="video-section" style="padding: 96px 0;">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-header__title">El Mundo</h2>
+        <div class="section-header__divider"></div>
+        <p class="section-header__subtitle">Explora el mapamundi interactivo</p>
+      </div>
+
+      <div style="text-align: center;" class="fade-in-up">
+        <a href="world-map.html" class="btn btn-primary btn-lg">Abrir Mapa Interactivo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Music Player -->
+  <div class="music-player">
+    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
+    <select class="music-player__select" title="Seleccionar canción"></select>
+    <div class="music-player__controls">
+      <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
+      <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>
+      <button class="music-player__btn music-player__btn--next" aria-label="Siguiente">⏭</button>
+      <button class="music-player__btn music-player__btn--repeat" aria-label="Repetir">🔁</button>
+    </div>
+    <audio class="music-player__audio" loop></audio>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

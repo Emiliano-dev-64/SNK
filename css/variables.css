@@ -1,0 +1,112 @@
+/* ============================================
+   CSS Custom Properties - LOL Universe Theme
+   ============================================ */
+
+:root {
+  /* ---- Core Colors ---- */
+  --color-bg-primary: #0A1428;
+  --color-bg-secondary: #091428;
+  --color-bg-tertiary: #0A1A30;
+  --color-surface: #1E2A3A;
+  --color-surface-hover: #2A3A4E;
+  --color-surface-light: #1A2332;
+
+  /* ---- Accent Colors ---- */
+  --color-gold: #C89B3C;
+  --color-gold-light: #F0E6D2;
+  --color-gold-dark: #785A28;
+  --color-gold-glow: rgba(200, 155, 60, 0.35);
+
+  /* ---- Text Colors ---- */
+  --color-text-primary: #F0E6D2;
+  --color-text-secondary: #A09B8C;
+  --color-text-muted: #5B5A56;
+  --color-text-accent: #C89B3C;
+
+  /* ---- State Colors ---- */
+  --color-accent-blue: #0AC8B9;
+  --color-accent-red: #E84057;
+  --color-accent-green: #00C853;
+  --color-accent-purple: #9D6CD0;
+
+  /* ---- Overlay Colors ---- */
+  --overlay-dark: rgba(0, 0, 0, 0.75);
+  --overlay-medium: rgba(0, 0, 0, 0.5);
+  --overlay-light: rgba(0, 0, 0, 0.3);
+
+  /* ---- Typography ---- */
+  --font-display: 'Times New Roman', 'Georgia', serif;
+  --font-body: 'Segoe UI', 'Arial', sans-serif;
+  --font-mono: 'Consolas', 'Courier New', monospace;
+
+  --fs-hero: clamp(2.5rem, 6vw, 5rem);
+  --fs-h1: clamp(2rem, 4vw, 3.5rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.5rem);
+  --fs-h3: clamp(1.2rem, 2vw, 1.75rem);
+  --fs-h4: clamp(1rem, 1.5vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- Spacing Scale ---- */
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* ---- Border Radius ---- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-round: 50%;
+
+  /* ---- Transitions ---- */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --transition-fast: 150ms var(--ease-default);
+  --transition-normal: 300ms var(--ease-default);
+  --transition-slow: 500ms var(--ease-default);
+  --transition-slower: 800ms var(--ease-default);
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-glow-gold: 0 0 20px var(--color-gold-glow);
+  --shadow-glow-blue: 0 0 20px rgba(10, 200, 185, 0.3);
+
+  /* ---- Z-Index Scale ---- */
+  --z-below: -1;
+  --z-base: 0;
+  --z-above: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-navbar: 500;
+  --z-modal-backdrop: 900;
+  --z-modal: 1000;
+  --z-tooltip: 1100;
+  --z-music-player: 800;
+
+  /* ---- Layout ---- */
+  --container-max: 1400px;
+  --container-wide: 1600px;
+  --navbar-height: 64px;
+  --sidebar-width: 420px;
+}

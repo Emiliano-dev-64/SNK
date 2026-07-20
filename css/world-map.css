@@ -1,0 +1,345 @@
+/* ============================================
+   World Map Page - Map of Runaterra Style
+   ============================================ */
+
+.world-map {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+  cursor: grab;
+}
+
+.world-map:active {
+  cursor: grabbing;
+}
+
+/* ---- Map Container ---- */
+.world-map__container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.world-map__zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+
+.world-map__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---- Hotspots ---- */
+.hotspot {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform var(--transition-fast);
+}
+
+.hotspot:hover {
+  transform: scale(1.3);
+  z-index: 10;
+}
+
+.hotspot__marker {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotspot__dot {
+  width: 12px;
+  height: 12px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-gold-glow),
+              0 0 20px var(--color-gold-glow);
+  animation: hotspot-pulse 2s infinite ease-in-out;
+}
+
+.hotspot__ring {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  animation: hotspot-ring 2s infinite ease-out;
+  opacity: 0;
+}
+
+@keyframes hotspot-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes hotspot-ring {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.hotspot:hover .hotspot__dot {
+  background: var(--color-gold-light);
+  box-shadow: 0 0 15px var(--color-gold-glow),
+              0 0 30px var(--color-gold-glow);
+}
+
+/* ---- Region Tooltip ---- */
+.region-tooltip {
+  position: fixed;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(10, 20, 40, 0.95);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: var(--z-tooltip);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast),
+              visibility var(--transition-fast);
+  box-shadow: 0 0 15px rgba(200, 155, 60, 0.2);
+  white-space: nowrap;
+}
+
+.region-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---- Map Controls ---- */
+.map-controls {
+  position: fixed;
+  bottom: var(--space-xl);
+  left: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  z-index: var(--z-sticky);
+}
+
+.map-controls__btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 20, 40, 0.85);
+  border: 1px solid var(--color-gold-dark);
+  border-radius: var(--radius-sm);
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  backdrop-filter: blur(5px);
+  transition: all var(--transition-fast);
+}
+
+.map-controls__btn:hover {
+  background: var(--color-gold);
+  color: var(--color-bg-primary);
+  border-color: var(--color-gold);
+}
+
+.map-controls__zoom-level {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  padding: var(--space-2xs) 0;
+}
+
+/* ---- Region Panel (Slide-in) ---- */
+.region-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--color-bg-secondary);
+  border-left: 1px solid var(--color-gold-dark);
+  z-index: var(--z-modal);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.region-panel.active {
+  transform: translateX(0);
+}
+
+.region-panel__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-round);
+  font-size: 1.2rem;
+  z-index: 10;
+  transition: background var(--transition-fast);
+}
+
+.region-panel__close:hover {
+  background: var(--color-accent-red);
+}
+
+.region-panel__hero {
+  position: relative;
+  height: 250px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.region-panel__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.region-panel__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-bg-secondary) 100%
+  );
+}
+
+.region-panel__hero-name {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.region-panel__content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-lg);
+}
+
+.region-panel__description {
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+.region-panel__section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+}
+
+.region-panel__champions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.region-champion {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.region-champion:hover {
+  background: var(--color-surface-hover);
+}
+
+.region-champion__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1px solid var(--color-gold-dark);
+}
+
+.region-champion__name {
+  font-size: var(--fs-xs);
+  color: var(--color-text-primary);
+  font-weight: var(--fw-semibold);
+}
+
+.region-panel__explore-btn {
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
+/* ---- Mini Map ---- */
+.mini-map {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 180px;
+  height: 120px;
+  background: rgba(10, 20, 40, 0.85);
+  border: 1px solid var(--color-gold-dark);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  z-index: var(--z-sticky);
+  backdrop-filter: blur(5px);
+}
+
+.mini-map__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.mini-map__viewport {
+  position: absolute;
+  border: 1px solid var(--color-gold);
+  background: rgba(200, 155, 60, 0.1);
+  pointer-events: none;
+}

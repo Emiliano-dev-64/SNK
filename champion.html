@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personaje - One Pipis</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/logo OP dnd.png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/champion-detail.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="champion-detail">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <img src="../img/logo OP dnd.png" alt="One Pipis Logo">
+      <span class="navbar__logo-text">One Pipis</span>
+    </a>
+
+    <div class="navbar__menu">
+      <a href="index.html" class="navbar__link">Inicio</a>
+      <a href="champions.html" class="navbar__link">Personajes</a>
+      <a href="world-map.html" class="navbar__link">Mapa</a>
+      <a href="wanted.html" class="navbar__link">Wanted</a>
+      <a href="tiendas.html" class="navbar__link">Tienda</a>
+    </div>
+
+    <button class="navbar__hamburger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="navbar__mobile-menu">
+    <a href="index.html" class="navbar__mobile-link">Inicio</a>
+    <a href="champions.html" class="navbar__mobile-link">Personajes</a>
+    <div class="navbar__mobile-submenu">
+      <button class="navbar__mobile-link navbar__mobile-submenu-toggle">Mapa ▾</button>
+      <div class="navbar__mobile-submenu-items">
+        <a href="world-map.html" class="navbar__mobile-submenu-link">Mapa General</a>
+        <a href="region.html?id=cozia" class="navbar__mobile-submenu-link">Cozia</a>
+        <a href="region.html?id=archipielago-cozia" class="navbar__mobile-submenu-link">Archipiélago Cozia</a>
+        <a href="region.html?id=filo-maldito" class="navbar__mobile-submenu-link">Filo Maldito</a>
+      </div>
+    </div>
+    <a href="wanted.html" class="navbar__mobile-link">Wanted</a>
+    <a href="tiendas.html" class="navbar__mobile-link">Tiendas</a>
+  </div>
+
+  <!-- Champion Detail -->
+  <main class="champion-detail">
+    <!-- Hero -->
+    <section class="champion-hero">
+      <img src="" alt="" class="champion-hero__bg">
+      <div class="champion-hero__overlay"></div>
+      <div class="champion-hero__content">
+        <img src="" alt="" class="champion-hero__title-img">
+        <h1 class="champion-hero__name"></h1>
+        <p class="champion-hero__tagline"></p>
+      </div>
+    </section>
+
+    <!-- Navigation Arrows -->
+    <div class="champion-nav champion-nav--prev">
+      <button class="champion-nav__btn" aria-label="Personaje anterior">◀</button>
+      <span class="champion-nav__label"></span>
+    </div>
+    <div class="champion-nav champion-nav--next">
+      <span class="champion-nav__label"></span>
+      <button class="champion-nav__btn" aria-label="Siguiente personaje">▶</button>
+    </div>
+
+    <!-- Content -->
+    <div class="champion-content">
+      <!-- Top Row: Related | Lore | Bio -->
+      <div class="champion-top-row">
+        <!-- Related Champions -->
+        <aside class="champion-related">
+          <h3 class="champion-related__title">Personajes Relacionados</h3>
+          <div class="champion-related__list"></div>
+        </aside>
+
+        <!-- Lore -->
+        <section class="champion-lore">
+          <h2 class="champion-lore__title">Historia</h2>
+          <div class="champion-lore__text"></div>
+        </section>
+
+        <!-- Right Column -->
+        <aside class="champion-sidebar">
+          <!-- Bio Panel -->
+          <div class="champion-bio-panel">
+            <h3 class="champion-bio-panel__title">Ficha</h3>
+            <div class="champion-bio-panel__fields"></div>
+          </div>
+
+          <!-- Curiosities -->
+          <div class="champion-curiosities">
+            <h3 class="champion-curiosities__title">Curiosidades</h3>
+            <ul class="champion-curiosities__list"></ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Gallery -->
+      <section class="champion-gallery">
+        <h2 class="champion-gallery__title">Galería</h2>
+        <div class="champion-gallery__grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Music Player -->
+  <div class="music-player">
+    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
+    <select class="music-player__select" title="Seleccionar canción"></select>
+    <div class="music-player__controls">
+      <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
+      <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>
+      <button class="music-player__btn music-player__btn--next" aria-label="Siguiente">⏭</button>
+      <button class="music-player__btn music-player__btn--repeat" aria-label="Repetir">🔁</button>
+    </div>
+    <audio class="music-player__audio" loop></audio>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

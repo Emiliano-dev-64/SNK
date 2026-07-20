@@ -1,0 +1,312 @@
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* ---- Tablet (768px - 1199px) ---- */
+@media (max-width: 1199px) {
+  :root {
+    --sidebar-width: 360px;
+  }
+
+  .champions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .champion-stats__grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .region-panel__champions {
+    grid-template-columns: 1fr;
+  }
+
+  .shops-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-lg);
+  }
+}
+
+/* ---- Mobile (< 768px) ---- */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 56px;
+    --sidebar-width: 100%;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero__title {
+    letter-spacing: 2px;
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
+
+  /* Champions Grid */
+  .champions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    padding: var(--space-md);
+  }
+
+  .filter-bar__search {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .filter-bar__tags {
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: var(--space-xs);
+  }
+
+  .filter-tag {
+    flex-shrink: 0;
+  }
+
+  /* Champion Detail */
+  .champion-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .champion-hero__name {
+    font-size: var(--fs-h2);
+  }
+
+  .champion-content {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .champion-top-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .champion-related,
+  .champion-sidebar {
+    order: 1;
+  }
+
+  .champion-lore {
+    order: 0;
+  }
+
+  .champion-stats__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .champion-nav--prev {
+    left: var(--space-sm);
+  }
+
+  .champion-nav--next {
+    right: var(--space-sm);
+  }
+
+  .champion-nav__label {
+    display: none;
+  }
+
+  /* World Map */
+  .region-panel {
+    width: 100%;
+    height: 70vh;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-left: none;
+    border-top: 1px solid var(--color-gold-dark);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    transform: translateY(100%);
+  }
+
+  .region-panel.active {
+    transform: translateY(0);
+  }
+
+  .region-panel__close {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .map-controls {
+    bottom: var(--space-md);
+    left: var(--space-md);
+  }
+
+  .mini-map {
+    display: none;
+  }
+
+  /* Region Page */
+  .region-hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .region-hero__name {
+    font-size: var(--fs-h2);
+  }
+
+  .region-champions__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .region-locations__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .region-gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Shops */
+  .shops-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  /* Modal */
+  .modal {
+    max-width: 95vw;
+  }
+
+  .modal__content {
+    padding: var(--space-lg);
+  }
+
+  /* Video Section */
+  .video-section {
+    padding: var(--space-2xl) 0;
+  }
+}
+
+/* ---- Small Mobile (< 480px) ---- */
+@media (max-width: 480px) {
+  .champions-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .champion-card {
+    aspect-ratio: 4/3;
+  }
+
+  .champion-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card {
+    padding: var(--space-sm);
+  }
+
+  .stat-card__value {
+    font-size: var(--fs-h4);
+  }
+
+  .champion-gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .region-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__logo {
+    width: clamp(80px, 30vw, 160px);
+  }
+
+  .section-header__title {
+    font-size: var(--fs-h2);
+    letter-spacing: 2px;
+  }
+
+  .shops-header__title {
+    font-size: var(--fs-h2);
+    letter-spacing: 2px;
+  }
+}
+
+/* ---- Extra Small (< 360px) ---- */
+@media (max-width: 360px) {
+  .hero__title {
+    font-size: 1.8rem;
+  }
+
+  .hero__subtitle {
+    font-size: var(--fs-small);
+  }
+
+  .champion-hero__name {
+    font-size: var(--fs-h3);
+  }
+
+  .region-hero__name {
+    font-size: var(--fs-h3);
+  }
+}
+
+/* ---- Landscape Mobile ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    height: auto;
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero__logo {
+    width: 100px;
+  }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
+}
+
+/* ---- Large Screens (> 1600px) ---- */
+@media (min-width: 1600px) {
+  .champions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .region-champions__grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero__particle {
+    display: none;
+  }
+}

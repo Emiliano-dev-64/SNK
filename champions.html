@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personajes - One Pipis</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/logo OP dnd.png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/champions.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="champions">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <img src="../img/logo OP dnd.png" alt="One Pipis Logo">
+      <span class="navbar__logo-text">One Pipis</span>
+    </a>
+
+    <div class="navbar__menu">
+      <a href="index.html" class="navbar__link">Inicio</a>
+      <a href="champions.html" class="navbar__link active">Personajes</a>
+      <a href="world-map.html" class="navbar__link">Mapa</a>
+      <a href="wanted.html" class="navbar__link">Wanted</a>
+      <a href="tiendas.html" class="navbar__link">Tienda</a>
+    </div>
+
+    <button class="navbar__hamburger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="navbar__mobile-menu">
+    <a href="index.html" class="navbar__mobile-link">Inicio</a>
+    <a href="champions.html" class="navbar__mobile-link">Personajes</a>
+    <div class="navbar__mobile-submenu">
+      <button class="navbar__mobile-link navbar__mobile-submenu-toggle">Mapa ▾</button>
+      <div class="navbar__mobile-submenu-items">
+        <a href="world-map.html" class="navbar__mobile-submenu-link">Mapa General</a>
+        <a href="region.html?id=cozia" class="navbar__mobile-submenu-link">Cozia</a>
+        <a href="region.html?id=archipielago-cozia" class="navbar__mobile-submenu-link">Archipiélago Cozia</a>
+        <a href="region.html?id=filo-maldito" class="navbar__mobile-submenu-link">Filo Maldito</a>
+      </div>
+    </div>
+    <a href="wanted.html" class="navbar__mobile-link">Wanted</a>
+    <a href="tiendas.html" class="navbar__mobile-link">Tiendas</a>
+  </div>
+
+  <!-- Page Content -->
+  <main class="champions-page">
+    <!-- Header -->
+    <div class="champions-header">
+      <h1 class="champions-header__title">Personajes</h1>
+      <p class="champions-header__subtitle">Los héroes que surcan los mares del Grand Line</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-bar__search">
+        <span class="filter-bar__search-icon">🔍</span>
+        <input type="text" id="championSearch" placeholder="Buscar personaje...">
+      </div>
+      <div class="filter-bar__tags">
+        <button class="filter-tag active" data-filter="all">Todos</button>
+        <button class="filter-tag" data-filter="filo-maldito">Filo maldito</button>
+        <button class="filter-tag" data-filter="archipielago-cozia">Archipiélago Cozia</button>
+        <button class="filter-tag" data-filter="cozia">Cozia</button>
+      </div>
+    </div>
+
+    <!-- Champions Grid -->
+    <div class="champions-grid">
+      <!-- Populated by JavaScript -->
+    </div>
+  </main>
+
+  <!-- Music Player -->
+  <div class="music-player">
+    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
+    <select class="music-player__select" title="Seleccionar canción"></select>
+    <div class="music-player__controls">
+      <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
+      <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>
+      <button class="music-player__btn music-player__btn--next" aria-label="Siguiente">⏭</button>
+      <button class="music-player__btn music-player__btn--repeat" aria-label="Repetir">🔁</button>
+    </div>
+    <audio class="music-player__audio" loop></audio>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* ============================================
+   Champions Grid Page
+   ============================================ */
+
+.champions-page {
+  min-height: 100vh;
+  padding-top: var(--navbar-height);
+  background: var(--color-bg-primary);
+}
+
+/* ---- Page Header ---- */
+.champions-header {
+  position: relative;
+  padding: var(--space-3xl) 0 var(--space-xl);
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-primary) 100%
+  );
+}
+
+.champions-header__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+.champions-header__subtitle {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* ---- Filter Bar ---- */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid rgba(200, 155, 60, 0.15);
+  flex-wrap: wrap;
+}
+
+.filter-bar__search {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.filter-bar__search input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  padding-left: 40px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-gold-dark);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--fs-small);
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.filter-bar__search input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.filter-bar__search input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px var(--color-gold-glow);
+}
+
+.filter-bar__search-icon {
+  position: absolute;
+  left: var(--space-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+.filter-bar__tags {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-tag {
+  padding: var(--space-xs) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-gold-dark);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-tag:hover,
+.filter-tag.active {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-bg-primary);
+}
+
+/* ---- Champions Grid ---- */
+.champions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  max-width: var(--container-wide);
+  margin: 0 auto;
+}
+
+/* ---- Empty State ---- */
+.champions-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-4xl) var(--space-xl);
+  color: var(--color-text-muted);
+}
+
+.champions-empty__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.5;
+}
+
+/* ---- Animation ---- */
+.champion-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--ease-out),
+              transform 0.6s var(--ease-out);
+}
+
+.champion-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.champion-card:nth-child(1) { transition-delay: 0.05s; }
+.champion-card:nth-child(2) { transition-delay: 0.1s; }
+.champion-card:nth-child(3) { transition-delay: 0.15s; }
+.champion-card:nth-child(4) { transition-delay: 0.2s; }
+.champion-card:nth-child(5) { transition-delay: 0.25s; }
+.champion-card:nth-child(6) { transition-delay: 0.3s; }
