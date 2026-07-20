@@ -16,7 +16,7 @@ export class ChampionGrid {
 
   async init() {
     try {
-      const response = await fetch('../data/champions.json');
+      const response = await fetch('data/champions.json');
       this.data = await response.json();
       this.render(this.data.champions);
       this.bindEvents();
@@ -89,7 +89,7 @@ export class ChampionGrid {
           alt="${champion.name}" 
           class="champion-card__image"
           loading="lazy"
-          onerror="this.src='../img/champions/perfilMaximo.jpeg'"
+          onerror="this.src='img/champions/perfilMaximo.jpeg'"
         >
         <div class="champion-card__overlay">
           <div class="champion-card__name">${champion.name}</div>

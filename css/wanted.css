@@ -5,7 +5,7 @@
 /* ---- Page ---- */
 .wanted-page {
   min-height: 100vh;
-  background: url('../img/backgrounds/woodBG.png') center/cover fixed no-repeat;
+  background: url('img/backgrounds/woodBG.png') center/cover fixed no-repeat;
   position: relative;
   padding-top: var(--navbar-height);
 }

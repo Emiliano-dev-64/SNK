@@ -15,7 +15,7 @@ export class ChampionDetail {
 
   async init() {
     try {
-      const response = await fetch('../data/champions.json');
+      const response = await fetch('data/champions.json');
       this.data = await response.json();
       this.champion = this.data.champions.find(c => c.id === this.championId);
       
