@@ -231,6 +231,11 @@
   margin-bottom: var(--space-3xl);
 }
 
+.champion-top-row--no-related {
+  grid-template-columns: 1fr 220px;
+  justify-items: center;
+}
+
 /* ---- Sidebar (Right Column) ---- */
 .champion-sidebar {
   display: flex;

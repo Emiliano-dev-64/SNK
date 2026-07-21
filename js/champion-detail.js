@@ -223,12 +223,18 @@ export class ChampionDetail {
     const section = document.querySelector('.champion-related');
     if (!list || !section || !this.data || !this.champion) return;
 
-    const related = this.data.champions.filter(c =>
-      c.id !== this.champion.id && c.region === this.champion.region
-    );
+    const entries = this.champion.relatedChampions || [];
+    const related = entries
+      .map(e => {
+        const c = this.data.champions.find(ch => ch.id === e.id);
+        return c ? { ...c, relation: e.relation } : null;
+      })
+      .filter(Boolean);
 
     if (related.length === 0) {
       section.style.display = 'none';
+      const topRow = document.querySelector('.champion-top-row');
+      if (topRow) topRow.classList.add('champion-top-row--no-related');
       return;
     }
 
@@ -237,7 +243,7 @@ export class ChampionDetail {
         <img src="${c.icon}" alt="${c.name}" class="champion-related__item-img">
         <div>
           <div class="champion-related__item-name">${c.name}</div>
-          <div class="champion-related__item-title">${c.title}</div>
+          <div class="champion-related__item-title">${c.relation}</div>
         </div>
       </a>
     `).join('');

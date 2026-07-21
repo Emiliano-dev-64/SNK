@@ -1,0 +1,104 @@
+{
+  "categories": [
+    {
+      "id": "ciudades",
+      "name": "Ciudades",
+      "description": "Puertos, mercados y asentamientos urbanos",
+      "image": "img/world/cozia/coziaCiudad.png",
+      "images": [
+        { "src": "img/world/cozia/coziaCiudad.png", "name": "Cozia (Ciudad)" },
+        { "src": "img/world/cozia/coziaTrefico.png", "name": "Trefico" },
+        { "src": "img/world/cozia/coziaPuebloR.png", "name": "Pueblo Ronquido" },
+        { "src": "img/world/cozia/coziaGelditus.png", "name": "Gelditus" }
+      ]
+    },
+    {
+      "id": "costas",
+      "name": "Costas",
+      "description": "Playas, puertos pesqueros y zonas costeras",
+      "image": "img/world/cozia/coziaVillamarea.png",
+      "images": [
+        { "src": "img/world/cozia/coziaVillamarea.png", "name": "Villa Marea" }
+      ]
+    },
+    {
+      "id": "islas",
+      "name": "Islas",
+      "description": "Archipiélagos, islas remotas y territorios insulares",
+      "image": "img/world/archipielagoCozia/archCesila.png",
+      "images": [
+        { "src": "img/world/archipielagoCozia/archCesila.png", "name": "Cesila" },
+        { "src": "img/world/archipielagoCozia/archHueso.png", "name": "Hueso" },
+        { "src": "img/world/archipielagoCozia/archSuqueza.png", "name": "Suqueza" },
+        { "src": "img/world/archipielagoCozia/archPlaceres.png", "name": "Placeres" },
+        { "src": "img/world/archipielagoCozia/archPicoVerde.png", "name": "Pico Verde" },
+        { "src": "img/world/archipielagoCozia/archPiernaRota.png", "name": "Pierna Rota" }
+      ]
+    },
+    {
+      "id": "fortalezas",
+      "name": "Fortalezas",
+      "description": "Castillos, bastiones y posiciones defensivas",
+      "image": "img/world/cozia/coziaByco.png",
+      "images": [
+        { "src": "img/world/cozia/coziaByco.png", "name": "Byco" }
+      ]
+    },
+    {
+      "id": "montanas",
+      "name": "Montañas",
+      "description": "Cumbres, valles y terrenos elevados",
+      "image": "",
+      "images": []
+    },
+    {
+      "id": "praderas",
+      "name": "Praderas",
+      "description": "Llanuras, campos y zonas abiertas",
+      "image": "",
+      "images": []
+    },
+    {
+      "id": "bosques",
+      "name": "Bosques",
+      "description": "Selvas, bosques densos y zonas selváticas",
+      "image": "",
+      "images": []
+    },
+    {
+      "id": "desiertos",
+      "name": "Desiertos",
+      "description": "Arenas, tierras áridas y zonas deserticas",
+      "image": "",
+      "images": []
+    },
+    {
+      "id": "mar",
+      "name": "Mar",
+      "description": "Océanos, mares y fondos marinos",
+      "image": "",
+      "images": []
+    },
+    {
+      "id": "nieve",
+      "name": "Nieve",
+      "description": "Tundras, glaciares y zonas heladas",
+      "image": "",
+      "images": []
+    },
+    {
+      "id": "ruinas",
+      "name": "Ruinas",
+      "description": "Templos abandonados, civilizaciones perdidas",
+      "image": "",
+      "images": []
+    },
+    {
+      "id": "subterraneos",
+      "name": "Subterráneos",
+      "description": "Cuevas, mazmorras y catacumbas",
+      "image": "",
+      "images": []
+    }
+  ]
+}

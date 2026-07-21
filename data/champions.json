@@ -7,17 +7,27 @@
       "icon": "img/icons/iconMaximo.png",
       "image": "img/champions/perfilMaximo.png",
       "background": "img/backgrounds/maximoBG.png",
-      "lore": "Máximo nació en los abismos de la Isla Gyojin, hijo de una linaje de guerreros pacifistas que defendían las enseñanzas de la reina Otohime. Pero en él ardía una furia distinta: la del tiburón blanco, fiera, impulsiva, orgullosa. Fue educado para controlar su poder, pero su temperamento no tardó en chocar con las tensiones sociales entre humanos y gyojins.\n\nCon apenas 13 años, un conflicto con un noble humano degeneró en tragedia: Máximo fue acusado falsamente y vendido como esclavo al submundo de Dressrosa. Allí fue obligado a luchar en el Coliseo Corrida, donde su fuerza y habilidades lo convirtieron en un gladiador temido e indomable. Los años de arena, cadenas y sangre lo convirtieron en leyenda. Pronto los espectadores lo bautizaron:\n\n\"El Tiburón de Dressrosa\".\n\nFue en ese infierno donde conoció a dos figuras clave de su historia:\n\nMarco el Fénix, brevemente capturado y herido, compartió con él la celda y una profunda conversación sobre redención, legado y libertad. Fue el primero en tratarlo como a un igual.\n\nGecko Moriah, en cambio, llegó buscando cadáveres poderosos para su ejército. Intentó esclavizar los cuerpos de los gladiadores caídos. Máximo lo enfrentó en secreto junto con Marco, pero fueron derrotados. Marco logró escapar con Máximo, pero en las alturas lograron derribar a este último, quien quedó varado en algún lugar del East Blue.",
+      "lore": "Máximo nació en los abismos de la Isla Gyojin, hijo de un linaje de guerreros pacifistas que defendían las enseñanzas de la reina Otohime. Pero en él ardía una furia distinta: la del tiburón blanco, fiera, impulsiva, orgullosa. Fue educado para controlar su poder, pero su temperamento no tardó en chocar con las tensiones sociales entre humanos y gyojins.\n\nCon 16 años, un conflicto con un noble humano degeneró en tragedia: Máximo fue acusado falsamente y vendido como esclavo al submundo de Dressrosa. Allí fue obligado a luchar en el Coliseo Corrida, donde su fuerza y habilidades lo convirtieron en un gladiador temido e indomable. Los años de arena, cadenas y sangre lo convirtieron en leyenda. Pronto los espectadores lo bautizaron:\n\n'El Tiburón de Dressrosa'.\n\nEn uno de los combates más esperados del Coliseo se enfrentó a Alexius, un guerrero cuya técnica y experiencia superaban con creces la fuerza bruta de Máximo. La derrota fue aplastante, pero en lugar de sembrar odio, despertó admiración. Convencido de que jamás alcanzaría la libertad dependiendo únicamente de su instinto, Máximo le pidió a Alexius que lo entrenara. Con el paso de los años, entre combate y combate, nació una amistad forjada en la arena y el acero.\n\nCuando llegó el momento oportuno, Alexius organizó la fuga de Máximo. Antes de separarse, le dio un último consejo: navegar hacia el East Blue, un mar donde podría empezar una nueva vida lejos de las cadenas del Nuevo Mundo. Durante algunos años, Máximo encontró la paz que siempre había buscado, ocultando su pasado y viviendo como un hombre libre.\n\nPero el pasado nunca desaparece por completo.\n\nSu tranquilidad terminó cuando Kira, un despiadado cazarrecompensas, dio con su paradero. Sin darle oportunidad de reaccionar, lo emboscó y lo redujo con una eficacia implacable. Cuando Máximo volvió a abrir los ojos, estaba nuevamente encadenado, encerrado en una jaula y exhibido como mercancía en el excéntrico mercado negro de la ciudad de Cozia, donde una vez más tendría que luchar por recuperar su libertad.\n\nAunque su libertad sigue siendo frágil, Máximo jamás abandonó el sueño que nació tras conocer a Alexius. Algún día regresará a la Isla Gyojin, no como el joven impulsivo que fue arrancado de su hogar, sino como un verdadero guerrero. Allí abrirá su propia academia de combate para formar a las nuevas generaciones de gyojins, transmitiéndoles la disciplina, el honor y los valores que su maestro le enseñó. Pero antes de que ese día llegue, deberá encontrar nuevamente a Alexius y saldar la deuda que nunca podrá olvidar.",
       "region": "filo-maldito",
       "race": "Gyojin",
       "age": "25",
       "birthplace": "Isla Gyojin",
       "curiosities": [
-        "Su apodo \"El Tiburón de Dressrosa\" se lo dieron los espectadores del Coliseo Corrida.",
-        "Compartió celda con Marco el Fénix durante su cautiverio.",
-        "Su arma, la Buster Sword, fue forjada en la isla Gyojin."
+        "Vivió durante 2 años en Syrup Village.",
+        "Toca el ukelele.",
+        "Su arma, la Buster Sword, fue ganada en el torneo anual del Coliseo Corrida."
       ],
       "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "alexius",
+          "relation": "Mejor amigo/Mentor"
+        },
+        {
+          "id": "kira-blackwing",
+          "relation": "Enemigo"
+        }
+      ],
       "gallery": [
         {
           "src": "img/gallery/galleryMaximoChild.png",
@@ -51,6 +61,12 @@
         "Su estilo de combate combina tres espadas simultáneamente."
       ],
       "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "irugadora",
+          "relation": "Némesis"
+        }
+      ],
       "gallery": [
         {
           "src": "img/gallery/galleryNachoChild.png",
@@ -87,7 +103,12 @@
         "Su padre adoptivo fue el científico Martin P. Disalvo.",
         "Busca al Dr. Vegapunk para cumplir el sueño de su maestro."
       ],
-      "wanted": "img/splinterbounty.png",
+      "wanted": "",
+      "relatedChampions": [
+        {
+        
+        }
+      ],
       "gallery": [
         {
           "src": "img/gallery/galleryFormaMonsterSplinter.png",
@@ -117,6 +138,16 @@
         "Peleó en arenas clandestinas durante siete años."
       ],
       "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "zephyr-skybrand",
+          "relation": "Padre"
+        },
+        {
+          "id": "galdwin-skripeo",
+          "relation": "Mentor"
+        }
+      ],
       "gallery": [
         {
           "src": "img/gallery/galleryCaelisChild.png",
@@ -146,6 +177,11 @@
         "Entrenó con Scopper Gaban y el doctor Crocus."
       ],
       "wanted": null,
+      "relatedChampions": [
+        {
+        
+        }
+      ],
       "gallery": []
     },
     {
@@ -166,19 +202,37 @@
         "Hábil reparador de barcos, aunque no le gusta pelear."
       ],
       "wanted": null,
+      "relatedChampions": [
+        {
+        
+        }
+      ],
       "gallery": []
     },
     {
-      "id": "galdwin",
-      "name": "Galdwin",
+      "id": "galdwin-skripeo",
+      "name": "Galdwin Skripeo",
       "title": "El luchador skypieano",
       "icon": "img/icons/iconGaldwin.png",
       "image": "img/champions/perfilGaldwin.png",
       "background": "img/backgrounds/galdwinBG.png",
       "lore": "Pipi nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hija de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Pipi no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "archipielago-cozia",
-      "wanted": "img/galdwinbounty.png",
-      "gallery": []
+      "wanted": "img/wanted/wantedGaldwin.png",
+      "relatedChampions": [
+        {
+          "id": "joana-skripeo",
+          "relation": "Hija"
+        },
+        {
+          "id": "caelis-skybrand",
+          "relation": "Discípulo"
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "pierna-n",
@@ -189,8 +243,12 @@
       "background": "img/backgrounds/piernaNBG.png",
       "lore": "Pipi nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hija de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Pipi no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "archipielago-cozia",
-      "wanted": "img/piernanegrabounty.png",
-      "gallery": []
+      "wanted": "img//wanted/wantedPiernaN.png",
+      "relatedChampions": [],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "vandal",
@@ -202,7 +260,11 @@
       "lore": "Pipi nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hija de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Pipi no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
-      "gallery": []
+      "relatedChampions": [],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "sin-nombre",
@@ -214,12 +276,29 @@
       "lore": "Pipi nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hija de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Pipi no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "beto",
+          "relation": "Subordinado"
+        },
+        {
+          "id": "greg",
+          "relation": "Subordinado"
+        },
+        {
+          "id": "nico",
+          "relation": "Subordinado"
+        }
+      ],
       "gallery": [
         {
           "src": "img/gallery/gallerySinNombreSapo.png",
           "caption": "Sin Nombre en su forma sapo."
         }
-      ]
+      ],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "beto",
@@ -231,7 +310,24 @@
       "lore": "Pipi nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hija de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Pipi no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
-      "gallery": []
+      "relatedChampions": [
+        {
+          "id": "sin-nombre",
+          "relation": "Jefe"
+        },
+        {
+          "id": "greg",
+          "relation": "Subordinado"
+        },
+        {
+          "id": "nico",
+          "relation": "Subordinado"
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "greg",
@@ -243,7 +339,24 @@
       "lore": "Pipi nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hija de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Pipi no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
-      "gallery": []
+      "relatedChampions": [
+        {
+          "id": "sin-nombre",
+          "relation": "Jefe"
+        },
+        {
+          "id": "beto",
+          "relation": "Capitán"
+        },
+        {
+          "id": "nico",
+          "relation": "Mejor amigo"
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "nico",
@@ -255,7 +368,24 @@
       "lore": "Pipi nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hija de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Pipi no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
-      "gallery": []
+      "relatedChampions": [
+        {
+          "id": "sin-nombre",
+          "relation": "Jefe"
+        },
+        {
+          "id": "beto",
+          "relation": "Capitán"
+        },
+        {
+          "id": "greg",
+          "relation": "Mejor amigo"
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "giannis",
@@ -267,7 +397,15 @@
       "lore": "Giannis nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de un cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Giannis no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural lo convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje lo ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
-      "gallery": []
+      "relatedChampions": [
+        {
+        
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "sabras",
@@ -279,7 +417,11 @@
       "lore": "Sabras nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Sabras no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
-      "gallery": []
+      "relatedChampions": [],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
     },
     {
       "id": "ushio",
@@ -291,8 +433,315 @@
       "lore": "Ushio nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Ushio no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
       "region": "cozia",
       "wanted": null,
+      "relatedChampions": [],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
+    },
+    {
+      "id": "alexander",
+      "name": "Alexander",
+      "title": "El luchador letal",
+      "icon": "img/icons/iconAlexander.png",
+      "image": "img/champions/perfilAlexander.png",
+      "background": "img/backgrounds/alexanderBG.png",
+      "lore": "Ushio nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Ushio no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
+      "region": "marina",
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "oberon",
+          "relation": ""
+        },
+        {
+          "id": "vik-tech",
+          "relation": ""
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
+    },
+    {
+      "id": "oberon",
+      "name": "Oberon",
+      "title": "El relojero elegante",
+      "icon": "img/icons/iconOberon.png",
+      "image": "img/champions/perfilOberon.png",
+      "background": "img/backgrounds/oberonBG.png",
+      "lore": "Ushio nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Ushio no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
+      "region": "marina",
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "alexander",
+          "relation": ""
+        },
+        {
+          "id": "vik-tech",
+          "relation": ""
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
+    },
+    {
+      "id": "vik-tech",
+      "name": "Vik-Tech",
+      "title": "El marine cyborg",
+      "icon": "img/icons/iconVik.png",
+      "image": "img/champions/perfilVik.png",
+      "background": "img/backgrounds/vikBG.png",
+      "lore": "Ushio nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Ushio no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
+      "region": "marina",
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "alexander",
+          "relation": ""
+        },
+        {
+          "id": "oberon",
+          "relation": ""
+        }
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
+    },
+    {
+      "id": "joana-skripeo",
+      "name": "Joana Skripeo",
+      "title": "La Hija del Guardián",
+      "icon": "img/icons/iconJoana.png",
+      "image": "img/champions/perfilJoana.png",
+      "background": "img/backgrounds/joanaBG.png",
+      "lore": "Ushio nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Ushio no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
+      "region": "archipielago-cozia",
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "galdwin-skripeo",
+          "relation": "Padre"
+        }
+      ],
+      "gallery": [],
+      "age": "19",
+      "birthplace": "Skypiea",
+      "curiosities": ["Es panadera."]
+    },
+    {
+      "id": "tunu-baro",
+      "name": "Tunu Baro",
+      "title": "El Pibe de los Astilleros",
+      "icon": "img/icons/iconTunu.png",
+      "image": "img/champions/perfilTunu.png",
+      "background": "img/backgrounds/tunuBG.png",
+      "lore": "Ushio nació en un pueblo pesquero del East Blue, donde la música era tan esencial como el aire. Hijo de una cantante de baladas y un pescador, creció entre redes de pesca y melodías ancestrales.\n\nSu talento musical fue evidente desde temprana edad: a los cinco años podía tocar cualquier instrumento que encontrara, y a los diez ya componía canciones que hacían llorar a los pescadores más veteranos.\n\nPero Ushio no era solo música: tenía una inteligencia social extraordinaria, una capacidad innata para leer a las personas y saber exactamente qué decir para inspirar, consolar o motivar. Su carisma natural la convirtió en el corazón moral de cualquier grupo al que se unía.\n\nCuando zarpó al Grand Line, su objetivo no era la fama ni la fortuna, sino encontrar la \"Canción Perdida\", una melodía legendaria que, según la leyenda, podía cambiar el destino de quien la escuchara. Su viaje la ha llevado a participar en batallas épicas, no con fuerza bruta, sino con el poder de su voz y su ingenio.",
+      "region": "archipielago-cozia",
+      "wanted": null,
+      "relatedChampions": [
+        {}
+      ],
+      "gallery": [],
+      "age": "",
+      "birthplace": "",
+      "curiosities": []
+    },
+    {
+      "id": "arlong",
+      "name": "Arlong",
+      "title": "La Sierra",
+      "icon": "img/icons/iconArlong.png",
+      "image": "img/champions/perfilArlong.png",
+      "background": "img/backgrounds/arlongBG.png",
+      "lore": "Arlong, surgido del violento Distrito Gyojin, cultivó desde temprana edad un intenso desprecio hacia los humanos, a quienes consideraba una especie inferior. Su ideología radical lo llevó a formar su propia tripulación pirata antes de unirse a los Piratas del Sol, liderados por Fisher Tiger, donde su postura violenta contrastaba fuertemente con la visión más pacífica de sus compañeros, particularmente la de Jinbe.\n\nTras la trágica muerte de Fisher Tiger, provocada por una emboscada humana, Arlong buscó venganza y fue encarcelado, para luego ser liberado y distanciarse de la moderación de Jinbe. Determinado a imponer su dominio, llevó a sus seguidores leales al East Blue, buscando establecer un imperio basado en la superioridad de su raza.\n\nEn el East Blue, Arlong ocupó la Isla de Konomi, construyendo el temible Arlong Park y sometiendo a sus habitantes bajo el terror y el cobro forzoso de tributos.",
+      "region": "",
+      "race": "Gyojin",
+      "age": "39",
+      "birthplace": "Isla Gyojin",
+      "curiosities": [
+        "Su apodo \"La Sierra\" proviene de su nariz aserrada y su estilo de combate basado en esta.",
+        "Es el hermano mayor adoptivo de la sirena Madame Shyarly.",
+        "Sus dientes se regeneran al instante si se caen."
+      ],
+      "wanted": "img//wanted/wantedArlong.png",
+      "relatedChampions": [],
+      "gallery": []
+    },
+    {
+      "id": "dorian",
+      "name": "Dorian",
+      "title": "El Mercader Fantasma",
+      "icon": "img/icons/iconDorian.png",
+      "image": "img/champions/perfilDorian.png",
+      "background": "img/backgrounds/dorianBG.png",
+      "lore": "Dorian fue un comerciante ambulante que surcaba las rutas mercantiles de Cozia, vendiendo objetos raros y prohibidos. Nadie conoce su verdadero origen, solo que apareció una noche en el puerto de Trefico con un barco lleno de tesoros imposibles. Su capacidad para conseguir cualquier cosa lo convirtió en una leyenda viva entre los mercaderes del Grand Line.",
+      "region": "marina",
+      "race": "Humano",
+      "age": "42",
+      "birthplace": "Desconocido",
+      "curiosities": [
+        "Nunca se le ha visto dormir en tierra firme.",
+        "Dice conocer el paradero del Poneglyph Dorado.",
+        "Su barco, La Sombra, no tiene nombre pintado en la popa."
+      ],
+      "wanted": null,
+      "relatedChampions": [],
+      "gallery": []
+    },
+    {
+      "id": "gin",
+      "name": "Gin",
+      "title": "El Puño de Hierro",
+      "icon": "img/icons/iconGin.png",
+      "image": "img/champions/perfilGin.png",
+      "background": "img/backgrounds/ginBG.png",
+      "lore": "Gin creció en los muelles de Cozia, donde aprendió a pelear antes de aprender a leer. Hijo de un herrero y una pescadora, forjó su propio estilo de combate usando herramientas de trabajo como armas. Su puño derecho está cubierto de cicatrices de acero caliente, un testimonio de años golpeando yunque sin guantes.",
+      "region": "cozia",
+      "race": "Humano",
+      "age": "24",
+      "birthplace": "Cozia",
+      "curiosities": [
+        "Forja sus propias armas con las herramientas de su padre.",
+        "Tiene una colección de martillos rotos que guarda como recuerdos.",
+        "Nunca ha perdido una pelea en espacio cerrado."
+      ],
+      "wanted": null,
+      "relatedChampions": [],
+      "gallery": []
+    },
+    {
+      "id": "zaraki",
+      "name": "Zaraki",
+      "title": "El Espadachín Salvaje",
+      "icon": "img/icons/iconZaraki.png",
+      "image": "img/champions/perfilZaraki.png",
+      "background": "img/backgrounds/zarakiBG.png",
+      "lore": "Zaraki es un espadachín sin maestro que surgió de las deepest zonas del Filo Maldito. Su estilo es pura furia: no sigue técnicas, no respeta reglas, solo avanza. Cada batalla es una celebración de caos, y cada victoria un recordatorio de que la fuerza bruta puede superar cualquier estrategia.",
+      "region": "marina",
+      "race": "Humano",
+      "age": "30",
+      "birthplace": "",
+      "curiosities": [
+        "Su espada no tiene nombre, solo \"la_bestia\".",
+        "Se dice que ha cortado una montaña por la mitad en un mal día.",
+        "Duime en batalla, no por estrategia, sino porque se aburre."
+      ],
+      "wanted": null,
+      "relatedChampions": [],
+      "gallery": []
+    },
+    {
+      "id": "zephyr-skybrand",
+      "name": "Zephyr Skybrand",
+      "title": "El Viento del Sur",
+      "icon": "img/icons/iconZephyr.png",
+      "image": "img/champions/perfilZephyr.png",
+      "background": "img/backgrounds/zephyrBG.png",
+      "lore": "Zephyr nació en las costas del Archipiélago Cozia, donde los vientos del sur traen tormentas y oportunidades. Navegador nato, ha cruzado el Grand Line tres veces sin perder un solo tripulante. Su habilidad para leer el viento y las corrientes lo convierte en el capitán más buscado por las tripulaciones que buscan cruzar mares peligrosos.",
+      "region": "marina",
+      "race": "Humano",
+      "age": "42",
+      "birthplace": "Baterilla",
+      "curiosities": [
+        "Puede predecir tormentas tres días antes de que lleguen.",
+        "Su bandera es un delfín dorado sobre fondo azul.",
+        "Nunca ha anclado en un puerto más de dos noches seguidas."
+      ],
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "caelis-skybrand",
+          "relation": "Hijo"
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "id": "irugadora",
+      "name": "Irugadora",
+      "title": "El Filo Maldito",
+      "icon": "img/icons/iconIrugadora.png",
+      "image": "img/champions/perfilIrugadora.png",
+      "background": "img/backgrounds/irugadoraBG.png",
+      "lore": "Zephyr nació en las costas del Archipiélago Cozia, donde los vientos del sur traen tormentas y oportunidades. Navegador nato, ha cruzado el Grand Line tres veces sin perder un solo tripulante. Su habilidad para leer el viento y las corrientes lo convierte en el capitán más buscado por las tripulaciones que buscan cruzar mares peligrosos.",
+      "region": "",
+      "race": "?",
+      "age": "?",
+      "birthplace": "?",
+      "curiosities": [
+        "?",
+        "?",
+        "?"
+      ],
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "nacho-d-castro",
+          "relation": "Némesis"
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "id": "alexius",
+      "name": "Alexius",
+      "title": "El Honor de Dressrosa",
+      "icon": "img/icons/iconAlexius.png",
+      "image": "img/champions/perfilAlexius.png",
+      "background": "img/backgrounds/alexiusBG.png",
+      "lore": "Alexius nació en los barrios bajos de Loguetown, donde la violencia era el lenguaje cotidiano y la supervivencia dependía de la fuerza y la astucia. Desde muy joven demostró un talento extraordinario para el combate. Ya fuera con los puños o empuñando cualquier arma que cayera en sus manos, siempre encontraba la manera de imponerse. Sin embargo, entre todas las disciplinas, encontró su verdadera vocación luchando con lanza y escudo, un estilo que combinaba precisión, resistencia y control absoluto del campo de batalla.\n\nPara ganarse la vida comenzó a participar en peleas clandestinas, donde su reputación creció rápidamente. Su talento llamó la atención de un supuesto reclutador que le prometió fama y fortuna en un torneo profesional. La oferta era una mentira. Al aceptar el contrato fue vendido al submundo de Dressrosa, donde quedó condenado a luchar de por vida como esclavo en el Coliseo Corrida. Intentó rebelarse, pero las cadenas y la brutalidad de sus captores terminaron por doblegar su cuerpo, nunca su espíritu.\n\nCon el paso de los años, Alexius dejó de ser un simple gladiador. Su disciplina, su temple y el respeto con el que trataba incluso a sus adversarios lo convirtieron en una figura admirada dentro del Coliseo. No peleaba por el aplauso del público, sino por conservar aquello que nadie podía arrebatarle: su honor y su dignidad. Entre los gladiadores era conocido como un guerrero invencible, pero también como un hombre cuya palabra valía más que cualquier victoria.\n\nFue allí donde conoció a Máximo Duque, un joven gyojin cuya fuerza descomunal era tan grande como su impulsividad. En el combate que los enfrentó, Alexius obtuvo una victoria contundente gracias a su experiencia y estrategia. Lejos de guardar rencor, Máximo le pidió que lo entrenara, y con el tiempo aquella rivalidad dio paso a una amistad inquebrantable. Durante años, Alexius le enseñó que la verdadera fuerza no residía únicamente en el poder físico, sino en la disciplina, la paciencia y el autocontrol.\n\nCuando la oportunidad finalmente se presentó, Alexius arriesgó su propia vida para ayudar a Máximo a escapar del Coliseo. Antes de despedirse, le aconsejó buscar un nuevo comienzo en el East Blue, convencido de que allí encontraría la paz que ambos habían perdido hacía mucho tiempo.\n\nDesde aquel día, nadie volvió a ver a Alexius.",
+      "region": "",
+      "race": "Humano",
+      "age": "30",
+      "birthplace": "Loguetown",
+      "curiosities": [
+        "No pelea por placer, solo por deber.",
+        "Tiene el récord de más de 1000 victorias en el Coliseo Corrida.",
+        "Su comida preferida es el takoyaki."
+      ],
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "maximo-duque",
+          "relation": "Mejor amigo/Discípulo"
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "id": "kira-blackwing",
+      "name": "Kira Blackwing",
+      "title": "El Ala Negra",
+      "icon": "img/icons/iconKira.png",
+      "image": "img/champions/perfilKira.png",
+      "background": "img/backgrounds/kiraBG.png",
+      "lore": "Poco se sabe sobre el pasado de Kira. Su nombre comenzó a circular entre traficantes de esclavos, mafias y organizaciones criminales mucho antes de que el Gobierno Mundial llegara a conocerlo. Nunca trabajó por justicia ni por ideales; desde el principio entendió que la vida de una persona tenía un precio, y que cobrarlo era un negocio extremadamente rentable.\n\nCon el paso de los años se convirtió en uno de los cazarrecompensas más letales del mar. Su precisión con las armas de fuego era tan extraordinaria que las historias sobre él comenzaron a adquirir un tono casi sobrenatural. Siempre llevaba dos pistolas a la cintura, pero jamás utilizaba ambas. Según quienes sobrevivieron para contarlo, una sola bala siempre era suficiente.\n\nSus viajes lo llevaron hasta Máximo Duque, un antiguo esclavo cuya recompensa de captura era lo suficientemente interesante como para ignorarla. Sin previo aviso, Kira tendió una emboscada impecable y redujo al gyojin antes de que siquiera pudiera desenvainar su espada. Tras venderlo al mercado negro de Cozia, desapareció sin dejar rastro, convencido de que aquella cacería había terminado.",
+      "region": "",
+      "race": "Humano",
+      "age": "17",
+      "birthplace": "Water 7",
+      "curiosities": [
+        "El CP9 le ofreció unirse pero declinó la oferta.",
+        "Se aburre con facilidad.",
+        "Le encanta el chocolate."
+      ],
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "maximo-duque",
+          "relation": "Enemigo"
+        }
+      ],
       "gallery": []
     }
+    
   ],
   "regions": [
     {
@@ -338,12 +787,10 @@
       "image": "img/world/cozia/cozia.png",
       "heroImage": "img/world/cozia/cozia.png",
       "champions": [
-        "vandal",
         "sin-nombre",
         "beto",
         "greg",
         "nico",
-        "giannis",
         "sabras",
         "ushio"
       ],
@@ -352,56 +799,42 @@
           "id": "cozia-pais",
           "name": "Cozia",
           "description": "El país dominado por los peces gordos del comercio y la política, donde la ley se negocia con oro y las alianzas cambian con el viento.",
-          "x": 32.5,
-          "y": 39,
           "image": "img/world/cozia/coziaMapa.png"
         },
         {
           "id": "cozia-ciudad",
           "name": "Cozia (Ciudad)",
           "description": "La ciudad principal de la región, un puerto bullicioso lleno de comerciantes y aventureros.",
-          "x": 32.5,
-          "y": 39,
           "image": "img/world/cozia/coziaCiudad.png"
         },
         {
           "id": "villa-marea",
           "name": "Villa Marea",
           "description": "Un pueblo costero conocido por sus puestas de sol y su gente amable.",
-          "x": 45,
-          "y": 30,
           "image": "img/world/cozia/coziaVillamarea.png"
         },
         {
           "id": "byco",
           "name": "Byco",
           "description": "Una fortaleza rocosa en el borde de la región, hogar de guerreros experimentados.",
-          "x": 73,
-          "y": 41,
           "image": "img/world/cozia/coziaByco.png"
         },
         {
           "id": "gelditus",
           "name": "Gelditus",
           "description": "Una ciudad minera donde el oro y los secretos se esconden bajo tierra.",
-          "x": 58.3,
-          "y": 37,
           "image": "img/world/cozia/coziaGelditus.png"
         },
         {
           "id": "pueblo-ronquido",
           "name": "Pueblo Ronquido",
           "description": "Un pueblo tranquilo donde los habitantes duermen más de lo que despiertan.",
-          "x": 47.2,
-          "y": 45,
           "image": "img/world/cozia/coziaPuebloR.png"
         },
         {
           "id": "trefico",
           "name": "Trefico",
           "description": "Un cruce de caminos mercantil donde convergen rutas de todo el Grand Line.",
-          "x": 88.3,
-          "y": 37,
           "image": "img/world/cozia/coziaTrefico.png"
         }
       ]
@@ -410,35 +843,56 @@
       "id": "archipielago-cozia",
       "name": "Archipiélago Cozia",
       "description": "Un conjunto de islas interconectadas por corrientes peligrosas y criaturas marinas. Este archipiélago es conocido por sus paisajes salvajes y sus secretos ocultos en cada isla.",
-      "image": "img/world/archipielagoCozia/archipielagoCoziaMapa.png",
-      "heroImage": "img/world/archipielagoCozia/archipielagoCoziaMapa.png",
+      "image": "img/world/archipielagoCozia/archipielagoCozia.png",
+      "heroImage": "img/world/archipielagoCozia/archipielagoCozia.png",
       "champions": [
-        "galdwin", "pierna-n"
+        "galdwin-skripeo",
+        "joana-skripeo",
+        "tunu-baro",
+        "pierna-n"
       ],
       "locations": [
         {
-          "id": "isla-principal",
-          "name": "Isla Principal",
+          "id": "archMapa",
+          "name": "Mapa del archipiélago",
           "description": "La isla más grande del archipiélago, con selvas densas y ruinas antiguas.",
-          "x": 54.8,
-          "y": 14,
-          "image": "img/mapainicio.png"
+          "image": "img/world/archipielagoCozia/archipielagoCoziaMapa.png"
         },
         {
-          "id": "isla-coral",
-          "name": "Isla del Coral",
+          "id": "cesila",
+          "name": "Cesila",
+          "description": "La isla más grande del archipiélago, con selvas densas y ruinas antiguas.",
+          "image": "img/world/archipielagoCozia/archCesila.png"
+        },
+        {
+          "id": "hueso",
+          "name": "Hueso",
           "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
-          "x": 52,
-          "y": 16,
-          "image": "img/mapainicio.png"
+          "image": "img/world/archipielagoCozia/archHueso.png"
         },
         {
-          "id": "isla-volcanica",
-          "name": "Isla Volcánica",
-          "description": "Una isla activa con volcanes que humean y aguas termales naturales.",
-          "x": 57,
-          "y": 12,
-          "image": "img/mapainicio.png"
+          "id": "suqueza",
+          "name": "Suqueza",
+          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
+          "image": "img/world/archipielagoCozia/archSuqueza.png"
+        },
+        {
+          "id": "placeres",
+          "name": "Placeres",
+          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
+          "image": "img/world/archipielagoCozia/archPlaceres.png"
+        },
+        {
+          "id": "pico-verde",
+          "name": "Pico Verde",
+          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
+          "image": "img/world/archipielagoCozia/archPicoVerde.png"
+        },
+        {
+          "id": "pierna-rota",
+          "name": "Pierna Rota",
+          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
+          "image": "img/world/archipielagoCozia/archPiernaRota.png"
         }
       ]
     },
@@ -454,27 +908,55 @@
         "geronimo-splinter",
         "caelis-skybrand",
         "arthur-kane",
-        "pipi"
+        "pipi",
+        "giannis"
       ],
       "locations": [
         {
           "id": "arena-duelo",
           "name": "Arena de Duelo",
           "description": "Una arena abierta donde los espadachines resuelven sus disputas con honor.",
-          "x": 62,
-          "y": 18,
           "image": "img/Cozia.jpg"
         },
         {
           "id": "forja-acero",
           "name": "Forja del Acero",
           "description": "Un taller donde los herreros más expertos crean las armas letales de la región.",
-          "x": 60,
-          "y": 20,
+          "image": "img/Cozia.jpg"
+        }
+      ]
+    },
+    {
+      "id": "marina",
+      "name": "Marina",
+      "description": "La corrupción máxima.",
+      "image": "img/Cozia.jpg",
+      "heroImage": "img/Cozia.jpg",
+      "champions": [
+        "alexander",
+        "oberon",
+        "vik-tech",
+        "dorian",
+        "gin",
+        "zaraki",
+        "zephyr-skybrand"
+      ],
+      "locations": [
+        {
+          "id": "arena-duelo",
+          "name": "Arena de Duelo",
+          "description": "Una arena abierta donde los espadachines resuelven sus disputas con honor.",
+          "image": "img/Cozia.jpg"
+        },
+        {
+          "id": "forja-acero",
+          "name": "Forja del Acero",
+          "description": "Un taller donde los herreros más expertos crean las armas letales de la región.",
           "image": "img/Cozia.jpg"
         }
       ]
     }
+
   ],
   "shops": [
     {
