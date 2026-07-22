@@ -254,17 +254,3 @@
 .navbar__mobile-submenu-link:hover {
   color: var(--color-gold);
 }
-
-@media (max-width: 768px) {
-  .navbar__menu {
-    display: none;
-  }
-
-  .navbar__hamburger {
-    display: flex;
-  }
-
-  .navbar {
-    padding: 0 var(--space-md);
-  }
-}

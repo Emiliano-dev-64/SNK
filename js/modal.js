@@ -47,7 +47,7 @@ export class Modal {
     this.backdrop.className = 'modal-backdrop';
     this.backdrop.innerHTML = `
       <div class="modal">
-        <button class="modal__close" aria-label="Cerrar">&times;</button>
+        <button class="close-btn modal__close" aria-label="Cerrar">&times;</button>
         <div class="modal__content"></div>
       </div>
     `;
@@ -105,16 +105,24 @@ export function initShopPopups() {
   const modal = new Modal();
 
   document.querySelectorAll('.shop-card').forEach(card => {
-    card.addEventListener('click', () => {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    const openShop = () => {
       const shopId = card.dataset.shopId;
       const itemsImage = card.dataset.items;
-      
       if (itemsImage) {
         modal.open(`
           <img src="${itemsImage}" alt="Lista de items">
         `, {
           className: 'modal--image'
         });
+      }
+    };
+    card.addEventListener('click', openShop);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openShop();
       }
     });
   });

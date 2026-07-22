@@ -42,7 +42,7 @@ export class WantedPage {
     this.container.innerHTML = champions.map(champion => {
       const rotation = (Math.random() * 6 - 3).toFixed(1);
       return `
-        <div class="wanted-poster fade-in-up" data-id="${champion.id}" data-name="${champion.name}" style="transform: rotate(${rotation}deg);">
+        <div class="wanted-poster fade-in-up" data-id="${champion.id}" data-name="${champion.name}" style="transform: rotate(${rotation}deg);" role="button" tabindex="0">
           <div class="wanted-poster__nail"></div>
           <div class="wanted-poster__paper">
             <div class="wanted-poster__image-wrap">
@@ -63,12 +63,18 @@ export class WantedPage {
 
   bindEvents() {
     this.container.querySelectorAll('.wanted-poster').forEach(poster => {
-      poster.addEventListener('click', () => {
+      const openPoster = () => {
         const id = poster.dataset.id;
         const img = poster.querySelector('.wanted-poster__image');
         const name = poster.dataset.name;
-
         this.openModal(id, img.src, name);
+      };
+      poster.addEventListener('click', openPoster);
+      poster.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openPoster();
+        }
       });
     });
   }

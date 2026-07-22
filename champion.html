@@ -10,14 +10,17 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" href="css/champion-detail.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/music-player.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="champion-detail">
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -61,7 +64,7 @@
   </div>
 
   <!-- Champion Detail -->
-  <main class="champion-detail">
+  <main id="main-content" class="champion-detail">
     <!-- Hero -->
     <section class="champion-hero">
       <img src="" alt="" class="champion-hero__bg">
@@ -89,13 +92,13 @@
       <div class="champion-top-row">
         <!-- Related Champions -->
         <aside class="champion-related">
-          <h3 class="champion-related__title">Personajes Relacionados</h3>
+          <h2 class="champion-related__title">Personajes Relacionados</h2>
           <div class="champion-related__list"></div>
         </aside>
 
         <!-- Lore -->
         <section class="champion-lore">
-          <h2 class="champion-lore__title">Historia</h2>
+          <h2 class="champion-lore__title section-title">Historia</h2>
           <div class="champion-lore__text"></div>
         </section>
 
@@ -103,13 +106,13 @@
         <aside class="champion-sidebar">
           <!-- Bio Panel -->
           <div class="champion-bio-panel">
-            <h3 class="champion-bio-panel__title">Ficha</h3>
+            <h2 class="champion-bio-panel__title">Ficha</h2>
             <div class="champion-bio-panel__fields"></div>
           </div>
 
           <!-- Curiosities -->
           <div class="champion-curiosities">
-            <h3 class="champion-curiosities__title">Curiosidades</h3>
+            <h2 class="champion-curiosities__title">Curiosidades</h2>
             <ul class="champion-curiosities__list"></ul>
           </div>
         </aside>
@@ -117,7 +120,7 @@
 
       <!-- Gallery -->
       <section class="champion-gallery">
-        <h2 class="champion-gallery__title">Galería</h2>
+        <h2 class="champion-gallery__title section-title">Galería</h2>
         <div class="champion-gallery__grid"></div>
       </section>
     </div>
@@ -125,8 +128,9 @@
 
   <!-- Music Player -->
   <div class="music-player">
-    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
-    <select class="music-player__select" title="Seleccionar canción"></select>
+    <button class="music-player__toggle" aria-label="Reproductor de música">🎵</button>
+    <label for="musicPlayerSelect" class="visually-hidden">Seleccionar canción</label>
+    <select id="musicPlayerSelect" class="music-player__select"></select>
     <div class="music-player__controls">
       <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
       <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>

@@ -15,6 +15,34 @@
   cursor: grabbing;
 }
 
+/* ---- World Map Page ---- */
+.world-map-page {
+  overflow: hidden;
+}
+
+.navbar--map {
+  background: rgba(10, 20, 40, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.navbar--map .navbar__logo img {
+  height: 32px;
+}
+
+.navbar--map .navbar__logo-text {
+  font-size: 1rem;
+}
+
+.region-panel-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 899;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
 /* ---- Map Container ---- */
 .world-map__container {
   position: absolute;
@@ -197,24 +225,10 @@
 }
 
 .region-panel__close {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   color: var(--color-text-primary);
   border-radius: var(--radius-round);
   font-size: 1.2rem;
-  z-index: 10;
-  transition: background var(--transition-fast);
-}
-
-.region-panel__close:hover {
-  background: var(--color-accent-red);
 }
 
 .region-panel__hero {

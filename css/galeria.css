@@ -340,32 +340,3 @@
   font-style: italic;
   margin-bottom: var(--space-xl);
 }
-
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .galeria-grid {
-    grid-template-columns: 1fr;
-    padding: var(--space-xl) var(--space-md);
-    gap: var(--space-lg);
-  }
-
-  .galeria-images-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    padding: 0 var(--space-md) var(--space-3xl);
-    gap: var(--space-md);
-  }
-
-  .galeria-viewer__nav {
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
-  }
-
-  .galeria-viewer__nav--prev {
-    left: var(--space-sm);
-  }
-
-  .galeria-viewer__nav--next {
-    right: var(--space-sm);
-  }
-}

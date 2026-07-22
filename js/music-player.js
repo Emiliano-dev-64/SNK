@@ -159,6 +159,7 @@ export class MusicPlayer {
   updateUI() {
     if (this.playBtn) {
       this.playBtn.innerHTML = this.isPlaying ? '⏸' : '▶';
+      this.playBtn.setAttribute('aria-label', this.isPlaying ? 'Pausar' : 'Reproducir');
     }
     if (this.repeatBtn) {
       this.repeatBtn.classList.toggle('active', this.isRepeating);

@@ -103,7 +103,7 @@ class Galeria {
     this.currentImages = category.images;
 
     grid.innerHTML = category.images.map((img, i) => `
-      <div class="galeria-image-card fade-in-up" data-index="${i}">
+      <div class="galeria-image-card fade-in-up" data-index="${i}" role="button" tabindex="0">
         <img src="${img.src}" alt="${img.name}" class="galeria-image-card__img" loading="lazy">
         <div class="galeria-image-card__overlay">
           <div class="galeria-image-card__name">${img.name}</div>
@@ -113,8 +113,15 @@ class Galeria {
 
     // Bind click events
     grid.querySelectorAll('.galeria-image-card').forEach(card => {
-      card.addEventListener('click', () => {
+      const openCard = () => {
         this.openViewer(parseInt(card.dataset.index));
+      };
+      card.addEventListener('click', openCard);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openCard();
+        }
       });
     });
 

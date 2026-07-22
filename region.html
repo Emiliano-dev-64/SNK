@@ -10,15 +10,20 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" href="css/region.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/champion-detail.css">
   <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/tooltip.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/music-player.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="region">
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -62,7 +67,7 @@
   </div>
 
   <!-- Region Page -->
-  <main class="region-page">
+  <main id="main-content" class="region-page">
     <!-- Hero -->
     <section class="region-hero">
       <img src="" alt="" class="region-hero__bg">
@@ -78,28 +83,35 @@
     <div class="region-content">
       <!-- Lore -->
       <section class="region-lore fade-in-up">
-        <h2 class="region-lore__title">Sobre la Región</h2>
+        <h2 class="region-lore__title section-title">Historia</h2>
         <p class="region-lore__text"></p>
       </section>
 
       <!-- Champions -->
       <section class="region-champions fade-in-up">
-        <h2 class="region-champions__title">Personajes de la Región</h2>
+        <h2 class="region-champions__title section-title">Personajes</h2>
         <div class="region-champions__grid"></div>
       </section>
 
       <!-- Locations -->
       <section class="region-locations fade-in-up">
-        <h2 class="region-locations__title">Lugares</h2>
+        <h2 class="region-locations__title section-title">Lugares</h2>
         <div class="region-locations__grid"></div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="region-gallery fade-in-up">
+        <h2 class="region-gallery__title section-title">Galería</h2>
+        <div class="region-gallery__grid"></div>
       </section>
     </div>
   </main>
 
   <!-- Music Player -->
   <div class="music-player">
-    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
-    <select class="music-player__select" title="Seleccionar canción"></select>
+    <button class="music-player__toggle" aria-label="Reproductor de música">🎵</button>
+    <label for="musicPlayerSelect" class="visually-hidden">Seleccionar canción</label>
+    <select id="musicPlayerSelect" class="music-player__select"></select>
     <div class="music-player__controls">
       <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
       <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>

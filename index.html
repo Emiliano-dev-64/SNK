@@ -11,15 +11,19 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/tooltip.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/music-player.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="home">
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -68,6 +72,7 @@
   </div>
 
   <!-- Hero Section -->
+  <main id="main-content">
   <section class="hero">
     <img src="img/inicioBG.png" alt="Fondo" class="hero__bg">
     <div class="hero__overlay"></div>
@@ -117,7 +122,7 @@
   </section>
 
   <!-- Champions Preview -->
-  <section class="champions-preview" style="padding: 96px 0;">
+  <section class="champions-preview">
     <div class="container">
       <div class="section-header fade-in-up">
         <h2 class="section-header__title">Los Personajes</h2>
@@ -125,7 +130,7 @@
         <p class="section-header__subtitle">Conoce a los héroes de nuestra campaña</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto;">
+      <div class="champions-preview__grid">
         <a href="champion.html?id=maximo-duque" class="champion-card fade-in-up">
           <img src="img/champions/perfilMaximo.png" alt="Máximo Duque" class="champion-card__image" loading="lazy">
           <div class="champion-card__overlay">
@@ -176,14 +181,14 @@
         </a>
       </div>
 
-      <div style="text-align: center; margin-top: 48px;" class="fade-in-up">
+      <div class="champions-preview__cta fade-in-up">
         <a href="champions.html" class="btn btn-secondary">Ver Todos los Personajes</a>
       </div>
     </div>
   </section>
 
   <!-- World Map Preview -->
-  <section class="video-section" style="padding: 96px 0;">
+  <section class="world-preview">
     <div class="container">
       <div class="section-header fade-in-up">
         <h2 class="section-header__title">El Mundo</h2>
@@ -191,7 +196,7 @@
         <p class="section-header__subtitle">Explora el mapamundi interactivo</p>
       </div>
 
-      <div style="text-align: center;" class="fade-in-up">
+      <div class="world-preview__cta fade-in-up">
         <a href="world-map.html" class="btn btn-primary btn-lg">Abrir Mapa Interactivo</a>
       </div>
     </div>
@@ -199,8 +204,9 @@
 
   <!-- Music Player -->
   <div class="music-player">
-    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
-    <select class="music-player__select" title="Seleccionar canción"></select>
+    <button class="music-player__toggle" aria-label="Reproductor de música">🎵</button>
+    <label for="musicPlayerSelect" class="visually-hidden">Seleccionar canción</label>
+    <select id="musicPlayerSelect" class="music-player__select"></select>
     <div class="music-player__controls">
       <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
       <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>
@@ -209,6 +215,8 @@
     </div>
     <audio class="music-player__audio" loop></audio>
   </div>
+
+  </main>
 
   <!-- Scripts -->
   <script type="module" src="js/app.js"></script>

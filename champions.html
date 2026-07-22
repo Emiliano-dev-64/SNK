@@ -10,14 +10,17 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" href="css/champions.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/music-player.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="champions">
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -61,7 +64,7 @@
   </div>
 
   <!-- Page Content -->
-  <main class="champions-page">
+  <main id="main-content" class="champions-page">
     <!-- Header -->
     <div class="champions-header">
       <h1 class="champions-header__title">Personajes</h1>
@@ -72,6 +75,7 @@
     <div class="filter-bar">
       <div class="filter-bar__search">
         <span class="filter-bar__search-icon">🔍</span>
+        <label for="championSearch" class="visually-hidden">Buscar personaje</label>
         <input type="text" id="championSearch" placeholder="Buscar personaje...">
       </div>
       <div class="filter-bar__tags">
@@ -91,8 +95,9 @@
 
   <!-- Music Player -->
   <div class="music-player">
-    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
-    <select class="music-player__select" title="Seleccionar canción"></select>
+    <button class="music-player__toggle" aria-label="Reproductor de música">🎵</button>
+    <label for="musicPlayerSelect" class="visually-hidden">Seleccionar canción</label>
+    <select id="musicPlayerSelect" class="music-player__select"></select>
     <div class="music-player__controls">
       <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
       <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>

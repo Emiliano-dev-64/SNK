@@ -200,6 +200,79 @@
   .video-section {
     padding: var(--space-2xl) 0;
   }
+
+  /* Navbar */
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 0 var(--space-md);
+  }
+
+  /* Music Player */
+  .music-player {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    left: var(--space-md);
+    justify-content: center;
+    border-radius: var(--radius-xl);
+  }
+
+  .music-player__select {
+    max-width: 140px;
+  }
+
+  .world-map .music-player {
+    right: var(--space-md);
+  }
+
+  /* Galeria */
+  .galeria-grid {
+    grid-template-columns: 1fr;
+    padding: var(--space-xl) var(--space-md);
+    gap: var(--space-lg);
+  }
+
+  .galeria-images-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 0 var(--space-md) var(--space-3xl);
+    gap: var(--space-md);
+  }
+
+  .galeria-viewer__nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+
+  .galeria-viewer__nav--prev {
+    left: var(--space-sm);
+  }
+
+  .galeria-viewer__nav--next {
+    right: var(--space-sm);
+  }
+
+  /* Wanted */
+  .wanted-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-2xl);
+    padding: var(--space-lg) var(--space-md) var(--space-3xl);
+  }
+
+  .wanted-header {
+    padding-top: var(--space-2xl);
+  }
+
+  .wanted-modal__label {
+    font-size: var(--fs-h3);
+    letter-spacing: 4px;
+  }
 }
 
 /* ---- Small Mobile (< 480px) ---- */
@@ -245,6 +318,13 @@
   .shops-header__title {
     font-size: var(--fs-h2);
     letter-spacing: 2px;
+  }
+
+  /* Wanted */
+  .wanted-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    max-width: 320px;
   }
 }
 

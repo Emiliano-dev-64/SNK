@@ -159,6 +159,30 @@
   font-weight: var(--fw-semibold);
 }
 
+.champion-bio-panel__value--link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-gold);
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+  transition: color var(--transition-fast);
+}
+
+.champion-bio-panel__value--link:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
+.champion-bio-panel__region-img {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 2px solid var(--color-gold-dark);
+  flex-shrink: 0;
+}
+
 /* ---- Related Champions ---- */
 .champion-related {
   display: flex;
@@ -298,25 +322,6 @@
   margin-bottom: var(--space-3xl);
 }
 
-.champion-lore__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h2);
-  color: var(--color-gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: var(--space-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.champion-lore__title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--color-gold-dark), transparent);
-}
-
 .champion-lore__text {
   font-size: var(--fs-body);
   color: var(--color-text-secondary);
@@ -327,28 +332,8 @@
   margin-bottom: var(--space-md);
 }
 
-/* ---- Stats Section ---- */
 .champion-stats {
   margin-bottom: var(--space-3xl);
-}
-
-.champion-stats__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h2);
-  color: var(--color-gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: var(--space-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.champion-stats__title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--color-gold-dark), transparent);
 }
 
 .champion-stats__grid {
@@ -397,25 +382,6 @@
   margin-bottom: var(--space-3xl);
 }
 
-.champion-abilities__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h2);
-  color: var(--color-gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: var(--space-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.champion-abilities__title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--color-gold-dark), transparent);
-}
-
 .champion-abilities__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -458,25 +424,6 @@
 /* ---- Gallery Section ---- */
 .champion-gallery {
   margin-bottom: var(--space-3xl);
-}
-
-.champion-gallery__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h2);
-  color: var(--color-gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: var(--space-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.champion-gallery__title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--color-gold-dark), transparent);
 }
 
 .champion-gallery__grid {

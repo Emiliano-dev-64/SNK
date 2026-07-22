@@ -747,7 +747,9 @@
     {
       "id": "mundo",
       "name": "El Mundo de One Pipis",
-      "description": "El Grand Line y sus mares circundantes, un mundo de piratas, aventuras y misterios por descubrir.",
+      "title": "El Grand Line y sus mares circundantes",
+      "lore": "El Grand Line y sus mares circundantes, un mundo de piratas, aventuras y misterios por descubrir.",
+      "icon": "img/mapamundibg.jpg",
       "image": "img/mapamundibg.jpg",
       "champions": [],
       "locations": [
@@ -783,7 +785,9 @@
     {
       "id": "cozia",
       "name": "Cozia",
-      "description": "Una región misteriosa del Grand Line, donde las ciudades portuarias conviven con la naturaleza salvaje. Cozia es conocida por sus mercados coloridos, sus tabernas llenas de historias y sus peligros ocultos bajo la superficie.",
+      "title": "Ciudades portuarias y naturaleza salvaje",
+      "lore": "Una región misteriosa del Grand Line, donde las ciudades portuarias conviven con la naturaleza salvaje. Cozia es conocida por sus mercados coloridos, sus tabernas llenas de historias y sus peligros ocultos bajo la superficie.",
+      "icon": "img/world/cozia/cozia.png",
       "image": "img/world/cozia/cozia.png",
       "heroImage": "img/world/cozia/cozia.png",
       "champions": [
@@ -842,7 +846,9 @@
     {
       "id": "archipielago-cozia",
       "name": "Archipiélago Cozia",
-      "description": "Un conjunto de islas interconectadas por corrientes peligrosas y criaturas marinas. Este archipiélago es conocido por sus paisajes salvajes y sus secretos ocultos en cada isla.",
+      "title": "Islas interconectadas por corrientes peligrosas",
+      "lore": "Un conjunto de islas interconectadas por corrientes peligrosas y criaturas marinas. Este archipiélago es conocido por sus paisajes salvajes y sus secretos ocultos en cada isla.",
+      "icon": "img/world/archipielagoCozia/archipielagoCozia.png",
       "image": "img/world/archipielagoCozia/archipielagoCozia.png",
       "heroImage": "img/world/archipielagoCozia/archipielagoCozia.png",
       "champions": [
@@ -899,9 +905,11 @@
     {
       "id": "filo-maldito",
       "name": "Filo Maldito",
-      "description": "Una tripulación peligrosa.",
-      "image": "img/Cozia.jpg",
-      "heroImage": "img/Cozia.jpg",
+      "title": "Una tripulación peligrosa",
+      "lore": "Una tripulación peligrosa.",
+      "icon": "img/logo OP dnd.png",
+      "image": "img/backgrounds/filoMalditoBG.png",
+      "heroImage": "img/backgrounds/filoMalditoBG.png",
       "champions": [
         "maximo-duque",
         "nacho-d-castro",
@@ -911,27 +919,21 @@
         "pipi",
         "giannis"
       ],
-      "locations": [
+      "gallery": [
         {
-          "id": "arena-duelo",
-          "name": "Arena de Duelo",
-          "description": "Una arena abierta donde los espadachines resuelven sus disputas con honor.",
-          "image": "img/Cozia.jpg"
-        },
-        {
-          "id": "forja-acero",
-          "name": "Forja del Acero",
-          "description": "Un taller donde los herreros más expertos crean las armas letales de la región.",
-          "image": "img/Cozia.jpg"
+          "src": "img/inicioBG.png",
+          "caption": "El barco de Filo Maldito."
         }
       ]
     },
     {
       "id": "marina",
       "name": "Marina",
-      "description": "La corrupción máxima.",
-      "image": "img/Cozia.jpg",
-      "heroImage": "img/Cozia.jpg",
+      "title": "La fuerza de la ley",
+      "lore": "La Marina es la mayor organización militar del mundo y el principal brazo armado del Gobierno Mundial. Su misión es mantener el orden, proteger a la población y perseguir a quienes amenacen la estabilidad de los mares, desde piratas y criminales hasta cualquier individuo considerado un enemigo de la justicia.\n\nCon bases repartidas por todos los océanos y una estructura jerárquica estricta, la Marina posee una presencia constante en casi todas las regiones del mundo. Sus soldados reciben entrenamiento militar desde temprana edad y dedican su vida a servir bajo los ideales de la justicia, aunque la interpretación de ese concepto puede variar enormemente según el oficial que la represente.\n\nGracias a sus inmensos recursos, su tecnología y el respaldo político del Gobierno Mundial, la Marina es considerada una de las fuerzas más poderosas jamás reunidas. Sus flotas patrullan rutas comerciales, responden a amenazas de gran escala y participan en operaciones militares capaces de cambiar el destino de naciones enteras.\n\nSin embargo, su enorme influencia también la ha convertido en una institución rodeada de controversias. Mientras muchos la ven como el último bastión que mantiene la paz, otros la consideran una organización dispuesta a sacrificar la libertad y la verdad en nombre de un orden impuesto. En un mundo dividido entre la justicia y la piratería, la Marina representa una autoridad cuya fuerza es tan incuestionable como las decisiones que toma.",
+      "icon": "img/icons/iconMarine.svg",
+      "image": "img/backgrounds/marineBG.png",
+      "heroImage": "img/backgrounds/marineBG.png",
       "champions": [
         "alexander",
         "oberon",
@@ -940,20 +942,6 @@
         "gin",
         "zaraki",
         "zephyr-skybrand"
-      ],
-      "locations": [
-        {
-          "id": "arena-duelo",
-          "name": "Arena de Duelo",
-          "description": "Una arena abierta donde los espadachines resuelven sus disputas con honor.",
-          "image": "img/Cozia.jpg"
-        },
-        {
-          "id": "forja-acero",
-          "name": "Forja del Acero",
-          "description": "Un taller donde los herreros más expertos crean las armas letales de la región.",
-          "image": "img/Cozia.jpg"
-        }
       ]
     }
 

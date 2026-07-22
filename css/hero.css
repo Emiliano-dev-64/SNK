@@ -76,7 +76,7 @@
 }
 
 .hero__logo {
-  width: clamp(120px, 20vw, 280px);
+  width: clamp(150px, 22vw, 300px);
   height: auto;
   margin: 0 auto var(--space-xl);
   filter: drop-shadow(0 0 20px var(--color-gold-glow));
@@ -176,31 +176,29 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* ---- Section Headers ---- */
-.section-header {
-  text-align: center;
-  margin-bottom: var(--space-3xl);
+/* ---- Champions Preview Section ---- */
+.champions-preview {
+  padding: var(--space-4xl) 0;
 }
 
-.section-header__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h1);
-  color: var(--color-gold-light);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: var(--space-md);
-}
-
-.section-header__divider {
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-  margin: var(--space-md) auto;
-}
-
-.section-header__subtitle {
-  font-size: var(--fs-body);
-  color: var(--color-text-secondary);
-  max-width: 600px;
+.champions-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.champions-preview__cta {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+/* ---- World Preview Section ---- */
+.world-preview {
+  padding: var(--space-4xl) 0;
+}
+
+.world-preview__cta {
+  text-align: center;
 }

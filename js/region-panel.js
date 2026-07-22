@@ -35,9 +35,18 @@ export class RegionPanel {
 
     // Open panel when clicking hotspots
     document.querySelectorAll('.hotspot[data-region]').forEach(hotspot => {
-      hotspot.addEventListener('click', () => {
+      hotspot.setAttribute('role', 'button');
+      hotspot.setAttribute('tabindex', '0');
+      const openRegion = () => {
         const regionId = hotspot.dataset.region;
         this.open(regionId);
+      };
+      hotspot.addEventListener('click', openRegion);
+      hotspot.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openRegion();
+        }
       });
     });
 
@@ -68,15 +77,18 @@ export class RegionPanel {
   renderRegion(region) {
     // Hero image
     const heroImg = this.panel.querySelector('.region-panel__hero-img');
-    if (heroImg) heroImg.src = region.image;
+    if (heroImg) {
+      heroImg.src = region.image;
+      heroImg.alt = region.name;
+    }
 
     // Region name
     const name = this.panel.querySelector('.region-panel__hero-name');
     if (name) name.textContent = region.name;
 
-    // Description
+    // Title
     const desc = this.panel.querySelector('.region-panel__description');
-    if (desc) desc.textContent = region.description;
+    if (desc) desc.textContent = region.title;
 
     // Champions
     const championsContainer = this.panel.querySelector('.region-panel__champions');
@@ -88,7 +100,7 @@ export class RegionPanel {
       championsContainer.innerHTML = champions.map(champ => `
         <a href="champion.html?id=${champ.id}" class="region-champion">
           <img src="${champ.icon}" alt="${champ.name}" class="region-champion__icon" 
-               onerror="this.src='img/champions/perfilMaximo.png'">
+               loading="lazy" onerror="this.src='img/champions/perfilMaximo.png'">
           <span class="region-champion__name">${champ.name}</span>
         </a>
       `).join('');

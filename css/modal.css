@@ -40,24 +40,10 @@
 }
 
 .modal__close {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   color: var(--color-text-primary);
   border-radius: var(--radius-round);
   font-size: 1.2rem;
-  z-index: 10;
-  transition: background var(--transition-fast);
-}
-
-.modal__close:hover {
-  background: var(--color-accent-red);
 }
 
 .modal__content {
@@ -117,40 +103,4 @@
   z-index: 10;
 }
 
-/* ============================================
-   Tooltip Component
-   ============================================ */
 
-.tooltip {
-  position: fixed;
-  padding: var(--space-sm) var(--space-md);
-  background: var(--color-surface);
-  color: var(--color-gold);
-  font-size: var(--fs-small);
-  font-weight: var(--fw-semibold);
-  border: 1px solid var(--color-gold-dark);
-  border-radius: var(--radius-sm);
-  pointer-events: none;
-  z-index: var(--z-tooltip);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--transition-fast),
-              visibility var(--transition-fast);
-  white-space: nowrap;
-  box-shadow: var(--shadow-md);
-}
-
-.tooltip.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: var(--color-gold-dark);
-}

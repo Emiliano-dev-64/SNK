@@ -10,19 +10,21 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/world-map.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/music-player.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body data-page="world-map" style="overflow: hidden;">
+<body data-page="world-map" class="world-map-page">
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
   <!-- Navbar (Minimal for map) -->
-  <nav class="navbar" style="background: rgba(10, 20, 40, 0.8); backdrop-filter: blur(10px);">
+  <nav class="navbar navbar--map">
     <a href="index.html" class="navbar__logo">
-      <img src="img/logo OP dnd.png" alt="One Pipis Logo" style="height: 32px;">
-      <span class="navbar__logo-text" style="font-size: 1rem;">Shuen No Kokai</span>
+      <img src="img/logo OP dnd.png" alt="One Pipis Logo">
+      <span class="navbar__logo-text">Shuen No Kokai</span>
     </a>
 
     <div class="navbar__menu">
@@ -60,6 +62,7 @@
   </div>
 
   <!-- World Map -->
+  <main id="main-content">
   <div class="world-map">
     <div id="mapaContainer" class="world-map__container">
       <div id="mapaZoom" class="world-map__zoom">
@@ -95,7 +98,7 @@
 
     <!-- Region Panel (Slide-in) -->
     <div class="region-panel">
-      <button class="region-panel__close" aria-label="Cerrar panel">&times;</button>
+      <button class="close-btn region-panel__close" aria-label="Cerrar panel">&times;</button>
       <div class="region-panel__hero">
         <img src="" alt="" class="region-panel__hero-img">
         <div class="region-panel__hero-overlay"></div>
@@ -112,19 +115,21 @@
     </div>
 
     <!-- Region Panel Backdrop -->
-    <div class="region-panel-backdrop" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 899; opacity: 0; visibility: hidden; transition: all 0.3s;"></div>
+    <div class="region-panel-backdrop"></div>
 
     <!-- Mini Map -->
     <div class="mini-map">
-      <img src="img/mapamundibg.jpg" alt="Mini Mapa" class="mini-map__image">
+      <img src="img/mapamundibg.jpg" alt="Mini Mapa" class="mini-map__image" loading="lazy">
       <div class="mini-map__viewport"></div>
     </div>
   </div>
+  </main>
 
   <!-- Music Player -->
   <div class="music-player">
-    <button class="music-player__toggle" aria-label="Toggle music player">🎵</button>
-    <select class="music-player__select" title="Seleccionar canción"></select>
+    <button class="music-player__toggle" aria-label="Reproductor de música">🎵</button>
+    <label for="musicPlayerSelect" class="visually-hidden">Seleccionar canción</label>
+    <select id="musicPlayerSelect" class="music-player__select"></select>
     <div class="music-player__controls">
       <button class="music-player__btn music-player__btn--prev" aria-label="Anterior">⏮</button>
       <button class="music-player__btn music-player__btn--play" aria-label="Reproducir">▶</button>

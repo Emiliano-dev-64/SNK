@@ -82,7 +82,7 @@ export class ChampionDetail {
           const src = typeof item === 'string' ? item : item.src;
           const caption = typeof item === 'string' ? '' : (item.caption || '');
           return `
-          <div class="champion-gallery__item" data-index="${i}">
+          <div class="champion-gallery__item" data-index="${i}" role="button" tabindex="0">
             <img src="${src}" alt="${caption || 'Galería ' + (i + 1)}" loading="lazy">
             ${caption ? `<div class="champion-gallery__caption">${caption}</div>` : ''}
           </div>`;
@@ -131,9 +131,16 @@ export class ChampionDetail {
     }
 
     items.forEach((item) => {
-      item.addEventListener('click', () => {
+      const openLightbox = () => {
         this.lightboxIndex = parseInt(item.dataset.index);
         this.openLightbox();
+      };
+      item.addEventListener('click', openLightbox);
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox();
+        }
       });
     });
   }
@@ -179,11 +186,20 @@ export class ChampionDetail {
     const fieldsContainer = document.querySelector('.champion-bio-panel__fields');
     if (!panel || !fieldsContainer || !this.champion) return;
 
+    const regionMap = {};
+    if (this.data?.regions) {
+      this.data.regions.forEach(r => { regionMap[r.id] = { name: r.name, icon: r.icon || r.image }; });
+    }
+
     const fields = [
       { key: 'race', label: 'Raza' },
       { key: 'age', label: 'Edad' },
       { key: 'birthplace', label: 'Lugar de nacimiento' }
     ];
+
+    if (this.champion.region && regionMap[this.champion.region]) {
+      fields.push({ key: 'region', label: 'Región / Facción' });
+    }
 
     const activeFields = fields.filter(f => this.champion[f.key]);
 
@@ -192,12 +208,24 @@ export class ChampionDetail {
       return;
     }
 
-    fieldsContainer.innerHTML = activeFields.map(field => `
+    fieldsContainer.innerHTML = activeFields.map(field => {
+      let valueHtml;
+      if (field.key === 'region') {
+        const region = regionMap[this.champion.region];
+        valueHtml = `
+          <a href="region.html?id=${this.champion.region}" class="champion-bio-panel__value champion-bio-panel__value--link">
+            <img src="${region.icon}" alt="${region.name}" class="champion-bio-panel__region-img" loading="lazy">
+            ${region.name}
+          </a>`;
+      } else {
+        valueHtml = `<span class="champion-bio-panel__value">${this.champion[field.key]}</span>`;
+      }
+      return `
       <div class="champion-bio-panel__item">
         <span class="champion-bio-panel__label">${field.label}</span>
-        <span class="champion-bio-panel__value">${this.champion[field.key]}</span>
-      </div>
-    `).join('');
+        ${valueHtml}
+      </div>`;
+    }).join('');
 
     panel.classList.add('active');
   }
@@ -240,7 +268,7 @@ export class ChampionDetail {
 
     list.innerHTML = related.map(c => `
       <a href="champion.html?id=${c.id}" class="champion-related__item">
-        <img src="${c.icon}" alt="${c.name}" class="champion-related__item-img">
+        <img src="${c.icon}" alt="${c.name}" class="champion-related__item-img" loading="lazy">
         <div>
           <div class="champion-related__item-name">${c.name}</div>
           <div class="champion-related__item-title">${c.relation}</div>
