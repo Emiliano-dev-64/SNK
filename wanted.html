@@ -80,14 +80,38 @@
 
   <!-- Music Player -->
   <div class="music-player">
-    <button class="music-player__toggle" aria-label="Reproductor de música"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></button>
-    <label for="musicPlayerSelect" class="visually-hidden">Seleccionar canción</label>
-    <select id="musicPlayerSelect" class="music-player__select"></select>
-    <div class="music-player__controls">
-      <button class="music-player__btn music-player__btn--prev" aria-label="Anterior"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
-      <button class="music-player__btn music-player__btn--play" aria-label="Reproducir"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
-      <button class="music-player__btn music-player__btn--next" aria-label="Siguiente"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
-      <button class="music-player__btn music-player__btn--repeat" aria-label="Repetir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+    <div class="music-player__panel">
+      <div class="music-player__panel-header">
+        <h3 class="music-player__panel-title">Biblioteca Musical</h3>
+        <button class="music-player__close" aria-label="Cerrar panel"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      </div>
+      <div class="music-player__search">
+        <svg class="music-player__search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Buscar canción...">
+      </div>
+      <div class="music-player__filters">
+        <button class="music-player__filter active" data-filter="all">Todos</button>
+        <button class="music-player__filter" data-filter="ambiental">Ambiental</button>
+        <button class="music-player__filter" data-filter="pelea">Pelea</button>
+        <button class="music-player__filter" data-filter="tension">Tensión</button>
+        <button class="music-player__filter" data-filter="triste">Triste</button>
+        <button class="music-player__filter" data-filter="epica">Épica</button>
+        <button class="music-player__filter" data-filter="personaje">Personajes</button>
+      </div>
+      <div class="music-player__tracklist"></div>
+    </div>
+    <div class="music-player__bar">
+      <div class="music-player__now">
+        <span class="music-player__now-label">Reproduciendo</span>
+        <span class="music-player__now-name">-</span>
+      </div>
+      <div class="music-player__controls">
+        <button class="music-player__btn music-player__btn--prev" aria-label="Anterior"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
+        <button class="music-player__btn music-player__btn--play" aria-label="Reproducir"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+        <button class="music-player__btn music-player__btn--next" aria-label="Siguiente"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
+        <button class="music-player__btn music-player__btn--repeat" aria-label="Repetir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+      </div>
+      <button class="music-player__expand" aria-label="Abrir biblioteca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
     </div>
     <audio class="music-player__audio" loop></audio>
   </div>

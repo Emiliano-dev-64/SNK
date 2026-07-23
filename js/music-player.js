@@ -1,43 +1,58 @@
 // ============================================
-// Music Player Component
+// Music Player Component - Expandable Panel
 // ============================================
 
 const PLAYLIST = [
-  { name: "Intro Record Keeper", file: "music/ostintro.mp3" },
-  { name: "Música de pelea 1", file: "music/ostfight1.mp3" },
-  { name: "Música de pelea 2", file: "music/ostfight2.mp3" },
-  { name: "Música de pelea 3", file: "music/ostfight3.mp3" },
-  { name: "Música de pelea 4", file: "music/ostfight4.mp3" },
-  { name: "Música de pelea 5", file: "music/ostfight5.mp3" },
-  { name: "Música de pelea 6", file: "music/ostfight6.mp3" },
-  { name: "Música de pelea 7", file: "music/ostfight7.mp3" },
-  { name: "Música de pelea 8", file: "music/ostfight8.mp3" },
-  { name: "Música de pelea 9", file: "music/ostfight9.mp3" },
-  { name: "Música de pelea 10", file: "music/ostfight10.mp3" },
-  { name: "Música de Boss", file: "music/ostbossfight.mp3" },
-  { name: "Música de Boss 2", file: "music/ostbossfight2.mp3" },
-  { name: "Música de tensión 1", file: "music/osttenso1.mp3" },
-  { name: "Música de tensión 2", file: "music/osttenso2.mp3" },
-  { name: "Música de tensión 3", file: "music/osttenso3.mp3" },
-  { name: "Apareció la Marina!", file: "music/ostmarina.mp3" },
-  { name: "Escape", file: "music/ostescape.mp3" },
-  { name: "Confuso", file: "music/ostconfuso.mp3" },
-  { name: "Isla destruida", file: "music/ostisladestruida.mp3" },
-  { name: "Tristeza", file: "music/osttriste.mp3" },
-  { name: "Pueblo 1", file: "music/ostpueblo1.mp3" },
-  { name: "Pueblo 2", file: "music/ostpueblo2.mp3" },
-  { name: "Pueblo 3", file: "music/ostpueblo3.mp3" },
-  { name: "Pueblo 4", file: "music/ostpueblo4.mp3" },
-  { name: "Pueblo 5", file: "music/ostpueblo5.mp3" },
-  { name: "Pueblo 6", file: "music/ostpueblo6.mp3" },
-  { name: "Despidiendo la Isla", file: "music/ostisladespedida.mp3" },
-  { name: "Tienda", file: "music/osttienda.mp3" },
-  { name: "Victoria", file: "music/ostvictoria.mp3" },
-  { name: "Navegando 1", file: "music/ostnav1.mp3" },
-  { name: "Navegando 2", file: "music/ostnav2.mp3" },
-  { name: "Navegando 3", file: "music/ostnav3.mp3" },
-  { name: "Navegando 4", file: "music/ostnav4.mp3" }
+  { name: "Intro Record Keeper", file: "music/ostintro.mp3", category: "epica" },
+  { name: "Música de pelea 1", file: "music/ostfight1.mp3", category: "pelea" },
+  { name: "Música de pelea 2", file: "music/ostfight2.mp3", category: "pelea" },
+  { name: "Música de pelea 3", file: "music/ostfight3.mp3", category: "pelea" },
+  { name: "Música de pelea 4", file: "music/ostfight4.mp3", category: "pelea" },
+  { name: "Música de pelea 5", file: "music/ostfight5.mp3", category: "pelea" },
+  { name: "Música de pelea 6", file: "music/ostfight6.mp3", category: "pelea" },
+  { name: "Música de pelea 7", file: "music/ostfight7.mp3", category: "pelea" },
+  { name: "Música de pelea 8", file: "music/ostfight8.mp3", category: "pelea" },
+  { name: "Música de pelea 9", file: "music/ostfight9.mp3", category: "pelea" },
+  { name: "Música de pelea 10", file: "music/ostfight10.mp3", category: "pelea" },
+  { name: "Música de Boss", file: "music/ostbossfight.mp3", category: "pelea" },
+  { name: "Música de Boss 2", file: "music/ostbossfight2.mp3", category: "pelea" },
+  { name: "Música de tensión 1", file: "music/osttenso1.mp3", category: "tension" },
+  { name: "Música de tensión 2", file: "music/osttenso2.mp3", category: "tension" },
+  { name: "Música de tensión 3", file: "music/osttenso3.mp3", category: "tension" },
+  { name: "Apareció la Marina!", file: "music/ostmarina.mp3", category: "tension" },
+  { name: "Escape", file: "music/ostescape.mp3", category: "tension" },
+  { name: "Confuso", file: "music/ostconfuso.mp3", category: "tension" },
+  { name: "Isla destruida", file: "music/ostisladestruida.mp3", category: "triste" },
+  { name: "Tristeza", file: "music/osttriste.mp3", category: "triste" },
+  { name: "Pueblo 1", file: "music/ostpueblo1.mp3", category: "ambiental" },
+  { name: "Pueblo 2", file: "music/ostpueblo2.mp3", category: "ambiental" },
+  { name: "Pueblo 3", file: "music/ostpueblo3.mp3", category: "ambiental" },
+  { name: "Pueblo 4", file: "music/ostpueblo4.mp3", category: "ambiental" },
+  { name: "Pueblo 5", file: "music/ostpueblo5.mp3", category: "ambiental" },
+  { name: "Pueblo 6", file: "music/ostpueblo6.mp3", category: "ambiental" },
+  { name: "Despidiendo la Isla", file: "music/ostisladespedida.mp3", category: "triste" },
+  { name: "Tienda", file: "music/osttienda.mp3", category: "ambiental" },
+  { name: "Victoria", file: "music/ostvictoria.mp3", category: "epica" },
+  { name: "Navegando 1", file: "music/ostnav1.mp3", category: "ambiental" },
+  { name: "Navegando 2", file: "music/ostnav2.mp3", category: "ambiental" },
+  { name: "Navegando 3", file: "music/ostnav3.mp3", category: "ambiental" },
+  { name: "Navegando 4", file: "music/ostnav4.mp3", category: "ambiental" },
+  { name: "Tema de Máximo", file: "music/characters/maximoOST.mp3", category: "personaje" },
+  { name: "Tema de Nacho", file: "music/characters/nachoOST.mp3", category: "personaje" },
+  { name: "Tema de Splinter", file: "music/characters/geronimoOST.mp3", category: "personaje" },
+  { name: "Tema de Caelis", file: "music/characters/caelisOST.mp3", category: "personaje" },
+  { name: "Tema de Arthur", file: "music/characters/arthurOST.mp3", category: "personaje" }
 ];
+
+const CATEGORIES = {
+  all: "Todos",
+  ambiental: "Ambiental",
+  pelea: "Pelea",
+  tension: "Tensión",
+  triste: "Triste",
+  epica: "Épica",
+  personaje: "Personajes"
+};
 
 export class MusicPlayer {
   constructor() {
@@ -45,16 +60,21 @@ export class MusicPlayer {
     if (!this.player) return;
 
     this.audio = this.player.querySelector('.music-player__audio');
-    this.select = this.player.querySelector('.music-player__select');
+    this.tracklist = this.player.querySelector('.music-player__tracklist');
+    this.searchInput = this.player.querySelector('.music-player__search input');
+    this.expandBtn = this.player.querySelector('.music-player__expand');
+    this.closeBtn = this.player.querySelector('.music-player__close');
     this.playBtn = this.player.querySelector('.music-player__btn--play');
     this.prevBtn = this.player.querySelector('.music-player__btn--prev');
     this.nextBtn = this.player.querySelector('.music-player__btn--next');
     this.repeatBtn = this.player.querySelector('.music-player__btn--repeat');
-    this.toggleBtn = this.player.querySelector('.music-player__toggle');
+    this.nowName = this.player.querySelector('.music-player__now-name');
 
-    this.currentIndex = 0;
+    this.allTracks = [...PLAYLIST];
+    this.currentTrack = null;
     this.isPlaying = false;
     this.isRepeating = false;
+    this.activeFilter = 'all';
 
     this.init();
   }
@@ -62,23 +82,20 @@ export class MusicPlayer {
   init() {
     if (!this.audio) return;
 
-    this.populateSelect();
+    this.renderTrackList();
     this.bindEvents();
-  }
-
-  populateSelect() {
-    if (!this.select) return;
-    
-    this.select.innerHTML = '';
-    PLAYLIST.forEach((track, index) => {
-      const option = document.createElement('option');
-      option.value = index;
-      option.textContent = track.name;
-      this.select.appendChild(option);
-    });
+    this.bindMusicEvents();
   }
 
   bindEvents() {
+    if (this.expandBtn) {
+      this.expandBtn.addEventListener('click', () => this.togglePanel());
+    }
+
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener('click', () => this.togglePanel());
+    }
+
     if (this.playBtn) {
       this.playBtn.addEventListener('click', () => this.togglePlay());
     }
@@ -95,18 +112,18 @@ export class MusicPlayer {
       this.repeatBtn.addEventListener('click', () => this.toggleRepeat());
     }
 
-    if (this.select) {
-      this.select.addEventListener('change', (e) => {
-        this.currentIndex = parseInt(e.target.value);
-        this.loadAndPlay();
-      });
+    if (this.searchInput) {
+      this.searchInput.addEventListener('input', () => this.filterTracks());
     }
 
-    if (this.toggleBtn) {
-      this.toggleBtn.addEventListener('click', () => {
-        this.player.classList.toggle('minimized');
+    this.player.querySelectorAll('.music-player__filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.player.querySelectorAll('.music-player__filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.activeFilter = btn.dataset.filter;
+        this.filterTracks();
       });
-    }
+    });
 
     if (this.audio) {
       this.audio.addEventListener('ended', () => {
@@ -117,13 +134,81 @@ export class MusicPlayer {
     }
   }
 
-  loadAndPlay() {
-    if (!this.audio || !PLAYLIST[this.currentIndex]) return;
-
-    this.audio.src = PLAYLIST[this.currentIndex].file;
-    this.audio.play().catch(() => {
-      // Autoplay blocked by browser
+  bindMusicEvents() {
+    document.addEventListener('music:play', (e) => {
+      this.playSpecificTrack(e.detail.file, e.detail.name);
     });
+  }
+
+  togglePanel() {
+    this.player.classList.toggle('expanded');
+  }
+
+  renderTrackList() {
+    if (!this.tracklist) return;
+
+    const filtered = this.getFilteredTracks();
+
+    if (filtered.length === 0) {
+      this.tracklist.innerHTML = '<div class="music-player__empty">No se encontraron canciones</div>';
+      return;
+    }
+
+    this.tracklist.innerHTML = filtered.map((track, i) => {
+      const isActive = this.currentTrack && this.currentTrack.file === track.file;
+      return `
+        <div class="music-player__track ${isActive ? 'active' : ''}" data-file="${track.file}">
+          <svg class="music-player__track-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <span class="music-player__track-name">${track.name}</span>
+          <span class="music-player__track-category">${CATEGORIES[track.category] || track.category}</span>
+        </div>
+      `;
+    }).join('');
+
+    this.tracklist.querySelectorAll('.music-player__track').forEach(el => {
+      el.addEventListener('click', () => {
+        const file = el.dataset.file;
+        const track = this.allTracks.find(t => t.file === file);
+        if (track) {
+          this.playTrack(track);
+        }
+      });
+    });
+  }
+
+  getFilteredTracks() {
+    let tracks = this.allTracks;
+
+    if (this.activeFilter !== 'all') {
+      tracks = tracks.filter(t => t.category === this.activeFilter);
+    }
+
+    if (this.searchInput && this.searchInput.value.trim()) {
+      const query = this.searchInput.value.trim().toLowerCase();
+      tracks = tracks.filter(t => t.name.toLowerCase().includes(query));
+    }
+
+    return tracks;
+  }
+
+  filterTracks() {
+    this.renderTrackList();
+  }
+
+  playTrack(track) {
+    if (!this.audio) return;
+    this.audio.src = track.file;
+    this.audio.play().catch(() => {});
+    this.currentTrack = track;
+    this.isPlaying = true;
+    this.updateUI();
+  }
+
+  playSpecificTrack(file, name) {
+    if (!this.audio) return;
+    this.audio.src = file;
+    this.audio.play().catch(() => {});
+    this.currentTrack = { file, name, category: 'personaje' };
     this.isPlaying = true;
     this.updateUI();
   }
@@ -133,19 +218,36 @@ export class MusicPlayer {
       this.audio.pause();
       this.isPlaying = false;
     } else {
-      this.loadAndPlay();
+      if (this.currentTrack) {
+        this.audio.play().catch(() => {});
+        this.isPlaying = true;
+      } else if (this.allTracks.length > 0) {
+        this.playTrack(this.allTracks[0]);
+      }
     }
     this.updateUI();
   }
 
   next() {
-    this.currentIndex = (this.currentIndex + 1) % PLAYLIST.length;
-    this.loadAndPlay();
+    if (!this.currentTrack) {
+      if (this.allTracks.length > 0) this.playTrack(this.allTracks[0]);
+      return;
+    }
+    const tracks = this.getFilteredTracks();
+    const idx = tracks.findIndex(t => t.file === this.currentTrack.file);
+    const nextIdx = (idx + 1) % tracks.length;
+    this.playTrack(tracks[nextIdx]);
   }
 
   prev() {
-    this.currentIndex = (this.currentIndex - 1 + PLAYLIST.length) % PLAYLIST.length;
-    this.loadAndPlay();
+    if (!this.currentTrack) {
+      if (this.allTracks.length > 0) this.playTrack(this.allTracks[this.allTracks.length - 1]);
+      return;
+    }
+    const tracks = this.getFilteredTracks();
+    const idx = tracks.findIndex(t => t.file === this.currentTrack.file);
+    const prevIdx = (idx - 1 + tracks.length) % tracks.length;
+    this.playTrack(tracks[prevIdx]);
   }
 
   toggleRepeat() {
@@ -156,6 +258,13 @@ export class MusicPlayer {
     this.updateUI();
   }
 
+  addTracks(tracks) {
+    tracks.forEach(track => {
+      this.allTracks.push({ ...track, category: 'personaje' });
+    });
+    this.renderTrackList();
+  }
+
   updateUI() {
     if (this.playBtn) {
       this.playBtn.innerHTML = this.isPlaying
@@ -163,11 +272,15 @@ export class MusicPlayer {
         : '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
       this.playBtn.setAttribute('aria-label', this.isPlaying ? 'Pausar' : 'Reproducir');
     }
+
     if (this.repeatBtn) {
       this.repeatBtn.classList.toggle('active', this.isRepeating);
     }
-    if (this.select) {
-      this.select.value = this.currentIndex;
+
+    if (this.nowName) {
+      this.nowName.textContent = this.currentTrack ? this.currentTrack.name : '-';
     }
+
+    this.renderTrackList();
   }
 }

@@ -15,8 +15,8 @@
       "birthplace": "Isla Gyojin",
       "curiosities": [
         "Vivió durante 2 años en Syrup Village.",
-        "Toca el ukelele.",
-        "Su arma, la Buster Sword, fue ganada en el torneo anual del Coliseo Corrida."
+        "Su arma, la Buster Sword, la ganó durante un enfrentamiento en el Coliseo Corrida.",
+        "Toca el ukelele."
       ],
       "wanted": null,
       "relatedChampions": [
@@ -42,6 +42,9 @@
           "src": "img/gallery/galleryMaximoColiseo.png",
           "caption": "Máximo en el Coliseo Corrida."
         }
+      ],
+      "music": [
+        { "name": "Tema de Máximo", "file": "music/characters/maximoOST.mp3" }
       ]
     },
     {
@@ -86,6 +89,9 @@
           "src": "img/gallery/galleryHonjoMasamune.png",
           "caption": "La Honjo Masamune de Nacho D. Castro."
         }
+      ],
+      "music": [
+        { "name": "Tema de Nacho", "file": "music/characters/nachoOST.mp3" }
       ]
     },
     {
@@ -119,6 +125,9 @@
           "src": "img/gallery/galleryEsteNoEsSplinter.png",
           "caption": "Soy Greg."
         }
+      ],
+      "music": [
+        { "name": "Tema de Splinter", "file": "music/characters/splinterOST.mp3" }
       ]
     },
     {
@@ -135,9 +144,9 @@
       "age": "19",
       "birthplace": "Birka",
       "curiosities": [
-        "Nació en Birka, la isla celestial prohibida por Enel.",
-        "Es mitad birkan y mitad humano.",
-        "Peleó en arenas clandestinas durante siete años."
+        "Su campera de cuero pesa alrededor de 30 kg.",
+        "Su cicatriz en el pecho la obtuvo durante una pelea clandestina en la que protegió a un niño de ser asesinado.",
+        "Odia sentirse dependiente de los demás; prefiere resolver todo por su propia fuerza."
       ],
       "wanted": null,
       "relatedChampions": [
@@ -167,6 +176,9 @@
           "src": "img/gallery/galleryCaelisNacimiento.png",
           "caption": "Caelis en brazos de su madre."
         }
+      ],
+      "music": [
+        { "name": "Tema de Caelis", "file": "music/characters/caelisOST.mp3" }
       ]
     },
     {
@@ -191,7 +203,10 @@
       "relatedChampions": [
         {}
       ],
-      "gallery": []
+      "gallery": [],
+      "music": [
+        { "name": "Tema de Arthur", "file": "music/characters/arthurOST.mp3" }
+      ]
     },
     {
       "id": "pipi",
@@ -459,13 +474,18 @@
       "background": "img/backgrounds/giannisBG.png",
       "lore": "Giannis Antetokounmpo nació en el Reino de Frauce, en el East Blue, bajo las historias de sus padres sobre su isla natal Namakura en una aldea oculta de brazos largos. Esta pequeña aldea sufrió mucho, por mucho tiempo, pero la más prevalente de estas era la hambruna, la cual causó una gran cantidad de muertes. Una de esas, fue la del padre de Giannis, Charles Antetokounmpo quien durante un invierno en donde Giannis enfermó, se rehusó a comer la poca comida que había, y se la dio a su hijo, muriendo en el proceso.\n\nCon solo 10 años, Giannis se obsesiono con la comida, buscando siempre maneras de comer todo lo que hubiese cerca, y se fascino con las historias de su madre, Verónica, sobre el All Blue.\n\nA pesar de todo, Giannis vivió con sus compañeros long arms quienes se apoyaron entre todos durante los duros momentos.\n\nPero es a los 12 años, que un grupo pirata portando una bandera de una calavera con dos esmeraldas en los ojos descubrió su pueblo.\n\nLes atacaron y arrasaron el pueblo, matando a los mayores y capturando a todos los demás. Aquí, Giannis fue separado de su madre, y acabó en el mercado negro de Cozia.",
       "faction": "filo-maldito",
-      "region": "cozia",
+      "region": "",
       "race": "Brazos largos",
       "wanted": null,
       "relatedChampions": [
         {}
       ],
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "img/gallery/galleryTako.png",
+          "caption": "Takoyakis, la especialidad de Giannis."
+        }
+      ],
       "age": "12",
       "birthplace": "Reino de Frauce",
       "curiosities": [
@@ -689,7 +709,7 @@
       "background": "img/backgrounds/ginBG.png",
       "lore": "Actualmente desconocida...",
       "faction": "marina",
-      "region": "cozia",
+      "region": "",
       "race": "Humano",
       "age": "19",
       "birthplace": "Cozia",
