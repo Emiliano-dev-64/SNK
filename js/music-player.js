@@ -158,7 +158,9 @@ export class MusicPlayer {
 
   updateUI() {
     if (this.playBtn) {
-      this.playBtn.innerHTML = this.isPlaying ? '⏸' : '▶';
+      this.playBtn.innerHTML = this.isPlaying
+        ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>'
+        : '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
       this.playBtn.setAttribute('aria-label', this.isPlaying ? 'Pausar' : 'Reproducir');
     }
     if (this.repeatBtn) {

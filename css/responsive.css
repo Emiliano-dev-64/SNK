@@ -290,6 +290,11 @@
 
 /* ---- Small Mobile (< 480px) ---- */
 @media (max-width: 480px) {
+  :root {
+    --ambient-grain-opacity: 0.02;
+    --ambient-vignette: rgba(0, 0, 0, 0.25);
+  }
+
   .champions-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -328,6 +333,11 @@
     letter-spacing: 2px;
   }
 
+  .section-icon {
+    width: 22px;
+    height: 22px;
+  }
+
   .shops-header__title {
     font-size: var(--fs-h2);
     letter-spacing: 2px;
@@ -343,6 +353,9 @@
 
 /* ---- Extra Small (< 360px) ---- */
 @media (max-width: 360px) {
+  :root {
+    --ambient-grain-opacity: 0.015;
+  }
   .hero__title {
     font-size: 1.8rem;
   }
@@ -397,6 +410,14 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  body::after {
+    opacity: 0.015 !important;
+  }
+
+  body::before {
+    animation: none !important;
   }
 
   .hero__particle {

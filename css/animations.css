@@ -128,6 +128,36 @@
   will-change: transform;
 }
 
+/* ---- Ambient Vignette Breathe ---- */
+@keyframes vignette-breathe {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ---- Ambient Gradient Drift ---- */
+@keyframes ambient-drift {
+  0% {
+    transform: translateX(-50%) translateX(-30px);
+  }
+  100% {
+    transform: translateX(-50%) translateX(30px);
+  }
+}
+
+/* ---- Ambient Glow Pulse ---- */
+@keyframes ambient-glow-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
 /* ---- Page Transition ---- */
 .page-transition {
   position: fixed;

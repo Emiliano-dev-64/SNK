@@ -47,7 +47,7 @@ export class Modal {
     this.backdrop.className = 'modal-backdrop';
     this.backdrop.innerHTML = `
       <div class="modal">
-        <button class="close-btn modal__close" aria-label="Cerrar">&times;</button>
+        <button class="close-btn modal__close" aria-label="Cerrar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg></button>
         <div class="modal__content"></div>
       </div>
     `;

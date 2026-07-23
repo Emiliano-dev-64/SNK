@@ -33,6 +33,10 @@
   text-shadow: 0 2px 20px rgba(200, 155, 60, 0.4);
   letter-spacing: 4px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
 }
 
 .wanted-header__subtitle {

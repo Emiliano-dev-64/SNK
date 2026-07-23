@@ -13,6 +13,24 @@
   justify-content: center;
 }
 
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 400px;
+  background: radial-gradient(
+    ellipse 60% 100% at 50% 0%,
+    var(--ambient-glow-gold),
+    transparent
+  );
+  pointer-events: none;
+  z-index: var(--z-base);
+  animation: ambient-drift 20s ease-in-out infinite alternate;
+}
+
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -160,6 +178,45 @@
   position: relative;
   padding: var(--space-4xl) 0;
   background: var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.video-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-dark),
+    transparent
+  );
+  opacity: 0.25;
+}
+
+.video-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 30%,
+    var(--ambient-glow-blue),
+    transparent
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.video-section.visible::before {
+  opacity: 1;
 }
 
 .video-section__container {
@@ -178,7 +235,44 @@
 
 /* ---- Champions Preview Section ---- */
 .champions-preview {
+  position: relative;
   padding: var(--space-4xl) 0;
+  overflow: hidden;
+}
+
+.champions-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 40% at 50% 30%,
+    var(--ambient-glow-gold),
+    transparent
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.champions-preview.visible::before {
+  opacity: 1;
+}
+
+.champions-preview::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-dark),
+    transparent
+  );
+  opacity: 0.2;
+  z-index: 1;
 }
 
 .champions-preview__grid {
@@ -196,7 +290,44 @@
 
 /* ---- World Preview Section ---- */
 .world-preview {
+  position: relative;
   padding: var(--space-4xl) 0;
+  overflow: hidden;
+}
+
+.world-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 50%,
+    var(--ambient-glow-purple),
+    transparent
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.world-preview.visible::before {
+  opacity: 1;
+}
+
+.world-preview::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-dark),
+    transparent
+  );
+  opacity: 0.2;
+  z-index: 1;
 }
 
 .world-preview__cta {

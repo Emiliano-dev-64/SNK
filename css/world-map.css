@@ -286,6 +286,9 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .region-panel__champions {

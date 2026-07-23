@@ -128,7 +128,7 @@
       "icon": "img/icons/iconCaelis.png",
       "image": "img/champions/perfilCaelis.png",
       "background": "img/backgrounds/caelisBG.png",
-      "lore": "Caelis nació más allá de las nubes, en Birka, la isla celestial donde el autoproclamado dios Enel prohibía todo contacto con la Tierra. Hijo de Alya, una skypieana, y Zephyr, un marine terrícola, su llegada fue un acto de amor clandestino… y de traición. Cuando Enel descubrió su existencia, ordenó matar a Alya; Zephyr logró huir con Caelis, pero su madre cayó bajo el relámpago divino.\n\nCreció como soldado errante junto a su padre, entrenándose en artes marciales y supervivencia; cada derrota templaba su cuerpo y su espíritu.\n\nA los doce años dominaba el combate cuerpo a cuerpo, pero en la ceremonia de ascenso de Zephyr, el almirante Akainu lo delató como hijo de una «rebelde» de Birka. Zephyr fue arrestado y encarcelado en Impel Down, y Caelis escapó, huérfano y sediento de justicia.\n\nDurante siete años peleó en arenas clandestinas, forjando su fuerza en sangre y soledad, ocultando su origen celeste.\n\nAhora, con diecinueve años y el corazón endurecido, su destino está claro: vengar a su madre, derrocar al traidor Akainu y liberar a su padre de la prisión más temida del mundo...\n\n¡Impel Down!",
+      "lore": "Caelis nació más allá de las nubes, en Birka, una isla celestial gobernada por el autoproclamado dios Enel, quien había prohibido cualquier tipo de contacto con la Tierra. Su nacimiento fue el resultado de un amor que nunca debió existir según las leyes de aquel lugar: su madre, Alya, era una skypieana de Birka, mientras que su padre, Zephyr, era un marine proveniente de la Tierra.\n\nLa relación entre ambos tuvo que mantenerse en secreto. En un lugar donde el contacto con el mundo inferior estaba completamente prohibido, la existencia de Caelis no solo representaba una desobediencia, sino también una traición directa a la autoridad de Enel. Sin embargo, Alya y Zephyr decidieron permanecer juntos y proteger a su hijo, aun sabiendo el peligro al que se enfrentaban.\n\nAntes de que todo se derrumbara, Alya le entregó a Zephyr una piedra proveniente de Birka. Era un recuerdo de su hogar y una prueba del vínculo que existía entre ellos. Zephyr conservó aquella piedra y, tiempo después, la convirtió en un colgante adornado con el símbolo de la Marina. Desde entonces, comenzó a llevarlo siempre consigo.\n\nLa existencia de Caelis no pudo permanecer oculta para siempre. Cuando Enel descubrió que Alya había tenido un hijo con un marine terrícola, ordenó su muerte. Zephyr intentó escapar de Birka junto a Caelis, pero no consiguió salvar a Alya. La madre del niño murió bajo el relámpago divino de Enel, mientras su esposo huía con el pequeño, llevándose consigo al último miembro de la familia que todavía podía proteger.\n\nDespués de escapar, Caelis creció junto a su padre como un soldado errante. Zephyr se encargó de enseñarle todo lo necesario para sobrevivir en un mundo peligroso. Desde pequeño, Caelis fue sometido a un entrenamiento constante basado en las artes marciales, la resistencia física y la supervivencia. Su vida no estuvo marcada por la tranquilidad, sino por el esfuerzo, el movimiento y la necesidad de mantenerse preparado.\n\nA los doce años, Caelis ya dominaba el combate cuerpo a cuerpo. A pesar de su corta edad, había desarrollado habilidades que superaban a las de muchas personas mayores que él.\n\nSin embargo, la vida de Caelis volvió a cambiar durante la ceremonia de ascenso de su padre. En aquel momento, el almirante Akainu reveló el origen de Zephyr y lo delató como el padre del hijo de una supuesta rebelde de Birka. La relación entre Zephyr y Alya, así como la existencia de Caelis, quedaron expuestas ante la Marina.\n\nZephyr fue arrestado y posteriormente encarcelado en Impel Down, la prisión más temida del mundo. Antes de ser separado de su hijo, le entregó el colgante que había llevado consigo durante años: la piedra de Birka que Alya le había dado, transformada por él y marcada con el símbolo de la Marina.\n\nMientras Zephyr era llevado a Impel Down, Caelis consiguió escapar. Con apenas doce años, volvió a quedarse solo. Su madre había muerto, su padre estaba encerrado en una prisión prácticamente imposible de abandonar y él debía sobrevivir mientras ocultaba su verdadera identidad.\n\nDurante los siete años siguientes, Caelis recorrió arenas clandestinas en las que peleó contra toda clase de adversarios. Allí continuó desarrollando las habilidades que Zephyr le había enseñado. Durante todos aquellos años llevó el colgante de su padre alrededor del cuello. La piedra de Birka era el único objeto que conectaba las distintas partes de su historia.\n\nAhora, Caelis tiene diecinueve años. Su cuerpo fue moldeado por años de entrenamiento y combates clandestinos, mientras que su corazón fue endurecido por las pérdidas que sufrió desde su infancia. Ya no es el niño que escapó de Birka en brazos de su padre ni el joven que tuvo que huir después del arresto de Zephyr.\n\nSu destino está claro.\n\nCaelis busca vengar la muerte de su madre, Alya, asesinada por orden de Enel. También desea enfrentarse al almirante Akainu, el hombre que delató a su padre y provocó su encarcelamiento. Sin embargo, por encima de todo, tiene un objetivo que ha mantenido vivo durante siete años: entrar en la prisión más peligrosa del mundo y liberar a Zephyr.",
       "faction": "filo-maldito",
       "region": "filo-maldito",
       "race": "Gente del cielo",
@@ -158,6 +158,14 @@
         {
           "src": "img/gallery/galleryCaelisCampera.png",
           "caption": "Caelis con su campera."
+        },
+        {
+          "src": "img/gallery/galleryCaelisColgante.png",
+          "caption": "El colgante de Caelis, obsequiado por su padre."
+        },
+        {
+          "src": "img/gallery/galleryCaelisNacimiento.png",
+          "caption": "Caelis en brazos de su madre."
         }
       ]
     },
@@ -325,6 +333,10 @@
         {
           "src": "img/gallery/gallerySinNombreSapo.png",
           "caption": "Sin Nombre en su forma sapo."
+        },
+        {
+          "src": "img/gallery/gallerySNFruta.png",
+          "caption": "Guwa guwa no mi\nTipo zoan\nModelo sapo."
         }
       ],
       "age": "24",
@@ -961,7 +973,7 @@
       "id": "cozia",
       "name": "Cozia",
       "title": "Ciudades portuarias y naturaleza salvaje",
-      "lore": "Una región misteriosa del Grand Line, donde las ciudades portuarias conviven con la naturaleza salvaje. Cozia es conocida por sus mercados coloridos, sus tabernas llenas de historias y sus peligros ocultos bajo la superficie.",
+      "lore": "Ubicada en las tranquilas aguas del East Blue, Cozia es una isla conocida por su gran ciudad costera y sus extensas playas. Hoy en día, es considerada una nación próspera y en constante crecimiento, donde el comercio marítimo y la tranquilidad han vuelto a formar parte de la vida cotidiana.\n\nSin embargo, su historia estuvo marcada por una de las guerras más devastadoras que haya vivido la isla.\n\nAños atrás, Cozia fue invadida por el Reino de Germa 66, un ejército capaz de cruzar mares enteros para librar guerras en nombre de quienes pudieran pagarlas. El conflicto llegó sin previo aviso y transformó la isla en un campo de batalla. Sus calles quedaron destruidas, innumerables familias fueron separadas y el futuro de la nación pareció desvanecerse entre el humo y las llamas.\n\nCon el paso del tiempo, la guerra finalmente llegó a su fin.\n\nLos habitantes que lograron sobrevivir comenzaron la difícil tarea de reconstruir su hogar. Poco a poco, las ciudades fueron levantándose nuevamente, los puertos recuperaron su actividad y las rutas comerciales volvieron a llenarse de barcos procedentes de todo el East Blue. Lo que alguna vez fueron ruinas terminó convirtiéndose, una vez más, en una isla llena de vida.",
       "icon": "img/world/cozia/cozia.png",
       "image": "img/world/cozia/cozia.png",
       "heroImage": "img/world/cozia/cozia.png",
@@ -1022,7 +1034,7 @@
       "id": "archipielago-cozia",
       "name": "Archipiélago Cozia",
       "title": "Islas interconectadas por corrientes peligrosas",
-      "lore": "Un conjunto de islas interconectadas por corrientes peligrosas y criaturas marinas. Este archipiélago es conocido por sus paisajes salvajes y sus secretos ocultos en cada isla.",
+      "lore": "Al oeste de Cozia se encuentra el Archipiélago Cozia, una región formada por numerosas islas de distintos tamaños, cada una con paisajes y características únicas. Desde selvas tropicales y playas de arena blanca hasta islotes rocosos y pequeños pueblos pesqueros, ninguna isla es igual a otra.\n\nGracias a su cercanía con Cozia, el archipiélago mantiene una importante actividad comercial y marítima, con embarcaciones que recorren constantemente sus aguas conectando las distintas comunidades.\n\nLa gran diversidad de sus islas ha convertido al Archipiélago Cozia en una de las regiones más singulares del East Blue, donde cada isla posee su propia identidad, costumbres y forma de vida.",
       "icon": "img/world/archipielagoCozia/archipielagoCozia.png",
       "image": "img/world/archipielagoCozia/archipielagoCozia.png",
       "heroImage": "img/world/archipielagoCozia/archipielagoCozia.png",
@@ -1117,7 +1129,7 @@
       "id": "filo-maldito",
       "name": "Filo Maldito",
       "title": "Una tripulación peligrosa",
-      "lore": "Una tripulación peligrosa.",
+      "lore": "Los Piratas Filo Maldito nacieron en el Archipiélago Cozia, cuando cuatro desconocidos cruzaron sus caminos en la isla de Cesila. Splinter, Caelis, Nacho y Arthur unieron fuerzas para enfrentarse a un miembro de la tripulación Pierna Podrida, ayudando al pueblo a liberarse de su amenaza.\n\nTras la batalla, descubrieron que, pese a sus distintas historias y motivaciones, todos compartían un mismo objetivo: alcanzar el Grand Line. Convencidos de que juntos tendrían más posibilidades de lograrlo, formaron una tripulación y eligieron a Nacho como su capitán.\n\nA partir de ese momento comenzaron sus aventuras por el East Blue. En la isla Suqueza se unió Pipi, más tarde liberaron a los esclavos de Isla Placeres y derrotaron definitivamente a la tripulación Pierna Podrida, salvando a los habitantes de Isla Pierna Rota.\n\nCon el tiempo, el viaje los llevó nuevamente a la región de Cozia, donde la tripulación siguió creciendo con la incorporación de Máximo, un gyojin, y Giannis, un niño perteneciente a la tribu brazos largos.\n\nDesde entonces, los Piratas Filo Maldito continúan navegando juntos, persiguiendo sus propios sueños mientras avanzan paso a paso hacia el Grand Line.",
       "icon": "img/logo OP dnd.png",
       "image": "img/backgrounds/filoMalditoBG.png",
       "heroImage": "img/backgrounds/filoMalditoBG.png",

@@ -124,9 +124,9 @@ export class FactionDetail {
       const lightbox = document.createElement('div');
       lightbox.className = 'lightbox';
       lightbox.innerHTML = `
-        <button class="lightbox__close" aria-label="Cerrar">&times;</button>
-        <button class="lightbox__prev" aria-label="Anterior">&#10094;</button>
-        <button class="lightbox__next" aria-label="Siguiente">&#10095;</button>
+        <button class="lightbox__close" aria-label="Cerrar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg></button>
+        <button class="lightbox__prev" aria-label="Anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="lightbox__next" aria-label="Siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></button>
         <div class="lightbox__content">
           <img class="lightbox__img" src="" alt="">
           <div class="lightbox__counter"></div>

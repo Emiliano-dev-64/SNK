@@ -521,6 +521,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: var(--space-md);
+  align-items: start;
 }
 
 .champion-gallery__item {
@@ -550,6 +551,7 @@
   font-size: var(--fs-small);
   color: var(--color-text-primary);
   text-align: center;
+  white-space: pre-line;
 }
 
 /* ---- Lightbox ---- */
@@ -603,6 +605,7 @@
   color: var(--color-text-primary);
   text-align: center;
   letter-spacing: 1px;
+  white-space: pre-line;
 }
 
 .lightbox__close,

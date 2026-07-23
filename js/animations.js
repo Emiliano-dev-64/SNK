@@ -20,7 +20,7 @@ export function initAnimations() {
 
   // Observe all animated elements
   const animatedElements = document.querySelectorAll(
-    '.fade-in-up, .fade-in, .scale-in, .slide-in-left, .slide-in-right'
+    '.fade-in-up, .fade-in, .scale-in, .slide-in-left, .slide-in-right, .video-section, .champions-preview, .world-preview, .section--ambient'
   );
 
   animatedElements.forEach(el => observer.observe(el));
@@ -45,8 +45,11 @@ export function initParticles() {
 
 function initParallax() {
   const parallaxElements = document.querySelectorAll('.parallax');
+  const ambientSections = document.querySelectorAll(
+    '.video-section, .champions-preview, .world-preview'
+  );
 
-  if (parallaxElements.length === 0) return;
+  if (parallaxElements.length === 0 && ambientSections.length === 0) return;
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
@@ -55,6 +58,12 @@ function initParallax() {
       const speed = parseFloat(el.dataset.speed) || 0.5;
       const yPos = -(scrollY * speed);
       el.style.transform = `translateY(${yPos}px)`;
+    });
+
+    ambientSections.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const offset = (rect.top / window.innerHeight) * 30;
+      el.style.setProperty('--ambient-offset', `${offset}px`);
     });
   }, { passive: true });
 }

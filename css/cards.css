@@ -97,7 +97,7 @@
 /* Champion Card Variant */
 .champion-card {
   position: relative;
-  aspect-ratio: 3/4;
+  aspect-ratio: 3 / 5;
   overflow: hidden;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -106,7 +106,7 @@
 }
 
 .champion-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-xl);
 }
 
@@ -118,7 +118,7 @@
 }
 
 .champion-card:hover .champion-card__image {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .champion-card__overlay {

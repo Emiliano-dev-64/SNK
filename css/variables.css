@@ -94,6 +94,15 @@
   --z-tooltip: 1100;
   --z-music-player: 800;
 
+  /* ---- Ambient Background ---- */
+  --ambient-grain-opacity: 0.035;
+  --ambient-glow-gold: rgba(200, 155, 60, 0.06);
+  --ambient-glow-blue: rgba(10, 200, 185, 0.04);
+  --ambient-glow-purple: rgba(157, 108, 208, 0.04);
+  --ambient-glow-red: rgba(232, 64, 87, 0.03);
+  --ambient-vignette: rgba(0, 0, 0, 0.4);
+  --ambient-transition: 20s ease-in-out;
+
   /* ---- Layout ---- */
   --container-max: 1400px;
   --container-wide: 1600px;

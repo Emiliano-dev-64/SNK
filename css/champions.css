@@ -18,6 +18,24 @@
     var(--color-bg-secondary) 0%,
     var(--color-bg-primary) 100%
   );
+  overflow: hidden;
+}
+
+.champions-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse 50% 40% at 50% 60%,
+    var(--ambient-glow-gold),
+    transparent
+  );
+  pointer-events: none;
+  animation: ambient-drift 25s ease-in-out infinite alternate;
 }
 
 .champions-header__title {
@@ -27,6 +45,10 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
 }
 
 .champions-header__subtitle {
