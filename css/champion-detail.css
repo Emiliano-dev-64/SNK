@@ -260,6 +260,97 @@
   justify-items: center;
 }
 
+.champion-top-row--no-related .champion-left-col {
+  display: none;
+}
+
+/* ---- Left Column (Portrait + Related) ---- */
+.champion-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.champion-portrait {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-gold-dark);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.champion-portrait:hover {
+  transform: scale(1.03);
+  border-color: var(--color-gold);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+.champion-portrait:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ---- Portrait Lightbox ---- */
+.portrait-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.portrait-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.portrait-lightbox__img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-gold-dark);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.portrait-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-gold-dark);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  z-index: 10;
+}
+
+.portrait-lightbox__close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: var(--color-gold);
+}
+
+.portrait-lightbox__close:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
 /* ---- Sidebar (Right Column) ---- */
 .champion-sidebar {
   display: flex;

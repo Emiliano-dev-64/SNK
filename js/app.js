@@ -10,6 +10,7 @@ import { ChampionGrid } from './champion-grid.js';
 import { ChampionDetail } from './champion-detail.js';
 import { RegionPanel } from './region-panel.js';
 import { RegionDetail } from './region-detail.js';
+import { FactionDetail } from './faction-detail.js';
 import { initShopPopups } from './modal.js';
 import { WantedPage } from './wanted.js';
 
@@ -40,6 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
     case 'region':
       new RegionDetail();
+      break;
+    case 'faction':
+      new FactionDetail();
       break;
     case 'shops':
       initShopPopups();

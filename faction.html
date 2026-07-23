@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapa del Mundo - Shuen No Kokai</title>
+  <title>Facción - Shuen No Kokai</title>
   <link rel="icon" type="image/png" sizes="32x32" href="img/logo OP dnd.png">
   
   <!-- CSS -->
@@ -11,17 +11,22 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/world-map.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/region.css">
+  <link rel="stylesheet" href="css/champion-detail.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/tooltip.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/music-player.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body data-page="world-map" class="world-map-page">
+<body data-page="faction">
 
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-  <!-- Navbar (Minimal for map) -->
-  <nav class="navbar navbar--map">
+  <!-- Navbar -->
+  <nav class="navbar">
     <a href="index.html" class="navbar__logo">
       <img src="img/logo OP dnd.png" alt="Shuen No Kokai Logo">
       <span class="navbar__logo-text">Shuen No Kokai</span>
@@ -30,7 +35,7 @@
     <div class="navbar__menu">
       <a href="index.html" class="navbar__link">Inicio</a>
       <a href="champions.html" class="navbar__link">Personajes</a>
-      <a href="world-map.html" class="navbar__link active">Mapa</a>
+      <a href="world-map.html" class="navbar__link">Mapa</a>
       <a href="wanted.html" class="navbar__link">Wanted</a>
       <a href="tiendas.html" class="navbar__link">Tienda</a>
       <a href="galeria.html" class="navbar__link">Galería</a>
@@ -53,7 +58,6 @@
         <a href="world-map.html" class="navbar__mobile-submenu-link">Mapa General</a>
         <a href="region.html?id=cozia" class="navbar__mobile-submenu-link">Cozia</a>
         <a href="region.html?id=archipielago-cozia" class="navbar__mobile-submenu-link">Archipiélago Cozia</a>
-        <a href="faction.html?id=filo-maldito" class="navbar__mobile-submenu-link">Filo Maldito</a>
       </div>
     </div>
     <a href="wanted.html" class="navbar__mobile-link">Wanted</a>
@@ -61,68 +65,39 @@
     <a href="galeria.html" class="navbar__mobile-link">Galería</a>
   </div>
 
-  <!-- World Map -->
-  <main id="main-content">
-  <div class="world-map">
-    <div id="mapaContainer" class="world-map__container">
-      <div id="mapaZoom" class="world-map__zoom">
-        <img src="img/mapamundibg.jpg" id="mapaBase" class="world-map__image" alt="Mapa del Mundo">
-        
-        <!-- Hotspots -->
-        <div class="hotspot" style="top: 13.5%; left: 59.5%;" data-name="Cozia" data-region="cozia">
-          <div class="hotspot__marker">
-            <div class="hotspot__dot"></div>
-            <div class="hotspot__ring"></div>
-          </div>
-        </div>
-        
-        <div class="hotspot" style="top: 14%; left: 54.8%;" data-name="Archipiélago Cozia" data-region="archipielago-cozia">
-          <div class="hotspot__marker">
-            <div class="hotspot__dot"></div>
-            <div class="hotspot__ring"></div>
-          </div>
-        </div>
+  <!-- Faction Page -->
+  <main id="main-content" class="region-page">
+    <!-- Hero -->
+    <section class="region-hero">
+      <img src="" alt="" class="region-hero__bg">
+      <div class="region-hero__overlay"></div>
+      <a href="champions.html" class="btn btn-secondary region-hero__back">← Volver a Personajes</a>
+      <div class="region-hero__content">
+        <h1 class="region-hero__name"></h1>
+        <p class="region-hero__tagline"></p>
       </div>
+    </section>
+
+    <!-- Content -->
+    <div class="region-content">
+      <!-- Lore -->
+      <section class="region-lore fade-in-up">
+        <h2 class="region-lore__title section-title">Historia</h2>
+        <p class="region-lore__text"></p>
+      </section>
+
+      <!-- Champions -->
+      <section class="region-champions fade-in-up">
+        <h2 class="region-champions__title section-title">Personajes</h2>
+        <div class="region-champions__grid"></div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="region-gallery fade-in-up">
+        <h2 class="region-gallery__title section-title">Galería</h2>
+        <div class="region-gallery__grid"></div>
+      </section>
     </div>
-
-    <!-- Region Tooltip -->
-    <div class="region-tooltip"></div>
-
-    <!-- Map Controls -->
-    <div class="map-controls">
-      <button class="map-controls__btn" id="zoomIn" aria-label="Acercar">+</button>
-      <div class="map-controls__zoom-level" id="zoomLevel">100%</div>
-      <button class="map-controls__btn" id="zoomOut" aria-label="Alejar">−</button>
-      <button class="map-controls__btn" id="zoomReset" aria-label="Restablecer zoom">⟲</button>
-    </div>
-
-    <!-- Region Panel (Slide-in) -->
-    <div class="region-panel">
-      <button class="close-btn region-panel__close" aria-label="Cerrar panel">&times;</button>
-      <div class="region-panel__hero">
-        <img src="" alt="" class="region-panel__hero-img">
-        <div class="region-panel__hero-overlay"></div>
-        <h2 class="region-panel__hero-name"></h2>
-      </div>
-      <div class="region-panel__content">
-        <p class="region-panel__description"></p>
-        
-        <h3 class="region-panel__section-title">Personajes</h3>
-        <div class="region-panel__champions"></div>
-        
-        <button class="btn btn-primary region-panel__explore-btn">Explorar Región</button>
-      </div>
-    </div>
-
-    <!-- Region Panel Backdrop -->
-    <div class="region-panel-backdrop"></div>
-
-    <!-- Mini Map -->
-    <div class="mini-map">
-      <img src="img/mapamundibg.jpg" alt="Mini Mapa" class="mini-map__image" loading="lazy">
-      <div class="mini-map__viewport"></div>
-    </div>
-  </div>
   </main>
 
   <!-- Music Player -->

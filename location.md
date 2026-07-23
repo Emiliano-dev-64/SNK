@@ -1,6 +1,6 @@
 # Cómo Añadir Nuevas Regiones al Mapa
 
-Este documento explica cómo añadir nuevas regiones al mapa interactivo de One Pipis.
+Este documento explica cómo añadir nuevas regiones al mapa interactivo de Shuen No Kokai.
 
 ## Estructura de una Región
 
@@ -83,7 +83,7 @@ Edita `world-map.html` y agrega un nuevo hotspot dentro de `#mapaZoom`:
 
 ### 4. Añadir Lugar en el Mapa Mundial (Opcional)
 
-Si la región debe aparecer también en la sección "El Mundo de One Pipis", agrega una entrada en el array `locations` de la región "mundo":
+Si la región debe aparecer también en la sección "El Mundo de Shuen No Kokai", agrega una entrada en el array `locations` de la región "mundo":
 
 ```json
 {

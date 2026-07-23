@@ -18,7 +18,7 @@ export class ChampionGrid {
     try {
       const response = await fetch('data/champions.json');
       this.data = await response.json();
-      this.render(this.data.champions);
+      this.render(this.data.champions.sort((a, b) => a.name.localeCompare(b.name)));
       this.bindEvents();
       this.observeCards();
     } catch (error) {
@@ -48,10 +48,11 @@ export class ChampionGrid {
 
     let filtered = this.data.champions;
 
-    // Filter by region
+    // Filter by region or faction
     if (this.activeFilter !== 'all') {
       filtered = filtered.filter(c => 
-        c.region && c.region.toLowerCase() === this.activeFilter.toLowerCase()
+        (c.region && c.region.toLowerCase() === this.activeFilter.toLowerCase()) ||
+        (c.faction && c.faction.toLowerCase() === this.activeFilter.toLowerCase())
       );
     }
 
@@ -65,9 +66,7 @@ export class ChampionGrid {
       );
     }
 
-    if (this.activeFilter === 'all' && !query.trim()) {
-      this.shuffle(filtered);
-    }
+    filtered.sort((a, b) => a.name.localeCompare(b.name));
 
     this.render(filtered);
     this.observeCards();

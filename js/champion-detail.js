@@ -36,7 +36,7 @@ export class ChampionDetail {
     if (!container || !this.champion) return;
 
     // Set page title
-    document.title = `${this.champion.name} - One Pipis`;
+    document.title = `${this.champion.name} - Shuen No Kokai`;
 
     // Render hero
     const hero = container.querySelector('.champion-hero');
@@ -53,6 +53,14 @@ export class ChampionDetail {
           titleImg.alt = this.champion.title;
         }
       }
+    }
+
+    // Render portrait
+    const portrait = container.querySelector('.champion-portrait');
+    if (portrait && this.champion.image) {
+      portrait.src = this.champion.image;
+      portrait.alt = this.champion.name;
+      this.initPortraitLightbox(portrait);
     }
 
     // Render lore
@@ -181,6 +189,68 @@ export class ChampionDetail {
     counter.textContent = `${this.lightboxIndex + 1} / ${this.lightboxImages.length}`;
   }
 
+  initPortraitLightbox(portrait) {
+    portrait.setAttribute('role', 'button');
+    portrait.setAttribute('tabindex', '0');
+    portrait.setAttribute('aria-label', `Ampliar imagen de ${this.champion.name}`);
+
+    if (!document.querySelector('.portrait-lightbox')) {
+      const lb = document.createElement('div');
+      lb.className = 'portrait-lightbox';
+      lb.setAttribute('role', 'dialog');
+      lb.setAttribute('aria-label', 'Imagen ampliada');
+      lb.setAttribute('aria-modal', 'true');
+      lb.innerHTML = `
+        <button class="portrait-lightbox__close" aria-label="Cerrar imagen">&times;</button>
+        <img class="portrait-lightbox__img" src="" alt="">
+      `;
+      document.body.appendChild(lb);
+
+      lb.querySelector('.portrait-lightbox__close').addEventListener('click', () => this.closePortraitLightbox());
+      lb.addEventListener('click', (e) => {
+        if (e.target === lb) this.closePortraitLightbox();
+      });
+    }
+
+    const open = () => this.openPortraitLightbox();
+    portrait.addEventListener('click', open);
+    portrait.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
+  }
+
+  openPortraitLightbox() {
+    const lb = document.querySelector('.portrait-lightbox');
+    if (!lb || !this.champion) return;
+    const img = lb.querySelector('.portrait-lightbox__img');
+    img.src = this.champion.image;
+    img.alt = this.champion.name;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.portrait-lightbox__close').focus();
+
+    this._portraitLbKeyHandler = (e) => {
+      if (e.key === 'Escape') this.closePortraitLightbox();
+    };
+    document.addEventListener('keydown', this._portraitLbKeyHandler);
+  }
+
+  closePortraitLightbox() {
+    const lb = document.querySelector('.portrait-lightbox');
+    if (!lb) return;
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    if (this._portraitLbKeyHandler) {
+      document.removeEventListener('keydown', this._portraitLbKeyHandler);
+      this._portraitLbKeyHandler = null;
+    }
+    const portrait = document.querySelector('.champion-portrait');
+    if (portrait) portrait.focus();
+  }
+
   renderBioPanel() {
     const panel = document.querySelector('.champion-bio-panel');
     const fieldsContainer = document.querySelector('.champion-bio-panel__fields');
@@ -191,6 +261,11 @@ export class ChampionDetail {
       this.data.regions.forEach(r => { regionMap[r.id] = { name: r.name, icon: r.icon || r.image }; });
     }
 
+    const factionMap = {};
+    if (this.data?.factions) {
+      this.data.factions.forEach(f => { factionMap[f.id] = { name: f.name, icon: f.icon || f.image }; });
+    }
+
     const fields = [
       { key: 'race', label: 'Raza' },
       { key: 'age', label: 'Edad' },
@@ -198,7 +273,11 @@ export class ChampionDetail {
     ];
 
     if (this.champion.region && regionMap[this.champion.region]) {
-      fields.push({ key: 'region', label: 'Región / Facción' });
+      fields.push({ key: 'region', label: 'Región' });
+    }
+
+    if (this.champion.faction && factionMap[this.champion.faction]) {
+      fields.push({ key: 'faction', label: 'Facción' });
     }
 
     const activeFields = fields.filter(f => this.champion[f.key]);
@@ -216,6 +295,13 @@ export class ChampionDetail {
           <a href="region.html?id=${this.champion.region}" class="champion-bio-panel__value champion-bio-panel__value--link">
             <img src="${region.icon}" alt="${region.name}" class="champion-bio-panel__region-img" loading="lazy">
             ${region.name}
+          </a>`;
+      } else if (field.key === 'faction') {
+        const faction = factionMap[this.champion.faction];
+        valueHtml = `
+          <a href="faction.html?id=${this.champion.faction}" class="champion-bio-panel__value champion-bio-panel__value--link">
+            <img src="${faction.icon}" alt="${faction.name}" class="champion-bio-panel__region-img" loading="lazy">
+            ${faction.name}
           </a>`;
       } else {
         valueHtml = `<span class="champion-bio-panel__value">${this.champion[field.key]}</span>`;
@@ -261,8 +347,6 @@ export class ChampionDetail {
 
     if (related.length === 0) {
       section.style.display = 'none';
-      const topRow = document.querySelector('.champion-top-row');
-      if (topRow) topRow.classList.add('champion-top-row--no-related');
       return;
     }
 

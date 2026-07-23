@@ -1,14 +1,13 @@
 // ============================================
-// Region Detail Page
+// Faction Detail Page
 // ============================================
 
 import { getUrlParam } from './utils.js';
-import { Modal } from './modal.js';
 
-export class RegionDetail {
+export class FactionDetail {
   constructor() {
-    this.regionId = getUrlParam('id');
-    if (!this.regionId) return;
+    this.factionId = getUrlParam('id');
+    if (!this.factionId) return;
     this.init();
   }
 
@@ -16,53 +15,53 @@ export class RegionDetail {
     try {
       const response = await fetch('data/champions.json');
       const data = await response.json();
-      const region = data.regions.find(r => r.id === this.regionId);
+      const faction = data.factions.find(f => f.id === this.factionId);
 
-      if (!region) {
-        console.error('Region not found:', this.regionId);
+      if (!faction) {
+        console.error('Faction not found:', this.factionId);
         return;
       }
 
-      this.region = region;
+      this.faction = faction;
       this.data = data;
-      this.render(region, data);
+      this.render(faction, data);
     } catch (error) {
-      console.error('Error loading region data:', error);
+      console.error('Error loading faction data:', error);
     }
   }
 
-  render(region, data) {
-    document.title = `${region.name} - Shuen No Kokai`;
+  render(faction, data) {
+    document.title = `${faction.name} - Shuen No Kokai`;
 
     // Hero
     const heroBg = document.querySelector('.region-hero__bg');
     if (heroBg) {
-      heroBg.src = region.heroImage || region.image;
-      heroBg.alt = `Fondo de ${region.name}`;
+      heroBg.src = faction.heroImage || faction.image;
+      heroBg.alt = `Fondo de ${faction.name}`;
     }
 
     const heroName = document.querySelector('.region-hero__name');
-    if (heroName) heroName.textContent = region.name;
+    if (heroName) heroName.textContent = faction.name;
 
     const heroTagline = document.querySelector('.region-hero__tagline');
-    if (heroTagline) heroTagline.textContent = region.title;
+    if (heroTagline) heroTagline.textContent = faction.title;
 
     // Lore
     const loreSection = document.querySelector('.region-lore');
     const loreText = document.querySelector('.region-lore__text');
     if (loreText) {
-      loreText.innerHTML = region.lore
+      loreText.innerHTML = faction.lore
         .split('\n\n')
         .map(p => `<p>${p}</p>`)
         .join('');
     }
-    if (loreSection && !region.lore) loreSection.style.display = 'none';
+    if (loreSection && !faction.lore) loreSection.style.display = 'none';
 
     // Champions
     const championsSection = document.querySelector('.region-champions');
     const championsGrid = document.querySelector('.region-champions__grid');
-    if (championsGrid && region.champions && region.champions.length > 0) {
-      const champions = region.champions
+    if (championsGrid && faction.champions && faction.champions.length > 0) {
+      const champions = faction.champions
         .map(id => data.champions.find(c => c.id === id))
         .filter(Boolean);
 
@@ -93,41 +92,11 @@ export class RegionDetail {
       championsSection.style.display = 'none';
     }
 
-    // Locations
-    const locationsSection = document.querySelector('.region-locations');
-    const locationsGrid = document.querySelector('.region-locations__grid');
-    if (locationsGrid && region.locations && region.locations.length > 0) {
-      locationsGrid.innerHTML = region.locations.map(loc => `
-        <div class="location-card" data-image="${loc.image}" data-name="${loc.name}">
-          <img src="${loc.image}" alt="${loc.name}" class="location-card__image" loading="lazy">
-          <div class="location-card__overlay">
-            <div class="location-card__name">${loc.name}</div>
-          </div>
-        </div>
-      `).join('');
-
-      const locationModal = new Modal();
-      locationsGrid.querySelectorAll('.location-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const image = card.dataset.image;
-          const name = card.dataset.name;
-          locationModal.open(`
-            <img src="${image}" alt="${name}" style="max-width: 100%; max-height: 80vh; border-radius: 8px; object-fit: contain;">
-          `, {
-            title: name,
-            className: 'modal--image'
-          });
-        });
-      });
-    } else if (locationsSection) {
-      locationsSection.style.display = 'none';
-    }
-
     // Gallery
     const gallerySection = document.querySelector('.region-gallery');
     const galleryGrid = document.querySelector('.region-gallery__grid');
-    if (gallerySection && galleryGrid && region.gallery && region.gallery.length > 0) {
-      galleryGrid.innerHTML = region.gallery
+    if (gallerySection && galleryGrid && faction.gallery && faction.gallery.length > 0) {
+      galleryGrid.innerHTML = faction.gallery
         .map((item, i) => {
           const src = typeof item === 'string' ? item : item.src;
           const caption = typeof item === 'string' ? '' : (item.caption || '');
@@ -148,7 +117,7 @@ export class RegionDetail {
     const items = grid.querySelectorAll('.region-gallery__item');
     if (items.length === 0) return;
 
-    this.lightboxImages = this.region.gallery;
+    this.lightboxImages = this.faction.gallery;
     this.lightboxIndex = 0;
 
     if (!document.querySelector('.lightbox')) {

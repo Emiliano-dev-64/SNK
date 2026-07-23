@@ -81,7 +81,7 @@ class Galeria {
     }
 
     // Update page title
-    document.title = `${category.name} - Galería - One Pipis`;
+    document.title = `${category.name} - Galería - Shuen No Kokai`;
 
     // Set header
     document.getElementById('categoryTitle').textContent = category.name;

@@ -99,9 +99,22 @@
     gap: var(--space-xl);
   }
 
-  .champion-related,
-  .champion-sidebar {
+  .champion-left-col {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-lg);
+  }
+
+  .champion-portrait {
+    aspect-ratio: 3/4;
+  }
+
+  .champion-related {
     order: 1;
+  }
+
+  .champion-sidebar {
+    order: 2;
   }
 
   .champion-lore {
