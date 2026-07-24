@@ -2,12 +2,16 @@
 // Champion Grid - Filtering & Rendering
 // ============================================
 
+import { getChampions } from './data-cache.js';
+import { championCard } from './templates.js';
+import { observeCards } from './animations.js';
+
 export class ChampionGrid {
   constructor(containerSelector = '.champions-grid') {
     this.container = document.querySelector(containerSelector);
     this.searchInput = document.querySelector('#championSearch');
     this.filterTags = document.querySelectorAll('.filter-tag');
-    this.data = null;
+    this.champions = null;
     this.activeFilter = 'all';
 
     if (!this.container) return;
@@ -16,11 +20,9 @@ export class ChampionGrid {
 
   async init() {
     try {
-      const response = await fetch('data/champions.json');
-      this.data = await response.json();
-      this.render(this.data.champions.sort((a, b) => a.name.localeCompare(b.name)));
+      this.champions = await getChampions();
+      this.render(this.champions.sort((a, b) => a.name.localeCompare(b.name)));
       this.bindEvents();
-      this.observeCards();
     } catch (error) {
       console.error('Error loading champion data:', error);
     }
@@ -44,19 +46,17 @@ export class ChampionGrid {
   }
 
   filterChampions(query) {
-    if (!this.data) return;
+    if (!this.champions) return;
 
-    let filtered = this.data.champions;
+    let filtered = this.champions;
 
-    // Filter by region or faction
     if (this.activeFilter !== 'all') {
-      filtered = filtered.filter(c => 
+      filtered = filtered.filter(c =>
         (c.region && c.region.toLowerCase() === this.activeFilter.toLowerCase()) ||
         (c.faction && c.faction.toLowerCase() === this.activeFilter.toLowerCase())
       );
     }
 
-    // Filter by search query
     if (query.trim()) {
       const q = query.toLowerCase();
       filtered = filtered.filter(c =>
@@ -67,16 +67,7 @@ export class ChampionGrid {
     }
 
     filtered.sort((a, b) => a.name.localeCompare(b.name));
-
     this.render(filtered);
-    this.observeCards();
-  }
-
-  shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
   }
 
   render(champions) {
@@ -92,36 +83,7 @@ export class ChampionGrid {
       return;
     }
 
-    this.container.innerHTML = champions.map(champion => `
-      <a href="champion.html?id=${champion.id}" class="champion-card" data-id="${champion.id}">
-        <img 
-          src="${champion.image}" 
-          alt="${champion.name}" 
-          class="champion-card__image"
-          loading="lazy"
-          onerror="this.src='img/champions/perfilMaximo.png'"
-        >
-        <div class="champion-card__overlay">
-          <div class="champion-card__name">${champion.name}</div>
-          <div class="champion-card__title">${champion.title}</div>
-        </div>
-        <div class="champion-card__border"></div>
-      </a>
-    `).join('');
-  }
-
-  observeCards() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    this.container.querySelectorAll('.champion-card').forEach(card => {
-      observer.observe(card);
-    });
+    this.container.innerHTML = champions.map(c => championCard(c)).join('');
+    observeCards(this.container);
   }
 }

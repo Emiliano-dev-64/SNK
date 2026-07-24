@@ -1,0 +1,82 @@
+{
+  "factions": [
+    {
+      "id": "filo-maldito",
+      "name": "Filo Maldito",
+      "title": "Una tripulación peligrosa",
+      "lore": "Los Piratas Filo Maldito nacieron en el Archipiélago Cozia, cuando cuatro desconocidos cruzaron sus caminos en la isla de Cesila. Splinter, Caelis, Nacho y Arthur unieron fuerzas para enfrentarse a un miembro de la tripulación Pierna Podrida, ayudando al pueblo a liberarse de su amenaza.\n\nTras la batalla, descubrieron que, pese a sus distintas historias y motivaciones, todos compartían un mismo objetivo: alcanzar el Grand Line. Convencidos de que juntos tendrían más posibilidades de lograrlo, formaron una tripulación y eligieron a Nacho como su capitán.\n\nA partir de ese momento comenzaron sus aventuras por el East Blue. En la isla Suqueza se unió Pipi, más tarde liberaron a los esclavos de Isla Placeres y derrotaron definitivamente a la tripulación Pierna Podrida, salvando a los habitantes de Isla Pierna Rota.\n\nCon el tiempo, el viaje los llevó nuevamente a la región de Cozia, donde la tripulación siguió creciendo con la incorporación de Máximo, un gyojin, y Giannis, un niño perteneciente a la tribu brazos largos.\n\nDesde entonces, los Piratas Filo Maldito continúan navegando juntos, persiguiendo sus propios sueños mientras avanzan paso a paso hacia el Grand Line.",
+      "icon": "img/logo OP dnd.png",
+      "image": "img/backgrounds/filoMalditoBG.png",
+      "heroImage": "img/backgrounds/filoMalditoBG.png",
+      "champions": [
+        "maximo-duque",
+        "nacho-d-castro",
+        "geronimo-splinter",
+        "caelis-skybrand",
+        "arthur-kane",
+        "pipi",
+        "giannis"
+      ],
+      "gallery": [
+        {
+          "src": "img/inicioBG.png",
+          "caption": "El barco de Filo Maldito."
+        }
+      ]
+    },
+    {
+      "id": "marina",
+      "name": "Marina",
+      "title": "La fuerza de la ley",
+      "lore": "La Marina es la mayor organización militar del mundo y el principal brazo armado del Gobierno Mundial. Su misión es mantener el orden, proteger a la población y perseguir a quienes amenacen la estabilidad de los mares, desde piratas y criminales hasta cualquier individuo considerado un enemigo de la justicia.\n\nCon bases repartidas por todos los océanos y una estructura jerárquica estricta, la Marina posee una presencia constante en casi todas las regiones del mundo. Sus soldados reciben entrenamiento militar desde temprana edad y dedican su vida a servir bajo los ideales de la justicia, aunque la interpretación de ese concepto puede variar enormemente según el oficial que la represente.\n\nGracias a sus inmensos recursos, su tecnología y el respaldo político del Gobierno Mundial, la Marina es considerada una de las fuerzas más poderosas jamás reunidas. Sus flotas patrullan rutas comerciales, responden a amenazas de gran escala y participan en operaciones militares capaces de cambiar el destino de naciones enteras.\n\nSin embargo, su enorme influencia también la ha convertido en una institución rodeada de controversias. Mientras muchos la ven como el último bastión que mantiene la paz, otros la consideran una organización dispuesta a sacrificar la libertad y la verdad en nombre de un orden impuesto. En un mundo dividido entre la justicia y la piratería, la Marina representa una autoridad cuya fuerza es tan incuestionable como las decisiones que toma.",
+      "icon": "img/icons/iconMarine.svg",
+      "image": "img/backgrounds/marineBG.png",
+      "heroImage": "img/backgrounds/marineBG.png",
+      "champions": [
+        "alexander",
+        "oberon",
+        "vik-tech",
+        "dorian",
+        "gin",
+        "zaraki",
+        "zephyr-skybrand"
+      ]
+    },
+    {
+      "id": "los-sin-nombre",
+      "name": "La Banda de Sin Nombre",
+      "title": "Los Sin Nombre",
+      "lore": "Actualmente desconocida...",
+      "icon": "img/icons/iconLosSinNombre.png",
+      "image": "img/backgrounds/losSinNombreBG.png",
+      "heroImage": "img/backgrounds/losSinNombreBG.png",
+      "champions": [
+        "sin-nombre",
+        "beto",
+        "greg",
+        "nico"
+      ]
+    },
+    {
+      "id": "los-pierna-podrida",
+      "name": "Los Pierna Podrida",
+      "title": "Los Pierna Podrida",
+      "lore": "Actualmente desconocida...",
+      "icon": "img/icons/iconPiernaP.png",
+      "image": "img/backgrounds/piernaPBG.png",
+      "heroImage": "img/backgrounds/piernaPBG.png",
+      "champions": [
+        "pierna-n",
+        "gruge",
+        "yowasa",
+        "luwen"
+      ],
+      "gallery": [
+        {
+          "src": "img/gallery/galleryBanderaPiernaP.png",
+          "caption": "La bandera de Los Pierna Podrida."
+        }
+      ]
+    }
+  ]
+}

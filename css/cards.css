@@ -96,6 +96,7 @@
 
 /* Champion Card Variant */
 .champion-card {
+  display: block;
   position: relative;
   aspect-ratio: 3 / 5;
   overflow: hidden;

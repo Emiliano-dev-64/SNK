@@ -3,6 +3,10 @@
 // ============================================
 
 import { getUrlParam } from './utils.js';
+import { getFactions, getChampions } from './data-cache.js';
+import { championCard } from './templates.js';
+import * as Lightbox from './lightbox.js';
+import { observeCards } from './animations.js';
 
 export class FactionDetail {
   constructor() {
@@ -13,9 +17,8 @@ export class FactionDetail {
 
   async init() {
     try {
-      const response = await fetch('data/champions.json');
-      const data = await response.json();
-      const faction = data.factions.find(f => f.id === this.factionId);
+      const [factions, champions] = await Promise.all([getFactions(), getChampions()]);
+      const faction = factions.find(f => f.id === this.factionId);
 
       if (!faction) {
         console.error('Faction not found:', this.factionId);
@@ -23,14 +26,14 @@ export class FactionDetail {
       }
 
       this.faction = faction;
-      this.data = data;
-      this.render(faction, data);
+      this.champions = champions;
+      this.render(faction, champions);
     } catch (error) {
       console.error('Error loading faction data:', error);
     }
   }
 
-  render(faction, data) {
+  render(faction, champions) {
     document.title = `${faction.name} - Shuen No Kokai`;
 
     // Hero
@@ -60,34 +63,13 @@ export class FactionDetail {
     // Champions
     const championsSection = document.querySelector('.region-champions');
     const championsGrid = document.querySelector('.region-champions__grid');
-    if (championsGrid && faction.champions && faction.champions.length > 0) {
-      const champions = faction.champions
-        .map(id => data.champions.find(c => c.id === id))
+    if (championsGrid && faction.champions?.length > 0) {
+      const factionChamps = faction.champions
+        .map(id => champions.find(c => c.id === id))
         .filter(Boolean);
 
-      championsGrid.innerHTML = champions.map(champ => `
-        <a href="champion.html?id=${champ.id}" class="champion-card">
-          <img src="${champ.image}" alt="${champ.name}" class="champion-card__image" loading="lazy">
-          <div class="champion-card__overlay">
-            <div class="champion-card__name">${champ.name}</div>
-            <div class="champion-card__title">${champ.title}</div>
-          </div>
-          <div class="champion-card__border"></div>
-        </a>
-      `).join('');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      championsGrid.querySelectorAll('.champion-card').forEach(card => {
-        observer.observe(card);
-      });
+      championsGrid.innerHTML = factionChamps.map(c => championCard(c)).join('');
+      observeCards(championsGrid);
     } else if (championsSection) {
       championsSection.style.display = 'none';
     }
@@ -95,7 +77,7 @@ export class FactionDetail {
     // Gallery
     const gallerySection = document.querySelector('.region-gallery');
     const galleryGrid = document.querySelector('.region-gallery__grid');
-    if (gallerySection && galleryGrid && faction.gallery && faction.gallery.length > 0) {
+    if (gallerySection && galleryGrid && faction.gallery?.length > 0) {
       galleryGrid.innerHTML = faction.gallery
         .map((item, i) => {
           const src = typeof item === 'string' ? item : item.src;
@@ -107,93 +89,9 @@ export class FactionDetail {
           </div>`;
         }).join('');
 
-      this.initLightbox(galleryGrid);
+      Lightbox.bindToGrid(galleryGrid, faction.gallery, '.region-gallery__item');
     } else if (gallerySection) {
       gallerySection.style.display = 'none';
     }
-  }
-
-  initLightbox(grid) {
-    const items = grid.querySelectorAll('.region-gallery__item');
-    if (items.length === 0) return;
-
-    this.lightboxImages = this.faction.gallery;
-    this.lightboxIndex = 0;
-
-    if (!document.querySelector('.lightbox')) {
-      const lightbox = document.createElement('div');
-      lightbox.className = 'lightbox';
-      lightbox.innerHTML = `
-        <button class="lightbox__close" aria-label="Cerrar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg></button>
-        <button class="lightbox__prev" aria-label="Anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="lightbox__next" aria-label="Siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></button>
-        <div class="lightbox__content">
-          <img class="lightbox__img" src="" alt="">
-          <div class="lightbox__counter"></div>
-        </div>
-      `;
-      document.body.appendChild(lightbox);
-
-      lightbox.querySelector('.lightbox__close').addEventListener('click', () => this.closeLightbox());
-      lightbox.querySelector('.lightbox__prev').addEventListener('click', () => this.navigateLightbox(-1));
-      lightbox.querySelector('.lightbox__next').addEventListener('click', () => this.navigateLightbox(1));
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) this.closeLightbox();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (!document.querySelector('.lightbox.active')) return;
-        if (e.key === 'Escape') this.closeLightbox();
-        if (e.key === 'ArrowLeft') this.navigateLightbox(-1);
-        if (e.key === 'ArrowRight') this.navigateLightbox(1);
-      });
-    }
-
-    items.forEach((item) => {
-      const openLightbox = () => {
-        this.lightboxIndex = parseInt(item.dataset.index);
-        this.openLightbox();
-      };
-      item.addEventListener('click', openLightbox);
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openLightbox();
-        }
-      });
-    });
-  }
-
-  openLightbox() {
-    const lightbox = document.querySelector('.lightbox');
-    if (!lightbox) return;
-    this.updateLightboxImage();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeLightbox() {
-    const lightbox = document.querySelector('.lightbox');
-    if (!lightbox) return;
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  navigateLightbox(direction) {
-    this.lightboxIndex += direction;
-    if (this.lightboxIndex < 0) this.lightboxIndex = this.lightboxImages.length - 1;
-    if (this.lightboxIndex >= this.lightboxImages.length) this.lightboxIndex = 0;
-    this.updateLightboxImage();
-  }
-
-  updateLightboxImage() {
-    const lightbox = document.querySelector('.lightbox');
-    if (!lightbox) return;
-    const item = this.lightboxImages[this.lightboxIndex];
-    const src = typeof item === 'string' ? item : item.src;
-    const caption = typeof item === 'string' ? '' : (item.caption || '');
-    lightbox.querySelector('.lightbox__img').src = src;
-    lightbox.querySelector('.lightbox__img').alt = caption || '';
-    lightbox.querySelector('.lightbox__counter').textContent =
-      `${this.lightboxIndex + 1} / ${this.lightboxImages.length}`;
   }
 }

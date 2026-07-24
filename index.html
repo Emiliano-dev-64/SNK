@@ -19,6 +19,13 @@
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/music-player.css">
+  <link rel="stylesheet" href="css/champions.css">
+  <link rel="stylesheet" href="css/champion-detail.css">
+  <link rel="stylesheet" href="css/world-map.css">
+  <link rel="stylesheet" href="css/region.css">
+  <link rel="stylesheet" href="css/wanted.css">
+  <link rel="stylesheet" href="css/shops.css">
+  <link rel="stylesheet" href="css/galeria.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="home">
@@ -130,55 +137,7 @@
         <p class="section-header__subtitle">Conoce a los héroes de nuestra campaña</p>
       </div>
 
-      <div class="champions-preview__grid">
-        <a href="champion.html?id=maximo-duque" class="champion-card fade-in-up">
-          <img src="img/champions/perfilMaximo.png" alt="Máximo Duque" class="champion-card__image" loading="lazy">
-          <div class="champion-card__overlay">
-            <div class="champion-card__name">Máximo Duque</div>
-            <div class="champion-card__title">El Tiburón de Dressrosa</div>
-          </div>
-          <div class="champion-card__border"></div>
-        </a>
-        <a href="champion.html?id=nacho-d-castro" class="champion-card fade-in-up stagger-1">
-          <img src="img/champions/perfilNacho.png" alt="Nacho D. Castro" class="champion-card__image" loading="lazy">
-          <div class="champion-card__overlay">
-            <div class="champion-card__name">Nacho D. Castro</div>
-            <div class="champion-card__title">El Espadachín de Tres Hojas</div>
-          </div>
-          <div class="champion-card__border"></div>
-        </a>
-        <a href="champion.html?id=geronimo-splinter" class="champion-card fade-in-up stagger-2">
-          <img src="img/champions/perfilSplinter.png" alt="Gerónimo Splinter" class="champion-card__image" loading="lazy">
-          <div class="champion-card__overlay">
-            <div class="champion-card__name">Gerónimo Splinter</div>
-            <div class="champion-card__title">El Mentor Sombrío</div>
-          </div>
-          <div class="champion-card__border"></div>
-        </a>
-        <a href="champion.html?id=caelis-skybrand" class="champion-card fade-in-up stagger-3">
-          <img src="img/champions/perfilCaelis.png" alt="Caelis Skybrand" class="champion-card__image" loading="lazy">
-          <div class="champion-card__overlay">
-            <div class="champion-card__name">Caelis Skybrand</div>
-            <div class="champion-card__title">El Nómada Celestial</div>
-          </div>
-          <div class="champion-card__border"></div>
-        </a>
-        <a href="champion.html?id=arthur-kane" class="champion-card fade-in-up stagger-4">
-          <img src="img/champions/perfilArthur.png" alt="Arthur Kane" class="champion-card__image" loading="lazy">
-          <div class="champion-card__overlay">
-            <div class="champion-card__name">Arthur Kane</div>
-            <div class="champion-card__title">El Corsario de Hierro</div>
-          </div>
-          <div class="champion-card__border"></div>
-        </a>
-        <a href="champion.html?id=pipi" class="champion-card fade-in-up stagger-5">
-          <img src="img/champions/perfilPipi.png" alt="Pipi" class="champion-card__image" loading="lazy">
-          <div class="champion-card__overlay">
-            <div class="champion-card__name">Pipi</div>
-            <div class="champion-card__title">El Corazón de la Tripulación</div>
-          </div>
-          <div class="champion-card__border"></div>
-        </a>
+      <div class="champions-preview__grid" id="homeChampionsGrid">
       </div>
 
       <div class="champions-preview__cta fade-in-up">
@@ -201,6 +160,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Music Player -->
   <div class="music-player">
@@ -239,8 +200,6 @@
     </div>
     <audio class="music-player__audio" loop></audio>
   </div>
-
-  </main>
 
   <!-- Scripts -->
   <script type="module" src="js/app.js"></script>

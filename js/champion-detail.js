@@ -3,10 +3,14 @@
 // ============================================
 
 import { getUrlParam } from './utils.js';
+import { getChampions, getRegions, getFactions } from './data-cache.js';
+import { championCard } from './templates.js';
+import * as Lightbox from './lightbox.js';
 
 export class ChampionDetail {
   constructor() {
     this.championId = getUrlParam('id');
+    this.champion = null;
     this.data = null;
 
     if (!this.championId) return;
@@ -15,10 +19,12 @@ export class ChampionDetail {
 
   async init() {
     try {
-      const response = await fetch('data/champions.json');
-      this.data = await response.json();
-      this.champion = this.data.champions.find(c => c.id === this.championId);
-      
+      const [champions, regions, factions] = await Promise.all([
+        getChampions(), getRegions(), getFactions()
+      ]);
+      this.data = { champions, regions, factions };
+      this.champion = champions.find(c => c.id === this.championId);
+
       if (!this.champion) {
         console.error('Champion not found:', this.championId);
         return;
@@ -35,17 +41,16 @@ export class ChampionDetail {
     const container = document.querySelector('.champion-detail');
     if (!container || !this.champion) return;
 
-    // Set page title
     document.title = `${this.champion.name} - Shuen No Kokai`;
 
-    // Render hero
+    // Hero
     const hero = container.querySelector('.champion-hero');
     if (hero) {
       hero.querySelector('.champion-hero__bg').src = this.champion.background;
       hero.querySelector('.champion-hero__bg').alt = this.champion.name;
       hero.querySelector('.champion-hero__name').textContent = this.champion.name;
       hero.querySelector('.champion-hero__tagline').textContent = this.champion.title;
-      
+
       if (this.champion.titleImage) {
         const titleImg = hero.querySelector('.champion-hero__title-img');
         if (titleImg) {
@@ -55,7 +60,7 @@ export class ChampionDetail {
       }
     }
 
-    // Render portrait
+    // Portrait
     const portrait = container.querySelector('.champion-portrait');
     if (portrait && this.champion.image) {
       portrait.src = this.champion.image;
@@ -63,7 +68,7 @@ export class ChampionDetail {
       this.initPortraitLightbox(portrait);
     }
 
-    // Render lore
+    // Lore
     const loreText = container.querySelector('.champion-lore__text');
     if (loreText) {
       loreText.innerHTML = this.champion.lore
@@ -72,22 +77,15 @@ export class ChampionDetail {
         .join('');
     }
 
-    // Render bio panel
     this.renderBioPanel();
-
-    // Render curiosities
     this.renderCuriosities();
-
-    // Render OST
     this.renderOst();
-
-    // Render related champions
     this.renderRelatedChampions();
 
-    // Render gallery
+    // Gallery
     const gallerySection = container.querySelector('.champion-gallery');
     const galleryGrid = container.querySelector('.champion-gallery__grid');
-    if (gallerySection && galleryGrid && this.champion.gallery && this.champion.gallery.length > 0) {
+    if (gallerySection && galleryGrid && this.champion.gallery?.length > 0) {
       galleryGrid.innerHTML = this.champion.gallery
         .map((item, i) => {
           const src = typeof item === 'string' ? item : item.src;
@@ -99,159 +97,10 @@ export class ChampionDetail {
           </div>`;
         }).join('');
 
-      this.initLightbox(galleryGrid);
+      Lightbox.bindToGrid(galleryGrid, this.champion.gallery, '.champion-gallery__item');
     } else if (gallerySection) {
       gallerySection.style.display = 'none';
     }
-  }
-
-  initLightbox(grid) {
-    const items = grid.querySelectorAll('.champion-gallery__item');
-    if (items.length === 0) return;
-
-    this.lightboxImages = this.champion.gallery;
-    this.lightboxIndex = 0;
-
-    if (!document.querySelector('.lightbox')) {
-      const lightbox = document.createElement('div');
-      lightbox.className = 'lightbox';
-      lightbox.innerHTML = `
-        <button class="lightbox__close" aria-label="Cerrar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg></button>
-        <button class="lightbox__prev" aria-label="Anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="lightbox__next" aria-label="Siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></button>
-        <div class="lightbox__content">
-          <img class="lightbox__img" src="" alt="">
-          <div class="lightbox__caption"></div>
-          <div class="lightbox__counter"></div>
-        </div>
-      `;
-      document.body.appendChild(lightbox);
-
-      lightbox.querySelector('.lightbox__close').addEventListener('click', () => this.closeLightbox());
-      lightbox.querySelector('.lightbox__prev').addEventListener('click', () => this.navigateLightbox(-1));
-      lightbox.querySelector('.lightbox__next').addEventListener('click', () => this.navigateLightbox(1));
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) this.closeLightbox();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (!document.querySelector('.lightbox.active')) return;
-        if (e.key === 'Escape') this.closeLightbox();
-        if (e.key === 'ArrowLeft') this.navigateLightbox(-1);
-        if (e.key === 'ArrowRight') this.navigateLightbox(1);
-      });
-    }
-
-    items.forEach((item) => {
-      const openLightbox = () => {
-        this.lightboxIndex = parseInt(item.dataset.index);
-        this.openLightbox();
-      };
-      item.addEventListener('click', openLightbox);
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openLightbox();
-        }
-      });
-    });
-  }
-
-  openLightbox() {
-    const lightbox = document.querySelector('.lightbox');
-    if (!lightbox) return;
-    this.updateLightboxImage();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeLightbox() {
-    const lightbox = document.querySelector('.lightbox');
-    if (!lightbox) return;
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  navigateLightbox(dir) {
-    this.lightboxIndex = (this.lightboxIndex + dir + this.lightboxImages.length) % this.lightboxImages.length;
-    this.updateLightboxImage();
-  }
-
-  updateLightboxImage() {
-    const lightbox = document.querySelector('.lightbox');
-    if (!lightbox) return;
-    const img = lightbox.querySelector('.lightbox__img');
-    const caption = lightbox.querySelector('.lightbox__caption');
-    const counter = lightbox.querySelector('.lightbox__counter');
-    const item = this.lightboxImages[this.lightboxIndex];
-    const src = typeof item === 'string' ? item : item.src;
-    const text = typeof item === 'string' ? '' : (item.caption || '');
-    img.src = src;
-    img.alt = text || `Galería ${this.lightboxIndex + 1}`;
-    caption.textContent = text;
-    caption.style.display = text ? 'block' : 'none';
-    counter.textContent = `${this.lightboxIndex + 1} / ${this.lightboxImages.length}`;
-  }
-
-  initPortraitLightbox(portrait) {
-    portrait.setAttribute('role', 'button');
-    portrait.setAttribute('tabindex', '0');
-    portrait.setAttribute('aria-label', `Ampliar imagen de ${this.champion.name}`);
-
-    if (!document.querySelector('.portrait-lightbox')) {
-      const lb = document.createElement('div');
-      lb.className = 'portrait-lightbox';
-      lb.setAttribute('role', 'dialog');
-      lb.setAttribute('aria-label', 'Imagen ampliada');
-      lb.setAttribute('aria-modal', 'true');
-      lb.innerHTML = `
-        <button class="portrait-lightbox__close" aria-label="Cerrar imagen"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg></button>
-        <img class="portrait-lightbox__img" src="" alt="">
-      `;
-      document.body.appendChild(lb);
-
-      lb.querySelector('.portrait-lightbox__close').addEventListener('click', () => this.closePortraitLightbox());
-      lb.addEventListener('click', (e) => {
-        if (e.target === lb) this.closePortraitLightbox();
-      });
-    }
-
-    const open = () => this.openPortraitLightbox();
-    portrait.addEventListener('click', open);
-    portrait.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        open();
-      }
-    });
-  }
-
-  openPortraitLightbox() {
-    const lb = document.querySelector('.portrait-lightbox');
-    if (!lb || !this.champion) return;
-    const img = lb.querySelector('.portrait-lightbox__img');
-    img.src = this.champion.image;
-    img.alt = this.champion.name;
-    lb.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    lb.querySelector('.portrait-lightbox__close').focus();
-
-    this._portraitLbKeyHandler = (e) => {
-      if (e.key === 'Escape') this.closePortraitLightbox();
-    };
-    document.addEventListener('keydown', this._portraitLbKeyHandler);
-  }
-
-  closePortraitLightbox() {
-    const lb = document.querySelector('.portrait-lightbox');
-    if (!lb) return;
-    lb.classList.remove('active');
-    document.body.style.overflow = '';
-    if (this._portraitLbKeyHandler) {
-      document.removeEventListener('keydown', this._portraitLbKeyHandler);
-      this._portraitLbKeyHandler = null;
-    }
-    const portrait = document.querySelector('.champion-portrait');
-    if (portrait) portrait.focus();
   }
 
   renderBioPanel() {
@@ -359,17 +208,14 @@ export class ChampionDetail {
 
     list.querySelectorAll('.champion-ost__play').forEach(btn => {
       btn.addEventListener('click', () => {
-        const file = btn.dataset.file;
-        const name = btn.dataset.name;
         document.dispatchEvent(new CustomEvent('music:play', {
-          detail: { file, name }
+          detail: { file: btn.dataset.file, name: btn.dataset.name }
         }));
       });
     });
 
-    const musicPlayer = document.querySelector('.music-player');
-    if (musicPlayer && musicPlayer.addTracks) {
-      musicPlayer.addTracks(tracks);
+    if (window.__musicPlayer?.addTracks) {
+      window.__musicPlayer.addTracks(tracks);
     }
   }
 
@@ -407,7 +253,7 @@ export class ChampionDetail {
 
     const champions = this.data.champions;
     const currentIndex = champions.findIndex(c => c.id === this.championId);
-    
+
     const prevChampion = currentIndex > 0 ? champions[currentIndex - 1] : champions[champions.length - 1];
     const nextChampion = currentIndex < champions.length - 1 ? champions[currentIndex + 1] : champions[0];
 
@@ -418,16 +264,82 @@ export class ChampionDetail {
 
     if (prevBtn && prevChampion) {
       prevBtn.addEventListener('click', () => {
-        window.location.href = `champion.html?id=${prevChampion.id}`;
+        document.dispatchEvent(new CustomEvent('spa:navigate', {
+          detail: { url: `champion.html?id=${prevChampion.id}` }
+        }));
       });
       if (prevLabel) prevLabel.textContent = prevChampion.name;
     }
 
     if (nextBtn && nextChampion) {
       nextBtn.addEventListener('click', () => {
-        window.location.href = `champion.html?id=${nextChampion.id}`;
+        document.dispatchEvent(new CustomEvent('spa:navigate', {
+          detail: { url: `champion.html?id=${nextChampion.id}` }
+        }));
       });
       if (nextLabel) nextLabel.textContent = nextChampion.name;
     }
+  }
+
+  initPortraitLightbox(portrait) {
+    portrait.setAttribute('role', 'button');
+    portrait.setAttribute('tabindex', '0');
+    portrait.setAttribute('aria-label', `Ampliar imagen de ${this.champion.name}`);
+
+    if (!document.querySelector('.portrait-lightbox')) {
+      const lb = document.createElement('div');
+      lb.className = 'portrait-lightbox';
+      lb.setAttribute('role', 'dialog');
+      lb.setAttribute('aria-label', 'Imagen ampliada');
+      lb.setAttribute('aria-modal', 'true');
+      lb.innerHTML = `
+        <button class="portrait-lightbox__close" aria-label="Cerrar imagen"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg></button>
+        <img class="portrait-lightbox__img" src="" alt="">
+      `;
+      document.body.appendChild(lb);
+
+      lb.querySelector('.portrait-lightbox__close').addEventListener('click', () => this.closePortraitLightbox());
+      lb.addEventListener('click', (e) => {
+        if (e.target === lb) this.closePortraitLightbox();
+      });
+    }
+
+    const open = () => this.openPortraitLightbox();
+    portrait.addEventListener('click', open);
+    portrait.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
+  }
+
+  openPortraitLightbox() {
+    const lb = document.querySelector('.portrait-lightbox');
+    if (!lb || !this.champion) return;
+    const img = lb.querySelector('.portrait-lightbox__img');
+    img.src = this.champion.image;
+    img.alt = this.champion.name;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.portrait-lightbox__close').focus();
+
+    this._portraitLbKeyHandler = (e) => {
+      if (e.key === 'Escape') this.closePortraitLightbox();
+    };
+    document.addEventListener('keydown', this._portraitLbKeyHandler);
+  }
+
+  closePortraitLightbox() {
+    const lb = document.querySelector('.portrait-lightbox');
+    if (!lb) return;
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    if (this._portraitLbKeyHandler) {
+      document.removeEventListener('keydown', this._portraitLbKeyHandler);
+      this._portraitLbKeyHandler = null;
+    }
+    const portrait = document.querySelector('.champion-portrait');
+    if (portrait) portrait.focus();
   }
 }

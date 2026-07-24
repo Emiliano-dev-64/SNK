@@ -1,0 +1,36 @@
+{
+  "shops": [
+    {
+      "id": "bazar",
+      "name": "Bazar",
+      "description": "El mercado general donde encontrarás todo tipo de provisiones y equipamiento básico.",
+      "image": "img/bazar.png",
+      "items": "img/listaBazar.png",
+      "color": "#C89B3C"
+    },
+    {
+      "id": "mercado-negro",
+      "name": "Mercado Negro",
+      "description": "El mercado clandestino donde se venden objetos prohibidos y raros. Ten cuidado.",
+      "image": "img/mercado.png",
+      "items": "img/listaMercado.png",
+      "color": "#E84057"
+    },
+    {
+      "id": "bar",
+      "name": "Bar",
+      "description": "La taberna donde los marineros descansan y comparten historias entre copas.",
+      "image": "img/bar.png",
+      "items": "img/listaBar.png",
+      "color": "#0AC8B9"
+    },
+    {
+      "id": "astillero",
+      "name": "Astillero",
+      "description": "Donde se construyen y reparan los barcos que surcarán los mares.",
+      "image": "img/astillero.png",
+      "items": "img/listaAstillero.png",
+      "color": "#9D6CD0"
+    }
+  ]
+}

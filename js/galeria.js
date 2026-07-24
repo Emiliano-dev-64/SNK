@@ -2,7 +2,7 @@
 // Galería - Categories & Image Viewer
 // ============================================
 
-class Galeria {
+export class Galeria {
   constructor() {
     this.data = null;
     this.viewer = null;
@@ -70,13 +70,17 @@ class Galeria {
     const catId = params.get('cat');
 
     if (!catId) {
-      window.location.href = 'galeria.html';
+      document.dispatchEvent(new CustomEvent('spa:navigate', {
+        detail: { url: 'galeria.html' }
+      }));
       return;
     }
 
     const category = this.data.categories.find(c => c.id === catId);
     if (!category) {
-      window.location.href = 'galeria.html';
+      document.dispatchEvent(new CustomEvent('spa:navigate', {
+        detail: { url: 'galeria.html' }
+      }));
       return;
     }
 
@@ -210,6 +214,3 @@ class Galeria {
     this.viewer.querySelector('.galeria-viewer__name').textContent = img.name;
   }
 }
-
-// Initialize
-new Galeria();

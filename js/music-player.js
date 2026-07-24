@@ -54,6 +54,8 @@ const CATEGORIES = {
   personaje: "Personajes"
 };
 
+const STORAGE_KEY = 'musicPlayer_state';
+
 export class MusicPlayer {
   constructor() {
     this.player = document.querySelector('.music-player');
@@ -77,6 +79,7 @@ export class MusicPlayer {
     this.activeFilter = 'all';
 
     this.init();
+    this.restoreState();
   }
 
   init() {
@@ -85,6 +88,10 @@ export class MusicPlayer {
     this.renderTrackList();
     this.bindEvents();
     this.bindMusicEvents();
+
+    window.addEventListener('beforeunload', () => {
+      this.saveState();
+    });
   }
 
   bindEvents() {
@@ -129,6 +136,8 @@ export class MusicPlayer {
       this.audio.addEventListener('ended', () => {
         if (!this.isRepeating) {
           this.next();
+        } else {
+          this.saveState();
         }
       });
     }
@@ -138,6 +147,47 @@ export class MusicPlayer {
     document.addEventListener('music:play', (e) => {
       this.playSpecificTrack(e.detail.file, e.detail.name);
     });
+  }
+
+  saveState() {
+    const state = {
+      currentTrack: this.currentTrack,
+      isPlaying: this.isPlaying,
+      isRepeating: this.isRepeating,
+      currentTime: this.audio ? this.audio.currentTime : 0
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {}
+  }
+
+  restoreState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const state = JSON.parse(raw);
+
+      if (state.isRepeating) {
+        this.isRepeating = true;
+        if (this.audio) this.audio.loop = true;
+      }
+
+      if (state.currentTrack) {
+        const track = this.allTracks.find(t => t.file === state.currentTrack.file);
+        if (track) {
+          this.currentTrack = track;
+          this.audio.src = track.file;
+          if (state.currentTime) this.audio.currentTime = state.currentTime;
+          this.updateUI();
+          if (state.isPlaying) {
+            this.audio.play().then(() => {
+              this.isPlaying = true;
+              this.updateUI();
+            }).catch(() => {});
+          }
+        }
+      }
+    } catch (e) {}
   }
 
   togglePanel() {
@@ -201,6 +251,7 @@ export class MusicPlayer {
     this.audio.play().catch(() => {});
     this.currentTrack = track;
     this.isPlaying = true;
+    this.saveState();
     this.updateUI();
   }
 
@@ -210,6 +261,7 @@ export class MusicPlayer {
     this.audio.play().catch(() => {});
     this.currentTrack = { file, name, category: 'personaje' };
     this.isPlaying = true;
+    this.saveState();
     this.updateUI();
   }
 
@@ -223,8 +275,10 @@ export class MusicPlayer {
         this.isPlaying = true;
       } else if (this.allTracks.length > 0) {
         this.playTrack(this.allTracks[0]);
+        return;
       }
     }
+    this.saveState();
     this.updateUI();
   }
 
@@ -255,6 +309,7 @@ export class MusicPlayer {
     if (this.audio) {
       this.audio.loop = this.isRepeating;
     }
+    this.saveState();
     this.updateUI();
   }
 

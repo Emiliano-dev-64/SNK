@@ -3,6 +3,8 @@
 // ============================================
 
 import { Modal } from './modal.js';
+import { getChampions } from './data-cache.js';
+import { observeCards } from './animations.js';
 
 export class WantedPage {
   constructor() {
@@ -15,12 +17,9 @@ export class WantedPage {
 
   async init() {
     try {
-      const response = await fetch('data/champions.json');
-      const data = await response.json();
-
-      const wantedChampions = data.champions.filter(c => c.wanted);
+      const champions = await getChampions();
+      const wantedChampions = champions.filter(c => c.wanted);
       this.render(wantedChampions);
-      this.observeCards();
     } catch (error) {
       console.error('Error loading wanted data:', error);
     }
@@ -59,6 +58,7 @@ export class WantedPage {
     }).join('');
 
     this.bindEvents();
+    observeCards(this.container);
   }
 
   bindEvents() {
@@ -80,36 +80,13 @@ export class WantedPage {
   }
 
   openModal(championId, imageUrl, championName) {
-    const modalContent = `
-      <img
-        src="${imageUrl}"
-        alt="Recompensa de ${championName}"
-        class="wanted-modal__image"
-      >
+    this.modal.open(`
+      <img src="${imageUrl}" alt="Recompensa de ${championName}" class="wanted-modal__image">
       <div class="wanted-modal__info">
-        <a href="champion.html?id=${championId}" class="wanted-modal__btn">
-          Ver Personaje
-        </a>
+        <a href="champion.html?id=${championId}" class="wanted-modal__btn">Ver Personaje</a>
       </div>
-    `;
-
-    this.modal.open(modalContent, {
+    `, {
       className: 'modal--wanted'
-    });
-  }
-
-  observeCards() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    this.container.querySelectorAll('.wanted-poster').forEach(poster => {
-      observer.observe(poster);
     });
   }
 }

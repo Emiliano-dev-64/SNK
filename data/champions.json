@@ -44,7 +44,10 @@
         }
       ],
       "music": [
-        { "name": "Tema de Máximo", "file": "music/characters/maximoOST.mp3" }
+        {
+          "name": "Tema de Máximo",
+          "file": "music/characters/maximoOST.mp3"
+        }
       ]
     },
     {
@@ -91,7 +94,10 @@
         }
       ],
       "music": [
-        { "name": "Tema de Nacho", "file": "music/characters/nachoOST.mp3" }
+        {
+          "name": "Tema de Nacho",
+          "file": "music/characters/nachoOST.mp3"
+        }
       ]
     },
     {
@@ -113,9 +119,7 @@
         "Busca al Dr. Vegapunk para cumplir el sueño de su maestro."
       ],
       "wanted": "",
-      "relatedChampions": [
-        {}
-      ],
+      "relatedChampions": [],
       "gallery": [
         {
           "src": "img/gallery/galleryFormaMonsterSplinter.png",
@@ -127,7 +131,10 @@
         }
       ],
       "music": [
-        { "name": "Tema de Splinter", "file": "music/characters/splinterOST.mp3" }
+        {
+          "name": "Tema de Splinter",
+          "file": "music/characters/splinterOST.mp3"
+        }
       ]
     },
     {
@@ -178,7 +185,10 @@
         }
       ],
       "music": [
-        { "name": "Tema de Caelis", "file": "music/characters/caelisOST.mp3" }
+        {
+          "name": "Tema de Caelis",
+          "file": "music/characters/caelisOST.mp3"
+        }
       ]
     },
     {
@@ -200,12 +210,13 @@
         "Entrenó con Scopper Gaban y el doctor Crocus."
       ],
       "wanted": null,
-      "relatedChampions": [
-        {}
-      ],
+      "relatedChampions": [],
       "gallery": [],
       "music": [
-        { "name": "Tema de Arthur", "file": "music/characters/arthurOST.mp3" }
+        {
+          "name": "Tema de Arthur",
+          "file": "music/characters/arthurOST.mp3"
+        }
       ]
     },
     {
@@ -227,9 +238,7 @@
         "Hábil reparador de barcos, aunque no le gusta pelear."
       ],
       "wanted": null,
-      "relatedChampions": [
-        {}
-      ],
+      "relatedChampions": [],
       "gallery": []
     },
     {
@@ -273,7 +282,7 @@
       "faction": "los-pierna-podrida",
       "region": "archipielago-cozia",
       "race": "Humano",
-      "wanted": "img//wanted/wantedPiernaN.png",
+      "wanted": "img/wanted/wantedPiernaN.png",
       "relatedChampions": [
         {
           "id": "gruge",
@@ -371,7 +380,7 @@
       "lore": "Beto nació en los barrios bajos de Cozia. Allí fue ganando mala reputación a causa de sus malas compañías y toma de decisiones.\n\nOtto, su mejor amigo, siempre lo sacaba de los problemas, a pesar de que eso significara hundirse con él.",
       "faction": "los-sin-nombre",
       "region": "cozia",
-      "race": "race",
+      "race": "Humano",
       "wanted": null,
       "relatedChampions": [
         {
@@ -477,9 +486,7 @@
       "region": "",
       "race": "Brazos largos",
       "wanted": null,
-      "relatedChampions": [
-        {}
-      ],
+      "relatedChampions": [],
       "gallery": [
         {
           "src": "img/gallery/galleryTako.png",
@@ -648,9 +655,7 @@
       "region": "archipielago-cozia",
       "race": "Humano",
       "wanted": null,
-      "relatedChampions": [
-        {}
-      ],
+      "relatedChampions": [],
       "gallery": [],
       "age": "35",
       "birthplace": "Isla Hueso",
@@ -678,7 +683,7 @@
         "Es el hermano mayor adoptivo de la sirena Madame Shyarly.",
         "Sus dientes se regeneran al instante si se caen."
       ],
-      "wanted": "img//wanted/wantedArlong.png",
+      "wanted": "img/wanted/wantedArlong.png",
       "relatedChampions": [],
       "gallery": []
     },
@@ -948,280 +953,6 @@
         }
       ],
       "gallery": []
-    }
-  ],
-  "regions": [
-    {
-      "id": "mundo",
-      "name": "El Mundo de Shuen No Kokai",
-      "title": "El Grand Line y sus mares circundantes",
-      "lore": "El Grand Line y sus mares circundantes, un mundo de piratas, aventuras y misterios por descubrir.",
-      "icon": "img/mapamundibg.jpg",
-      "image": "img/mapamundibg.jpg",
-      "champions": [],
-      "locations": [
-        {
-          "id": "cozia",
-          "name": "Cozia",
-          "description": "Una región misteriosa del Grand Line, hogar de ciudades portuarias y archipiélagos peligrosos.",
-          "x": 59.5,
-          "y": 13.5,
-          "image": "img/Cozia.jpg",
-          "linkedPage": "region.html?id=cozia"
-        },
-        {
-          "id": "archipielago-cozia",
-          "name": "Archipiélago Cozia",
-          "description": "Un conjunto de islas interconectadas por corrientes peligrosas y criaturas marinas.",
-          "x": 54.8,
-          "y": 14,
-          "image": "img/mapainicio.png",
-          "linkedPage": "region.html?id=archipielago-cozia"
-        },
-        {
-          "id": "filo-maldito",
-          "name": "Filo Maldito",
-          "description": "Una región peligrosa conocida por sus espadachines y sus duelos legendarios.",
-          "x": 62,
-          "y": 18,
-          "image": "img/Cozia.jpg",
-          "linkedPage": "faction.html?id=filo-maldito"
-        }
-      ]
-    },
-    {
-      "id": "cozia",
-      "name": "Cozia",
-      "title": "Ciudades portuarias y naturaleza salvaje",
-      "lore": "Ubicada en las tranquilas aguas del East Blue, Cozia es una isla conocida por su gran ciudad costera y sus extensas playas. Hoy en día, es considerada una nación próspera y en constante crecimiento, donde el comercio marítimo y la tranquilidad han vuelto a formar parte de la vida cotidiana.\n\nSin embargo, su historia estuvo marcada por una de las guerras más devastadoras que haya vivido la isla.\n\nAños atrás, Cozia fue invadida por el Reino de Germa 66, un ejército capaz de cruzar mares enteros para librar guerras en nombre de quienes pudieran pagarlas. El conflicto llegó sin previo aviso y transformó la isla en un campo de batalla. Sus calles quedaron destruidas, innumerables familias fueron separadas y el futuro de la nación pareció desvanecerse entre el humo y las llamas.\n\nCon el paso del tiempo, la guerra finalmente llegó a su fin.\n\nLos habitantes que lograron sobrevivir comenzaron la difícil tarea de reconstruir su hogar. Poco a poco, las ciudades fueron levantándose nuevamente, los puertos recuperaron su actividad y las rutas comerciales volvieron a llenarse de barcos procedentes de todo el East Blue. Lo que alguna vez fueron ruinas terminó convirtiéndose, una vez más, en una isla llena de vida.",
-      "icon": "img/world/cozia/cozia.png",
-      "image": "img/world/cozia/cozia.png",
-      "heroImage": "img/world/cozia/cozia.png",
-      "champions": [
-        "sin-nombre",
-        "beto",
-        "greg",
-        "nico",
-        "sabras",
-        "ushio"
-      ],
-      "locations": [
-        {
-          "id": "cozia-pais",
-          "name": "Cozia",
-          "description": "El país dominado por los peces gordos del comercio y la política, donde la ley se negocia con oro y las alianzas cambian con el viento.",
-          "image": "img/world/cozia/coziaMapa.png"
-        },
-        {
-          "id": "cozia-ciudad",
-          "name": "Cozia (Ciudad)",
-          "description": "La ciudad principal de la región, un puerto bullicioso lleno de comerciantes y aventureros.",
-          "image": "img/world/cozia/coziaCiudad.png"
-        },
-        {
-          "id": "villa-marea",
-          "name": "Villa Marea",
-          "description": "Un pueblo costero conocido por sus puestas de sol y su gente amable.",
-          "image": "img/world/cozia/coziaVillamarea.png"
-        },
-        {
-          "id": "byco",
-          "name": "Byco",
-          "description": "Una fortaleza rocosa en el borde de la región, hogar de guerreros experimentados.",
-          "image": "img/world/cozia/coziaByco.png"
-        },
-        {
-          "id": "gelditus",
-          "name": "Gelditus",
-          "description": "Una ciudad minera donde el oro y los secretos se esconden bajo tierra.",
-          "image": "img/world/cozia/coziaGelditus.png"
-        },
-        {
-          "id": "pueblo-ronquido",
-          "name": "Pueblo Ronquido",
-          "description": "Un pueblo tranquilo donde los habitantes duermen más de lo que despiertan.",
-          "image": "img/world/cozia/coziaPuebloR.png"
-        },
-        {
-          "id": "trefico",
-          "name": "Trefico",
-          "description": "Un cruce de caminos mercantil donde convergen rutas de todo el Grand Line.",
-          "image": "img/world/cozia/coziaTrefico.png"
-        }
-      ]
-    },
-    {
-      "id": "archipielago-cozia",
-      "name": "Archipiélago Cozia",
-      "title": "Islas interconectadas por corrientes peligrosas",
-      "lore": "Al oeste de Cozia se encuentra el Archipiélago Cozia, una región formada por numerosas islas de distintos tamaños, cada una con paisajes y características únicas. Desde selvas tropicales y playas de arena blanca hasta islotes rocosos y pequeños pueblos pesqueros, ninguna isla es igual a otra.\n\nGracias a su cercanía con Cozia, el archipiélago mantiene una importante actividad comercial y marítima, con embarcaciones que recorren constantemente sus aguas conectando las distintas comunidades.\n\nLa gran diversidad de sus islas ha convertido al Archipiélago Cozia en una de las regiones más singulares del East Blue, donde cada isla posee su propia identidad, costumbres y forma de vida.",
-      "icon": "img/world/archipielagoCozia/archipielagoCozia.png",
-      "image": "img/world/archipielagoCozia/archipielagoCozia.png",
-      "heroImage": "img/world/archipielagoCozia/archipielagoCozia.png",
-      "champions": [
-        "galdwin-skripeo",
-        "joana-skripeo",
-        "tunu-baro",
-        "pierna-n"
-      ],
-      "locations": [
-        {
-          "id": "archMapa",
-          "name": "Mapa del archipiélago",
-          "description": "La isla más grande del archipiélago, con selvas densas y ruinas antiguas.",
-          "image": "img/world/archipielagoCozia/archipielagoCoziaMapa.png"
-        },
-        {
-          "id": "cesila",
-          "name": "Cesila",
-          "description": "La isla más grande del archipiélago, con selvas densas y ruinas antiguas.",
-          "image": "img/world/archipielagoCozia/archCesila.png"
-        },
-        {
-          "id": "hueso",
-          "name": "Hueso",
-          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
-          "image": "img/world/archipielagoCozia/archHueso.png"
-        },
-        {
-          "id": "suqueza",
-          "name": "Suqueza",
-          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
-          "image": "img/world/archipielagoCozia/archSuqueza.png"
-        },
-        {
-          "id": "placeres",
-          "name": "Placeres",
-          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
-          "image": "img/world/archipielagoCozia/archPlaceres.png"
-        },
-        {
-          "id": "pico-verde",
-          "name": "Pico Verde",
-          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
-          "image": "img/world/archipielagoCozia/archPicoVerde.png"
-        },
-        {
-          "id": "pierna-rota",
-          "name": "Pierna Rota",
-          "description": "Una isla rodeada de arrecifes de coral coloridos y aguas cristalinas.",
-          "image": "img/world/archipielagoCozia/archPiernaRota.png"
-        }
-      ]
-    }
-  ],
-  "shops": [
-    {
-      "id": "bazar",
-      "name": "Bazar",
-      "description": "El mercado general donde encontrarás todo tipo de provisiones y equipamiento básico.",
-      "image": "img/bazar.png",
-      "items": "img/listaBazar.png",
-      "color": "#C89B3C"
-    },
-    {
-      "id": "mercado-negro",
-      "name": "Mercado Negro",
-      "description": "El mercado clandestino donde se venden objetos prohibidos y raros. Ten cuidado.",
-      "image": "img/mercado.png",
-      "items": "img/listaMercado.png",
-      "color": "#E84057"
-    },
-    {
-      "id": "bar",
-      "name": "Bar",
-      "description": "La taberna donde los marineros descansan y comparten historias entre copas.",
-      "image": "img/bar.png",
-      "items": "img/listaBar.png",
-      "color": "#0AC8B9"
-    },
-    {
-      "id": "astillero",
-      "name": "Astillero",
-      "description": "Donde se construyen y reparan los barcos que surcarán los mares.",
-      "image": "img/astillero.png",
-      "items": "img/listaAstillero.png",
-      "color": "#9D6CD0"
-    }
-  ],
-  "factions": [
-    {
-      "id": "filo-maldito",
-      "name": "Filo Maldito",
-      "title": "Una tripulación peligrosa",
-      "lore": "Los Piratas Filo Maldito nacieron en el Archipiélago Cozia, cuando cuatro desconocidos cruzaron sus caminos en la isla de Cesila. Splinter, Caelis, Nacho y Arthur unieron fuerzas para enfrentarse a un miembro de la tripulación Pierna Podrida, ayudando al pueblo a liberarse de su amenaza.\n\nTras la batalla, descubrieron que, pese a sus distintas historias y motivaciones, todos compartían un mismo objetivo: alcanzar el Grand Line. Convencidos de que juntos tendrían más posibilidades de lograrlo, formaron una tripulación y eligieron a Nacho como su capitán.\n\nA partir de ese momento comenzaron sus aventuras por el East Blue. En la isla Suqueza se unió Pipi, más tarde liberaron a los esclavos de Isla Placeres y derrotaron definitivamente a la tripulación Pierna Podrida, salvando a los habitantes de Isla Pierna Rota.\n\nCon el tiempo, el viaje los llevó nuevamente a la región de Cozia, donde la tripulación siguió creciendo con la incorporación de Máximo, un gyojin, y Giannis, un niño perteneciente a la tribu brazos largos.\n\nDesde entonces, los Piratas Filo Maldito continúan navegando juntos, persiguiendo sus propios sueños mientras avanzan paso a paso hacia el Grand Line.",
-      "icon": "img/logo OP dnd.png",
-      "image": "img/backgrounds/filoMalditoBG.png",
-      "heroImage": "img/backgrounds/filoMalditoBG.png",
-      "champions": [
-        "maximo-duque",
-        "nacho-d-castro",
-        "geronimo-splinter",
-        "caelis-skybrand",
-        "arthur-kane",
-        "pipi",
-        "giannis"
-      ],
-      "gallery": [
-        {
-          "src": "img/inicioBG.png",
-          "caption": "El barco de Filo Maldito."
-        }
-      ]
-    },
-    {
-      "id": "marina",
-      "name": "Marina",
-      "title": "La fuerza de la ley",
-      "lore": "La Marina es la mayor organización militar del mundo y el principal brazo armado del Gobierno Mundial. Su misión es mantener el orden, proteger a la población y perseguir a quienes amenacen la estabilidad de los mares, desde piratas y criminales hasta cualquier individuo considerado un enemigo de la justicia.\n\nCon bases repartidas por todos los océanos y una estructura jerárquica estricta, la Marina posee una presencia constante en casi todas las regiones del mundo. Sus soldados reciben entrenamiento militar desde temprana edad y dedican su vida a servir bajo los ideales de la justicia, aunque la interpretación de ese concepto puede variar enormemente según el oficial que la represente.\n\nGracias a sus inmensos recursos, su tecnología y el respaldo político del Gobierno Mundial, la Marina es considerada una de las fuerzas más poderosas jamás reunidas. Sus flotas patrullan rutas comerciales, responden a amenazas de gran escala y participan en operaciones militares capaces de cambiar el destino de naciones enteras.\n\nSin embargo, su enorme influencia también la ha convertido en una institución rodeada de controversias. Mientras muchos la ven como el último bastión que mantiene la paz, otros la consideran una organización dispuesta a sacrificar la libertad y la verdad en nombre de un orden impuesto. En un mundo dividido entre la justicia y la piratería, la Marina representa una autoridad cuya fuerza es tan incuestionable como las decisiones que toma.",
-      "icon": "img/icons/iconMarine.svg",
-      "image": "img/backgrounds/marineBG.png",
-      "heroImage": "img/backgrounds/marineBG.png",
-      "champions": [
-        "alexander",
-        "oberon",
-        "vik-tech",
-        "dorian",
-        "gin",
-        "zaraki",
-        "zephyr-skybrand"
-      ]
-    },
-    {
-      "id": "los-sin-nombre",
-      "name": "La Banda de Sin Nombre",
-      "title": "Los Sin Nombre",
-      "lore": "Actualmente desconocida...",
-      "icon": "img/icons/iconLosSinNombre.png",
-      "image": "img/backgrounds/losSinNombreBG.png",
-      "heroImage": "img/backgrounds/losSinNombreBG.png",
-      "champions": [
-        "sin-nombre",
-        "beto",
-        "greg",
-        "nico"
-      ]
-    },
-    {
-      "id": "los-pierna-podrida",
-      "name": "Los Pierna Podrida",
-      "title": "Los Pierna Podrida",
-      "lore": "Actualmente desconocida...",
-      "icon": "img/icons/iconPiernaP.png",
-      "image": "img/backgrounds/piernaPBG.png",
-      "heroImage": "img/backgrounds/piernaPBG.png",
-      "champions": [
-        "pierna-n",
-        "gruge",
-        "yowasa",
-        "luwen"
-      ],
-      "gallery":[
-        {
-          "src": "img/gallery/galleryBanderaPiernaP.png",
-          "caption": "La bandera de Los Pierna Podrida."
-        }
-      ]
     }
   ]
 }

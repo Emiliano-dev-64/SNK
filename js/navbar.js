@@ -7,9 +7,9 @@ export function initNavbar() {
   const hamburger = document.querySelector('.navbar__hamburger');
   const mobileMenu = document.querySelector('.navbar__mobile-menu');
   
-  if (!navbar) return;
+  if (!navbar || navbar._initialized) return;
+  navbar._initialized = true;
 
-  // Scroll effect - solid background
   const handleScroll = () => {
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
@@ -19,9 +19,8 @@ export function initNavbar() {
   };
 
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial check
+  handleScroll();
 
-  // Hamburger toggle
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -29,7 +28,6 @@ export function initNavbar() {
       document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close mobile menu on link click
     mobileMenu.querySelectorAll('.navbar__mobile-link').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -38,7 +36,6 @@ export function initNavbar() {
       });
     });
 
-    // Submenu toggle
     mobileMenu.querySelectorAll('.navbar__mobile-submenu-toggle').forEach(toggle => {
       toggle.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -48,11 +45,31 @@ export function initNavbar() {
     });
   }
 
-  // Active link highlighting
+  updateNavbarActiveLinks();
+}
+
+export function updateNavbarActiveLinks() {
+  document.querySelectorAll('.navbar__link, .navbar__mobile-link, .navbar__mobile-submenu-link').forEach(link => {
+    link.classList.remove('active');
+  });
+
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.navbar__link, .navbar__mobile-link').forEach(link => {
+  const currentSearch = window.location.search;
+
+  document.querySelectorAll('.navbar__link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath) {
+    if (!href) return;
+    const linkPath = href.split('?')[0];
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+    }
+  });
+
+  document.querySelectorAll('.navbar__mobile-link, .navbar__mobile-submenu-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const linkPath = href.split('?')[0];
+    if (linkPath === currentPath) {
       link.classList.add('active');
     }
   });

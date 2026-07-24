@@ -43,6 +43,24 @@ export function initParticles() {
   }
 }
 
+/**
+ * Observe cards/elements and add .visible when they enter viewport.
+ * Reusable by any component that renders fade-in-up elements.
+ */
+export function observeCards(container, selector = '.fade-in-up, .champion-card, .wanted-poster') {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  container.querySelectorAll(selector).forEach(el => observer.observe(el));
+  return observer;
+}
+
 function initParallax() {
   const parallaxElements = document.querySelectorAll('.parallax');
   const ambientSections = document.querySelectorAll(

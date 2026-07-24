@@ -23,7 +23,7 @@ export class WorldMap {
     this.isDragging = false;
     this.startX = 0;
     this.startY = 0;
-    this.minScale = 0.5;
+    this.minScale = 1;
     this.maxScale = 4;
 
     this.init();
@@ -31,7 +31,11 @@ export class WorldMap {
 
   init() {
     this.bindEvents();
-    this.clampAndApply();
+    if (this.image.complete && this.image.naturalWidth > 0) {
+      this.clampAndApply();
+    } else {
+      this.image.addEventListener('load', () => this.clampAndApply());
+    }
   }
 
   bindEvents() {
