@@ -41,6 +41,10 @@
         {
           "src": "img/gallery/galleryMaximoColiseo.png",
           "caption": "Máximo en el Coliseo Corrida."
+        },
+        {
+          "src": "img/gallery/galleryUkelele.png",
+          "caption": "El ukelele de Máximo."
         }
       ],
       "music": [
@@ -133,7 +137,7 @@
       "music": [
         {
           "name": "Tema de Splinter",
-          "file": "music/characters/splinterOST.mp3"
+          "file": "music/characters/geronimoOST.mp3"
         }
       ]
     },

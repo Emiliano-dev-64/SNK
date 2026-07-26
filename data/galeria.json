@@ -6,10 +6,9 @@
       "description": "Puertos, mercados y asentamientos urbanos",
       "image": "img/world/cozia/coziaCiudad.png",
       "images": [
-        { "src": "img/world/cozia/coziaCiudad.png", "name": "Cozia (Ciudad)" },
-        { "src": "img/world/cozia/coziaTrefico.png", "name": "Trefico" },
-        { "src": "img/world/cozia/coziaPuebloR.png", "name": "Pueblo Ronquido" },
-        { "src": "img/world/cozia/coziaGelditus.png", "name": "Gelditus" }
+        { "src": "img/ambiental/ciudades/ciudadDia.png", "name": "Cozia (Ciudad)" },
+        { "src": "img/ambiental/ciudades/ciudadNoche.png", "name": "Cozia de noche (Ciudad)" },
+        { "src": "img/ambiental/ciudades/mercado.png", "name": "Mercado Negro" }
       ]
     },
     {

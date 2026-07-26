@@ -4,39 +4,35 @@
 
 const PLAYLIST = [
   { name: "Intro Record Keeper", file: "music/ostintro.mp3", category: "epica" },
-  { name: "Música de pelea 1", file: "music/ostfight1.mp3", category: "pelea" },
-  { name: "Música de pelea 2", file: "music/ostfight2.mp3", category: "pelea" },
-  { name: "Música de pelea 3", file: "music/ostfight3.mp3", category: "pelea" },
-  { name: "Música de pelea 4", file: "music/ostfight4.mp3", category: "pelea" },
-  { name: "Música de pelea 5", file: "music/ostfight5.mp3", category: "pelea" },
-  { name: "Música de pelea 6", file: "music/ostfight6.mp3", category: "pelea" },
-  { name: "Música de pelea 7", file: "music/ostfight7.mp3", category: "pelea" },
-  { name: "Música de pelea 8", file: "music/ostfight8.mp3", category: "pelea" },
-  { name: "Música de pelea 9", file: "music/ostfight9.mp3", category: "pelea" },
-  { name: "Música de pelea 10", file: "music/ostfight10.mp3", category: "pelea" },
-  { name: "Música de Boss", file: "music/ostbossfight.mp3", category: "pelea" },
-  { name: "Música de Boss 2", file: "music/ostbossfight2.mp3", category: "pelea" },
+  { name: "Entrada Epica", file: "music/ostEntradaEpica.mp3", category: "epica" },
+  { name: "Preparación pelea", file: "music/ostfight3.mp3", category: "pelea" },
+  { name: "Intro Record Keeper 2", file: "music/ostfight5.mp3", category: "pelea" },
+  { name: "Persecución", file: "music/ostPersecucion.mp3", category: "pelea" },
+  { name: "Situación Crítica", file: "music/ostSituacionCritica.mp3", category: "pelea" },
+  { name: "Entrada Boss", file: "music/ostEntradaBoss.mp3", category: "pelea" },
+  { name: "Pelea Normal", file: "music/ostPeleaNormal.mp3", category: "pelea" },
   { name: "Música de tensión 1", file: "music/osttenso1.mp3", category: "tension" },
-  { name: "Música de tensión 2", file: "music/osttenso2.mp3", category: "tension" },
-  { name: "Música de tensión 3", file: "music/osttenso3.mp3", category: "tension" },
-  { name: "Apareció la Marina!", file: "music/ostmarina.mp3", category: "tension" },
-  { name: "Escape", file: "music/ostescape.mp3", category: "tension" },
+  { name: "¡Apareció la Marina!", file: "music/ostmarina.mp3", category: "tension" },
+  { name: "Escape Chistoso", file: "music/ostEscapeChistoso.mp3", category: "tension" },
   { name: "Confuso", file: "music/ostconfuso.mp3", category: "tension" },
   { name: "Isla destruida", file: "music/ostisladestruida.mp3", category: "triste" },
   { name: "Tristeza", file: "music/osttriste.mp3", category: "triste" },
-  { name: "Pueblo 1", file: "music/ostpueblo1.mp3", category: "ambiental" },
-  { name: "Pueblo 2", file: "music/ostpueblo2.mp3", category: "ambiental" },
-  { name: "Pueblo 3", file: "music/ostpueblo3.mp3", category: "ambiental" },
-  { name: "Pueblo 4", file: "music/ostpueblo4.mp3", category: "ambiental" },
-  { name: "Pueblo 5", file: "music/ostpueblo5.mp3", category: "ambiental" },
-  { name: "Pueblo 6", file: "music/ostpueblo6.mp3", category: "ambiental" },
-  { name: "Despidiendo la Isla", file: "music/ostisladespedida.mp3", category: "triste" },
+  { name: "Musica Chill", file: "music/ostpueblo1.mp3", category: "ambiental" },
+  { name: "Pueblo Alegre", file: "music/ostpueblo3.mp3", category: "ambiental" },
+  { name: "Victoria", file: "music/ostpueblo4.mp3", category: "ambiental" },
   { name: "Tienda", file: "music/osttienda.mp3", category: "ambiental" },
-  { name: "Victoria", file: "music/ostvictoria.mp3", category: "epica" },
-  { name: "Navegando 1", file: "music/ostnav1.mp3", category: "ambiental" },
-  { name: "Navegando 2", file: "music/ostnav2.mp3", category: "ambiental" },
-  { name: "Navegando 3", file: "music/ostnav3.mp3", category: "ambiental" },
-  { name: "Navegando 4", file: "music/ostnav4.mp3", category: "ambiental" },
+  { name: "Musica Chill 2", file: "music/ostvictoria.mp3", category: "epica" },
+  { name: "Empieza el viaje", file: "music/ostnav3.mp3", category: "ambiental" },
+  { name: "Navegando", file: "music/ostnav4.mp3", category: "ambiental" },
+  { name: "Pelea Intensa", file: "music/ostPeleaIntensa.mp3", category: "ambiental" },
+  { name: "Pelea Casual", file: "music/ostPeleaCasual.mp3", category: "ambiental" },
+  { name: "Pelea", file: "music/ostPelea.mp3", category: "ambiental" },
+  { name: "Splinter Nos Salva", file: "music/ostSplinterNosSalva.mp3", category: "ambiental" },
+  { name: "Entrada Boss 2", file: "music/ostEntradaBoss2.mp3", category: "ambiental" },
+  { name: "Ventaja", file: "music/ostVentaja.mp3", category: "ambiental" },
+  { name: "Charla NPC cool", file: "music/ostNPC.mp3", category: "ambiental" },
+  { name: "Emboscada", file: "music/ostEmboscada.mp3", category: "ambiental" },
+  { name: "PeleaImportante", file: "music/ostPeleaImportante.mp3", category: "ambiental" },
   { name: "Tema de Máximo", file: "music/characters/maximoOST.mp3", category: "personaje" },
   { name: "Tema de Nacho", file: "music/characters/nachoOST.mp3", category: "personaje" },
   { name: "Tema de Splinter", file: "music/characters/geronimoOST.mp3", category: "personaje" },
@@ -71,12 +67,20 @@ export class MusicPlayer {
     this.nextBtn = this.player.querySelector('.music-player__btn--next');
     this.repeatBtn = this.player.querySelector('.music-player__btn--repeat');
     this.nowName = this.player.querySelector('.music-player__now-name');
+    this.volumeBtn = this.player.querySelector('.music-player__btn--volume');
+    this.volumeSlider = this.player.querySelector('.music-player__volume-slider');
+    this.progressBar = this.player.querySelector('.music-player__progress');
+    this.progressFill = this.player.querySelector('.music-player__progress-fill');
+    this.timeCurrent = this.player.querySelector('.music-player__time-current');
+    this.timeTotal = this.player.querySelector('.music-player__time-total');
 
     this.allTracks = [...PLAYLIST];
     this.currentTrack = null;
     this.isPlaying = false;
     this.isRepeating = false;
     this.activeFilter = 'all';
+    this.volume = 1;
+    this.previousVolume = 1;
 
     this.init();
     this.restoreState();
@@ -88,6 +92,9 @@ export class MusicPlayer {
     this.renderTrackList();
     this.bindEvents();
     this.bindMusicEvents();
+    this.bindVolumeEvents();
+    this.bindProgressEvents();
+    this.updateVolumeIcon();
 
     window.addEventListener('beforeunload', () => {
       this.saveState();
@@ -149,12 +156,94 @@ export class MusicPlayer {
     });
   }
 
+  bindVolumeEvents() {
+    if (this.volumeBtn) {
+      this.volumeBtn.addEventListener('click', () => this.toggleMute());
+    }
+
+    if (this.volumeSlider) {
+      this.volumeSlider.addEventListener('input', () => {
+        this.setVolume(parseFloat(this.volumeSlider.value));
+      });
+    }
+  }
+
+  bindProgressEvents() {
+    if (this.progressBar) {
+      this.progressBar.addEventListener('click', (e) => this.seekTo(e));
+    }
+
+    if (this.audio) {
+      this.audio.addEventListener('timeupdate', () => this.updateProgress());
+      this.audio.addEventListener('loadedmetadata', () => this.updateProgress());
+    }
+  }
+
+  seekTo(e) {
+    if (!this.audio || !this.audio.duration) return;
+    const rect = this.progressBar.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    this.audio.currentTime = ratio * this.audio.duration;
+    this.updateProgress();
+    this.saveState();
+  }
+
+  updateProgress() {
+    if (!this.audio) return;
+    const current = this.audio.currentTime || 0;
+    const duration = this.audio.duration || 0;
+    const pct = duration > 0 ? (current / duration) * 100 : 0;
+
+    if (this.progressFill) this.progressFill.style.width = pct + '%';
+    if (this.timeCurrent) this.timeCurrent.textContent = this.formatTime(current);
+    if (this.timeTotal) this.timeTotal.textContent = this.formatTime(duration);
+  }
+
+  formatTime(sec) {
+    if (!sec || !isFinite(sec)) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  setVolume(value) {
+    this.volume = Math.max(0, Math.min(1, value));
+    if (this.audio) this.audio.volume = this.volume;
+    if (this.volume > 0) this.previousVolume = this.volume;
+    this.saveState();
+    this.updateVolumeIcon();
+  }
+
+  toggleMute() {
+    if (this.volume > 0) {
+      this.previousVolume = this.volume;
+      this.setVolume(0);
+    } else {
+      this.setVolume(this.previousVolume || 1);
+    }
+  }
+
+  updateVolumeIcon() {
+    if (!this.volumeBtn) return;
+    let svg;
+    if (this.volume < 0.01) {
+      svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
+    } else if (this.volume < 0.5) {
+      svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+    } else {
+      svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+    }
+    this.volumeBtn.innerHTML = svg;
+    this.volumeBtn.setAttribute('aria-label', this.volume < 0.01 ? 'Activar sonido' : 'Silenciar');
+  }
+
   saveState() {
     const state = {
       currentTrack: this.currentTrack,
       isPlaying: this.isPlaying,
       isRepeating: this.isRepeating,
-      currentTime: this.audio ? this.audio.currentTime : 0
+      currentTime: this.audio ? this.audio.currentTime : 0,
+      volume: this.volume
     };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
@@ -166,6 +255,14 @@ export class MusicPlayer {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
       const state = JSON.parse(raw);
+
+      if (state.volume !== undefined) {
+        this.volume = state.volume;
+        this.previousVolume = state.volume > 0 ? state.volume : 1;
+        if (this.audio) this.audio.volume = this.volume;
+        if (this.volumeSlider) this.volumeSlider.value = this.volume;
+        this.updateVolumeIcon();
+      }
 
       if (state.isRepeating) {
         this.isRepeating = true;
@@ -315,7 +412,9 @@ export class MusicPlayer {
 
   addTracks(tracks) {
     tracks.forEach(track => {
-      this.allTracks.push({ ...track, category: 'personaje' });
+      if (!this.allTracks.some(t => t.file === track.file)) {
+        this.allTracks.push({ ...track, category: 'personaje' });
+      }
     });
     this.renderTrackList();
   }
@@ -335,6 +434,10 @@ export class MusicPlayer {
     if (this.nowName) {
       this.nowName.textContent = this.currentTrack ? this.currentTrack.name : '-';
     }
+
+    if (this.volumeSlider) this.volumeSlider.value = this.volume;
+    this.updateVolumeIcon();
+    this.updateProgress();
 
     this.renderTrackList();
   }

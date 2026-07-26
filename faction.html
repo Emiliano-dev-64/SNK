@@ -126,15 +126,26 @@
     <div class="music-player__bar">
       <div class="music-player__now">
         <span class="music-player__now-label">Reproduciendo</span>
-        <span class="music-player__now-name">-</span>
-      </div>
-      <div class="music-player__controls">
+          <span class="music-player__now-name">-</span>
+        </div>
+        <div class="music-player__controls">
         <button class="music-player__btn music-player__btn--prev" aria-label="Anterior"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
         <button class="music-player__btn music-player__btn--play" aria-label="Reproducir"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
         <button class="music-player__btn music-player__btn--next" aria-label="Siguiente"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
         <button class="music-player__btn music-player__btn--repeat" aria-label="Repetir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
       </div>
       <button class="music-player__expand" aria-label="Abrir biblioteca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
+    </div>
+    <div class="music-player__volume-row">
+      <div class="music-player__duration">
+        <span class="music-player__time music-player__time-current">0:00</span>
+        <div class="music-player__progress"><div class="music-player__progress-fill"></div></div>
+        <span class="music-player__time music-player__time-total">0:00</span>
+      </div>
+      <div class="music-player__volume">
+        <button class="music-player__btn music-player__btn--volume" aria-label="Silenciar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+        <input type="range" class="music-player__volume-slider" min="0" max="1" step="0.01" value="1">
+      </div>
     </div>
     <audio class="music-player__audio" loop></audio>
   </div>
