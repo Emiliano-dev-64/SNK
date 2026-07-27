@@ -45,6 +45,10 @@
         {
           "src": "img/gallery/galleryUkelele.png",
           "caption": "El ukelele de Máximo."
+        },
+        {
+          "src": "img/gallery/galleryMaximoJaula.png",
+          "caption": "Máximo como esclavo en Cozia."
         }
       ],
       "music": [
@@ -123,7 +127,12 @@
         "Busca al Dr. Vegapunk para cumplir el sueño de su maestro."
       ],
       "wanted": "",
-      "relatedChampions": [],
+      "relatedChampions": [
+        {
+          "id": "martin",
+          "relation": "Padre adoptivo"
+        }
+      ],
       "gallery": [
         {
           "src": "img/gallery/galleryFormaMonsterSplinter.png",
@@ -214,8 +223,18 @@
         "Entrenó con Scopper Gaban y el doctor Crocus."
       ],
       "wanted": null,
-      "relatedChampions": [],
-      "gallery": [],
+      "relatedChampions": [
+        {
+          "id": "joan",
+          "relation": "Hermano mayor"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "img/gallery/galleryArthur.png",
+          "caption": "Arthur en brazos de su hermano Joan"
+        }
+      ],
       "music": [
         {
           "name": "Tema de Arthur",
@@ -265,6 +284,10 @@
         {
           "id": "caelis-skybrand",
           "relation": "Discípulo"
+        },
+        {
+          "id": "honk-solo",
+          "relation": "Amigo"
         }
       ],
       "gallery": [],
@@ -957,6 +980,109 @@
         }
       ],
       "gallery": []
+    },
+    {
+      "id": "martin",
+      "name": "Martin P. Disalvo",
+      "title": "Ndeah",
+      "icon": "img/icons/iconMartinP.png",
+      "image": "img/champions/perfilMartinP.png",
+      "background": "img/backgrounds/martinPBG.png",
+      "lore":"Actualmente desconocida...",
+      "faction": "",
+      "region": "",
+      "race": "Humano",
+      "age": "",
+      "birthplace": "",
+      "curiosities": [
+        "Le encanta la polenta.",
+        "Ganó 3 Picantes de Oro en ciencias.",
+        "Su muletilla es \"Nashe\"."
+      ],
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "geronimo-splinter",
+          "relation": "Hijo adoptivo"
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "id": "ue-bon",
+      "name": "Ue Bon",
+      "title": "El Cobarde",
+      "icon": "img/icons/iconUeBon.png",
+      "image": "img/champions/perfilUeBon.png",
+      "background": "img/backgrounds/ueBonBG.png",
+      "lore":"Actualmente desconocida...",
+      "faction": "",
+      "region": "cozia",
+      "race": "Huevo",
+      "age": "",
+      "birthplace": "Cozia",
+      "curiosities": [
+        "No le gusta que le digan \"huevo\"."
+      ],
+      "wanted": null,
+      "relatedChampions": [
+      ],
+      "gallery": []
+    },
+    {
+      "id": "honk-solo",
+      "name": "Honk Solo",
+      "title": "El Ave Aventurada",
+      "icon": "img/icons/iconHonk.png",
+      "image": "img/champions/perfilHonk.png",
+      "background": "img/backgrounds/honkBG.png",
+      "lore":"Actualmente desconocida...",
+      "faction": "",
+      "region": "",
+      "race": "Super pato",
+      "age": "",
+      "birthplace": "",
+      "curiosities": [
+        ""
+      ],
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "galdwin-skripeo",
+          "relation": "Amigo"
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "id": "joan",
+      "name": "Joan Kane",
+      "title": "El Lado Oscuro del Bien",
+      "icon": "img/icons/iconJoan.png",
+      "image": "img/champions/perfilJoan.png",
+      "background": "img/backgrounds/joanBG.png",
+      "lore":"Actualmente desconocida...",
+      "faction": "",
+      "region": "",
+      "race": "Cyborg",
+      "age": "22",
+      "birthplace": "",
+      "curiosities": [
+        ""
+      ],
+      "wanted": null,
+      "relatedChampions": [
+        {
+          "id": "arthur-kane",
+          "relation": "Hermano menor"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "img/gallery/galleryArthur.png",
+          "caption": "Joan con su hermano Arthur"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,783 @@
+/* ============================================
+   TV Mode - 10-Foot UI, D-Pad Navigation, Overscan
+   ============================================ */
+
+/* ---- TV Detection via User Agent ---- */
+body.tv-mode {
+  /* Safe zone padding for overscan */
+  --tv-safe-x: max(3vw, 40px);
+  --tv-safe-y: max(2vh, 24px);
+  --tv-focus-ring: 3px solid var(--color-gold);
+  --tv-focus-glow: 0 0 0 4px var(--color-gold-glow), 0 0 20px var(--color-gold-glow);
+}
+
+/* ---- Global Focus Styles for D-Pad ---- */
+body.tv-mode *:focus {
+  outline: none;
+}
+
+body.tv-mode a:focus-visible,
+body.tv-mode button:focus-visible,
+body.tv-mode [tabindex]:focus-visible,
+body.tv-mode input:focus-visible,
+body.tv-mode select:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+  border-radius: var(--radius-sm);
+  transition: outline 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* ---- Safe Zone Wrapper ---- */
+body.tv-mode .navbar {
+  left: 0;
+  right: 0;
+  padding-left: var(--tv-safe-x);
+  padding-right: var(--tv-safe-x);
+}
+
+body.tv-mode #main-content {
+  padding-left: var(--tv-safe-x);
+  padding-right: var(--tv-safe-x);
+}
+
+/* ---- Navbar TV Adaptations ---- */
+body.tv-mode .navbar {
+  height: calc(var(--navbar-height) + 16px);
+  align-items: center;
+}
+
+body.tv-mode .navbar__logo img {
+  height: 48px;
+}
+
+body.tv-mode .navbar__logo-text {
+  font-size: 1.5rem;
+}
+
+body.tv-mode .navbar__link {
+  font-size: 1rem;
+  padding: var(--space-md) var(--space-sm);
+  letter-spacing: 2px;
+}
+
+body.tv-mode .navbar__link::after {
+  height: 3px;
+}
+
+body.tv-mode .navbar__dropdown-item {
+  font-size: var(--fs-body);
+  padding: var(--space-md) var(--space-lg);
+  gap: var(--space-md);
+  min-height: 48px;
+}
+
+body.tv-mode .navbar__dropdown-item img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---- Buttons TV Adaptation ---- */
+body.tv-mode .btn {
+  min-height: 48px;
+  min-width: 48px;
+  font-size: var(--fs-body);
+  padding: var(--space-md) var(--space-xl);
+  letter-spacing: 2px;
+}
+
+body.tv-mode .btn-lg {
+  min-height: 56px;
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--fs-h4);
+}
+
+body.tv-mode .btn:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+/* ---- Hero TV Adaptation ---- */
+body.tv-mode .hero {
+  min-height: 100vh;
+}
+
+body.tv-mode .hero__content {
+  max-width: 1100px;
+  padding: var(--space-3xl);
+}
+
+body.tv-mode .hero__logo {
+  width: clamp(200px, 25vw, 400px);
+}
+
+body.tv-mode .hero__title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  letter-spacing: 6px;
+}
+
+body.tv-mode .hero__subtitle {
+  font-size: var(--fs-h3);
+  max-width: 800px;
+}
+
+body.tv-mode .hero__cta {
+  gap: var(--space-xl);
+}
+
+body.tv-mode .hero__scroll-indicator {
+  display: none;
+}
+
+/* ---- Champion Cards TV Adaptation ---- */
+body.tv-mode .champions-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+body.tv-mode .champion-card {
+  min-height: 380px;
+}
+
+body.tv-mode .champion-card:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+  transform: translateY(-8px) scale(1.02);
+}
+
+body.tv-mode .champion-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+body.tv-mode .champion-card__name {
+  font-size: var(--fs-h3);
+}
+
+body.tv-mode .champion-card__title {
+  font-size: var(--fs-body);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Champion Detail TV Adaptation ---- */
+body.tv-mode .champion-hero {
+  height: 85vh;
+}
+
+body.tv-mode .champion-hero__name {
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 4px;
+}
+
+body.tv-mode .champion-hero__tagline {
+  font-size: var(--fs-h3);
+}
+
+body.tv-mode .champion-content {
+  padding: var(--space-3xl) var(--space-2xl);
+  max-width: 1500px;
+}
+
+body.tv-mode .champion-top-row {
+  grid-template-columns: 260px 1fr 280px;
+  gap: var(--space-3xl);
+}
+
+body.tv-mode .champion-portrait {
+  cursor: pointer;
+}
+
+body.tv-mode .champion-portrait:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .champion-nav__btn {
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+  border-width: 2px;
+}
+
+body.tv-mode .champion-nav__btn:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .champion-bio-panel__value {
+  font-size: var(--fs-body);
+}
+
+body.tv-mode .champion-related__item {
+  padding: var(--space-md);
+  min-height: 56px;
+}
+
+body.tv-mode .champion-related__item:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .champion-related__item-name {
+  font-size: var(--fs-body);
+}
+
+body.tv-mode .champion-curiosities__item {
+  font-size: var(--fs-body);
+  line-height: 1.8;
+}
+
+body.tv-mode .stat-card {
+  padding: var(--space-lg);
+  min-height: 80px;
+}
+
+body.tv-mode .stat-card:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .stat-card__value {
+  font-size: var(--fs-h2);
+}
+
+body.tv-mode .champion-ost__item {
+  padding: var(--space-md);
+  min-height: 56px;
+}
+
+body.tv-mode .champion-ost__play {
+  width: 48px;
+  height: 48px;
+  font-size: 1.2rem;
+}
+
+body.tv-mode .champion-ost__play:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .champion-ost__name {
+  font-size: var(--fs-body);
+}
+
+/* ---- World Map TV Adaptation ---- */
+body.tv-mode .map-controls__btn {
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem;
+  border-width: 2px;
+}
+
+body.tv-mode .map-controls__btn:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .region-panel {
+  width: min(480px, 40vw);
+}
+
+body.tv-mode .region-panel__hero {
+  height: 300px;
+}
+
+body.tv-mode .region-panel__hero-name {
+  font-size: var(--fs-h2);
+}
+
+body.tv-mode .region-panel__description {
+  font-size: var(--fs-body);
+}
+
+body.tv-mode .region-champion {
+  padding: var(--space-md);
+  min-height: 52px;
+}
+
+body.tv-mode .region-champion:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .region-champion__name {
+  font-size: var(--fs-body);
+}
+
+body.tv-mode .region-panel__close {
+  width: 56px;
+  height: 56px;
+  font-size: 1.8rem;
+}
+
+body.tv-mode .hotspot__dot {
+  width: 18px;
+  height: 18px;
+}
+
+body.tv-mode .hotspot__marker {
+  width: 36px;
+  height: 36px;
+}
+
+/* ---- Shops TV Adaptation ---- */
+body.tv-mode .shops-grid {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-2xl);
+}
+
+body.tv-mode .shop-card:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .shop-card__name {
+  font-size: var(--fs-h2);
+}
+
+/* ---- Wanted TV Adaptation ---- */
+body.tv-mode .wanted-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-3xl);
+  max-width: 1600px;
+}
+
+body.tv-mode .wanted-poster:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 6px;
+  box-shadow: var(--tv-focus-glow);
+  transform: scale(1.05);
+}
+
+body.tv-mode .wanted-poster__bounty-label {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: 8px;
+}
+
+body.tv-mode .wanted-poster__name {
+  font-size: var(--fs-h3);
+}
+
+body.tv-mode .wanted-header__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ---- Gallery TV Adaptation ---- */
+body.tv-mode .galeria-grid {
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: var(--space-2xl);
+}
+
+body.tv-mode .galeria-card:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .galeria-card__name {
+  font-size: var(--fs-h2);
+}
+
+body.tv-mode .galeria-images-grid {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+body.tv-mode .galeria-image-card:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .galeria-viewer__nav {
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+}
+
+body.tv-mode .galeria-viewer__nav:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .galeria-viewer__close {
+  width: 56px;
+  height: 56px;
+  font-size: 1.8rem;
+}
+
+body.tv-mode .galeria-viewer__close:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+/* ---- Modal TV Adaptation ---- */
+body.tv-mode .modal {
+  max-width: 80vw;
+  max-height: 85vh;
+}
+
+body.tv-mode .modal__close {
+  width: 56px;
+  height: 56px;
+  font-size: 1.8rem;
+}
+
+body.tv-mode .modal__close:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .modal__content {
+  padding: var(--space-2xl);
+  font-size: var(--fs-body);
+}
+
+body.tv-mode .modal__title {
+  font-size: var(--fs-h1);
+}
+
+body.tv-mode .modal__text {
+  font-size: var(--fs-body);
+  line-height: 1.8;
+}
+
+body.tv-mode .modal--wanted {
+  max-width: 700px;
+}
+
+body.tv-mode .wanted-modal__label {
+  font-size: var(--fs-h1);
+  letter-spacing: 10px;
+}
+
+body.tv-mode .wanted-modal__btn {
+  min-height: 52px;
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--fs-body);
+}
+
+body.tv-mode .wanted-modal__btn:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+/* ---- Music Player TV Adaptation ---- */
+body.tv-mode .music-player {
+  width: 420px;
+  bottom: var(--space-2xl);
+  right: var(--space-2xl);
+}
+
+body.tv-mode .music-player__btn {
+  width: 40px;
+  height: 40px;
+}
+
+body.tv-mode .music-player__btn--play {
+  width: 48px;
+  height: 48px;
+}
+
+body.tv-mode .music-player__btn:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .music-player__expand {
+  width: 36px;
+  height: 36px;
+}
+
+body.tv-mode .music-player__expand:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .music-player__track {
+  padding: var(--space-sm) var(--space-md);
+  min-height: 44px;
+}
+
+body.tv-mode .music-player__track:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 2px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .music-player__track-name {
+  font-size: var(--fs-small);
+}
+
+body.tv-mode .music-player__now-name {
+  font-size: var(--fs-small);
+}
+
+body.tv-mode .music-player__filter {
+  padding: 6px 14px;
+  font-size: var(--fs-xs);
+  min-height: 36px;
+}
+
+body.tv-mode .music-player__filter:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 2px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .music-player__volume-slider {
+  width: 100px;
+  height: 6px;
+}
+
+body.tv-mode .music-player__volume-slider::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+}
+
+body.tv-mode .music-player__volume-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---- Filter Bar TV Adaptation ---- */
+body.tv-mode .filter-bar {
+  padding: var(--space-xl) var(--space-2xl);
+}
+
+body.tv-mode .filter-tag {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--fs-small);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+body.tv-mode .filter-tag:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .filter-bar__search input {
+  padding: var(--space-md) var(--space-lg);
+  padding-left: 48px;
+  font-size: var(--fs-body);
+  min-height: 48px;
+}
+
+/* ---- Section Headers TV Adaptation ---- */
+body.tv-mode .section-header__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: 4px;
+}
+
+body.tv-mode .section-header__subtitle {
+  font-size: var(--fs-h4);
+  max-width: 800px;
+}
+
+body.tv-mode .section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+/* ---- Close Buttons TV Adaptation ---- */
+body.tv-mode .close-btn {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+body.tv-mode .close-btn:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 3px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+/* ---- Champion Card Title Always Visible on TV ---- */
+body.tv-mode .champion-card__title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Card Description Always Visible on TV ---- */
+body.tv-mode .card__description {
+  max-height: 100px;
+}
+
+/* ---- Region Detail TV Adaptation ---- */
+body.tv-mode .region-hero {
+  height: 70vh;
+}
+
+body.tv-mode .region-hero__name {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+body.tv-mode .region-champions__grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+body.tv-mode .region-locations__grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+body.tv-mode .region-gallery__grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* ---- Landscape TV (Ultrawide) ---- */
+body.tv-mode.landscape-ultra {
+  --tv-safe-x: max(5vw, 60px);
+}
+
+body.tv-mode.landscape-ultra .champions-preview__grid {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+body.tv-mode.landscape-ultra .hero__content {
+  max-width: 1300px;
+}
+
+body.tv-mode.landscape-ultra .video-section__container {
+  max-width: 1100px;
+}
+
+/* ---- Scrollbar TV Adaptation ---- */
+body.tv-mode ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+body.tv-mode ::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: var(--radius-sm);
+}
+
+body.tv-mode ::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+/* ---- Focus Scroll Indicator (animated ring on focused element) ---- */
+body.tv-mode .tv-focus-scroll-hint {
+  position: fixed;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 20, 40, 0.9);
+  border: 1px solid var(--color-gold-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm) var(--space-xl);
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  letter-spacing: 1px;
+  z-index: 9000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+body.tv-mode .tv-focus-scroll-hint.visible {
+  opacity: 1;
+}
+
+/* ---- Pagination / Load More TV Adaptation ---- */
+body.tv-mode .pagination__btn,
+body.tv-mode .load-more-btn {
+  min-height: 48px;
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--fs-body);
+}
+
+body.tv-mode .pagination__btn:focus-visible,
+body.tv-mode .load-more-btn:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+/* ---- Tooltip TV Adaptation ---- */
+body.tv-mode .region-tooltip {
+  font-size: var(--fs-body);
+  padding: var(--space-md) var(--space-lg);
+  border-width: 2px;
+}
+
+/* ---- Galeria Viewer Image ---- */
+body.tv-mode .galeria-viewer__img {
+  max-width: 88vw;
+  max-height: 85vh;
+}
+
+body.tv-mode .galeria-viewer__name {
+  font-size: var(--fs-h4);
+  padding: var(--space-md) var(--space-2xl);
+}
+
+/* ---- Lightbox TV Adaptation ---- */
+body.tv-mode .lightbox__close,
+body.tv-mode .lightbox__prev,
+body.tv-mode .lightbox__next {
+  width: 56px;
+  height: 56px;
+  font-size: 1.8rem;
+}
+
+body.tv-mode .lightbox__close:focus-visible,
+body.tv-mode .lightbox__prev:focus-visible,
+body.tv-mode .lightbox__next:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+body.tv-mode .portrait-lightbox__close {
+  width: 56px;
+  height: 56px;
+  font-size: 1.8rem;
+}
+
+body.tv-mode .portrait-lightbox__close:focus-visible {
+  outline: var(--tv-focus-ring);
+  outline-offset: 4px;
+  box-shadow: var(--tv-focus-glow);
+}
+
+/* ---- Film grain reduced on TV ---- */
+body.tv-mode::after {
+  opacity: 0.02;
+}
+
+/* ---- Prevent overscan clipping on fixed elements ---- */
+body.tv-mode .music-player {
+  right: max(var(--space-2xl), var(--tv-safe-x));
+  bottom: max(var(--space-2xl), var(--tv-safe-y));
+}
+
+body.tv-mode .map-controls {
+  left: max(var(--space-xl), var(--tv-safe-x));
+  bottom: max(var(--space-xl), var(--tv-safe-y));
+}
+
+/* ---- Hero CTA buttons on TV ---- */
+body.tv-mode .hero__cta .btn {
+  min-width: 200px;
+}

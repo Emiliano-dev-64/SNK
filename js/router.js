@@ -84,10 +84,19 @@ export class Router {
 
       this.cleanup();
 
+      const tvClasses = document.body.classList.contains('tv-mode')
+        ? 'tv-mode' + (document.body.classList.contains('landscape-ultra') ? ' landscape-ultra' : '')
+        : '';
+
       this.contentEl.innerHTML = newMain.innerHTML;
       this.contentEl.className = newMain.className;
       document.body.dataset.page = newPage;
       document.body.className = newBodyClass;
+
+      if (tvClasses) {
+        tvClasses.split(' ').forEach(c => { if (c) document.body.classList.add(c); });
+      }
+
       document.title = doc.title;
 
       if (pushState) {
@@ -98,6 +107,18 @@ export class Router {
       document.body.style.overflow = '';
 
       this.onNavigate(newPage);
+
+      if (document.body.classList.contains('tv-mode')) {
+        setTimeout(() => {
+          const first = document.querySelector(
+            'a[href]:not([tabindex="-1"]), button:not([tabindex="-1"]):not([disabled]), [tabindex]:not([tabindex="-1"]), .champion-card'
+          );
+          if (first) {
+            first.focus();
+            first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 150);
+      }
 
     } catch (err) {
       console.error('Router:', err);

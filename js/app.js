@@ -17,6 +17,7 @@ import { Galeria } from './galeria.js';
 import { Router } from './router.js';
 import { getChampions } from './data-cache.js';
 import { championCard } from './templates.js';
+import { setupTVNavigation } from './tv-navigation.js';
 
 const STAGGER = ['', 'stagger-1', 'stagger-2', 'stagger-3', 'stagger-4', 'stagger-5'];
 
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.__isSPA = true;
   initNavbar();
   initAnimations();
+  setupTVNavigation();
 
   window.__musicPlayer = new MusicPlayer();
 
